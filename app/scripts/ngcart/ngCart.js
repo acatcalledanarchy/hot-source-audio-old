@@ -21,7 +21,6 @@ angular.module('ngCart', [])
         });
         if (angular.isObject(store.get('cart'))) {
             ngCart.$restore(store.get('cart'));
-
         } else {
             ngCart.init();
         }

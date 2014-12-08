@@ -10,9 +10,9 @@
 		.module('app.auth')
 		.factory('Auth', Auth);	
 
-	Auth.$inject = ['$firebase', '$firebaseSimpleLogin', 'FIREBASE_URL', '$rootScope'];
+	Auth.$inject = ['$firebase', '$firebaseSimpleLogin', 'FIREBASE_URL', '$rootScope', 'toastr'];
 
-	function Auth($firebase, $firebaseSimpleLogin, FIREBASE_URL, $rootScope) {
+	function Auth($firebase, $firebaseSimpleLogin, FIREBASE_URL, $rootScope, toastr) {
 		
 		var ref = new Firebase(FIREBASE_URL);
 		var auth = $firebaseSimpleLogin(ref);
@@ -59,14 +59,14 @@
 		};
 
 		$rootScope.$on('$firebaseSimpleLogin:login', function(e, user) {
-			//logger.success('Logged in');
+			toastr.success('Logged in');
 			angular.copy(user, Service.user);
 			Service.user.profile = $firebase(ref.child('profile').child(Service.user.uid)).$asObject();
 			// Update last login
 		});
 
 		$rootScope.$on('$firebaseSimpleLogin:logout', function() {
-			//logger.warning('Logged out');
+			toastr.warning('Logged out');
 			if(Service.user && Service.user.profile) {
 				Service.user.profile.$destroy();
 			}

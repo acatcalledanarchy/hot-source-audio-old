@@ -1,0 +1,16 @@
+/* Enter / leave */
+.page.ng-enter {
+	animation: fadeIn 0.25s both ease-in;
+}
+
+.page.ng-leave {
+	animation: fadeOut 0.25s both ease-in;
+}
+
+.page-content.ng-enter {
+	animation: slideInRight 0.25s both ease-in;
+}
+
+.page-content.ng-leave {
+	animation: slideOutLeft 0.25s both ease-in;
+}

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" ui-sref="home">
+				<img class="img-responsive" alt="{{ vm.websiteTitle }}" ng-src="images/{{ vm.websiteLogo }}">
+			</a>
+		</div>
+		<div class="collapse navbar-collapse" id="navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li> 
+					<a class="shop" ui-sref="{{ vm.shopTitle | lowercase }}" ui-sref-active="active">{{ vm.shopTitle }}</a>
+				</li>
+				<li> 
+					<a class="about" ui-sref="about" ui-sref-active="active">About</a>
+				</li>
+				<!--
+				<li>
+					<a class="contact" ui-sref="contact" ui-sref-active="active">Contact</a>
+				</li>
+				-->
+				<li ng-hide="vm.signedIn()">
+					<a class="auth" ui-sref="login" ui-sref-active="active">Login</a>
+				</li>
+				<li ng-show="vm.signedIn()">
+					<a class="auth" ui-sref="my-account" ui-sref-active="active">My account</a>
+				</li>
+				<li ng-show="vm.signedIn()">
+					<a class="auth" ui-sref="home" ng-click="vm.logout()">Logout</a>
+				</li>
+				<li class="hidden-xs">
+					<a class="checkout" ui-sref="checkout" ui-sref-active="active">
+						<summary></summary>
+					</a>
+				</li>	
+				<li class="hidden-xs" ng-show="vm.signedIn()">
+					<a class="my-profile" ui-sref="my-account">
+						<img class="img-circle" ng-src="//gravatar.com/avatar/{{ vm.user.profile.md5_hash }}" />
+					</a>
+				</li>		
+			</ul>
+		</div>
+	</div>
+</nav>

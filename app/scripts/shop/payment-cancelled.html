@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-uppercase">Checkout</h1>
+			<div class="well well-custom">
+				<div class="alert alert-danger alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<p>Payment cancelled.</p>
+				</div>
+				<cart base-url="{{ vm.baseUrl }}" pay-pal-email-address="{{ vm.payPalEmailAddress }}"></cart>
+			</div>
+		</div>
+		<div class="col-xs-3"></div>
+	</div>
+</div>

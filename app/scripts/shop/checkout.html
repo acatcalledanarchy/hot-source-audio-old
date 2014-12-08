@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-uppercase">Checkout</h1>
+			<div class="well well-custom">
+				<cart base-url="{{ vm.baseUrl }}" website-logo="{{ vm.websiteLogo }}" pay-pal-email-address="{{ vm.payPalEmailAddress }}" signed-in="{{ vm.signedIn() }}" user-md5-hash="{{ vm.userMd5Hash }}" shop-title-slug="{{ vm.shopTitle | lowercase }}" font-awesome-icon="{{ vm.fontAwesomeIcon }}"></cart>
+			</div>
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+</div>

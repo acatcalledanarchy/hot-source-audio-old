@@ -1,0 +1,7 @@
+.navbar-default .navbar-nav>li>a.checkout .badge {
+	background: #4B7314;
+}
+
+.navbar-default .navbar-nav>li>a.checkout:hover .badge {
+	background: #4EBBEE;
+}

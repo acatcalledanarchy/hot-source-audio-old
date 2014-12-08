@@ -1,0 +1,158 @@
+<!doctype html>
+<html class="no-js" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="$state.current.data.pageTitle"></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" href="styles/animations.css">
+    <link rel="stylesheet" type="text/css" href="styles/generic.css">
+    <link rel="stylesheet" type="text/css" href="styles/google.maps.css">
+    <link rel="stylesheet" type="text/css" href="styles/yoga.css">
+    <!-- endbuild -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sintony:400,700">
+  </head>
+  <body ng-class="$state.current.data.pageBodyClass">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header ui-view="header"></header>
+    <section class="page {{ vm.pageBackgroundClass }}" id="page-background" ui-view="page-background"></section>
+    <section class="page-content {{ vm.pageContentClass }}" id="page-content" ui-view="page-content"></section>
+    <section ui-view="page-overlay" class="page-overlay"></section>
+    <footer ui-view="footer"></footer>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <script src="//maps.google.com/maps/api/js"></script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/angular-bootstrap-show-errors/src/showErrors.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
+    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.module.js"></script>
+        <script src="scripts/app.routes.js"></script>
+
+        <!-- Auth -->
+        <script src="scripts/auth/auth.module.js"></script>
+        <script src="scripts/auth/auth.routes.js"></script>
+        <script src="scripts/auth/auth.factory.js"></script>
+        <script src="scripts/auth/auth.background.controller.js"></script>
+        <script src="scripts/auth/auth.controller.js"></script>
+        <script src="scripts/auth/login.form.controller.js"></script>
+        <script src="scripts/auth/register.form.controller.js"></script>
+        <script src="scripts/auth/my.account.controller.js"></script>
+        <script src="scripts/auth/change-password-form.directive.js"></script>
+        <script src="scripts/auth/profile.factory.js"></script>
+
+        <!-- ngCart -->
+        <script src="scripts/ngCart/ngCart.js"></script>
+        <!--
+        <script src="scripts/ngCart/ngCart.directives.js"></script>
+        -->
+
+
+        <!-- Shop -->
+        <script src="scripts/shop/shop.module.js"></script>
+        <script src="scripts/shop/shop.routes.js"></script>
+        <script src="scripts/shop/add-to-cart.directive.js"></script>
+        <script src="scripts/shop/cart.controller.js"></script>
+        <script src="scripts/shop/cart.directive.js"></script>
+        <script src="scripts/shop/checkout.background.controller.js"></script>
+        <script src="scripts/shop/checkout.controller.js"></script>
+        <script src="scripts/shop/order.factory.js"></script>
+        <script src="scripts/shop/payment.completed.controller.js"></script>
+        <script src="scripts/shop/shop.background.controller.js"></script>
+        <script src="scripts/shop/shop.controller.js"></script>
+
+        <script src="scripts/shop/summary.directive.js"></script>
+
+        <!-- Product -->
+        <script src="scripts/product/product.controller.js"></script>
+        <script src="scripts/product/product.factory.js"></script>
+        <script src="scripts/product/product-form.directive.js"></script>        
+        
+        <!-- Core -->
+        <script src="scripts/core/core.module.js"></script>
+        <script src="scripts/core/constants.js"></script>
+
+        <!-- Layout -->
+        <script src="scripts/about/about.background.controller.js"></script>
+        <script src="scripts/about/about.controller.js"></script>
+        <script src="scripts/contact/contact.background.controller.js"></script>
+        <script src="scripts/contact/contact.controller.js"></script>
+        <script src="scripts/home/home.background.controller.js"></script>
+        <script src="scripts/home/home.controller.js"></script>
+        <script src="scripts/layout/footer.controller.js"></script>
+        <script src="scripts/layout/header.controller.js"></script>
+        <script src="scripts/layout/overlay.controller.js"></script>
+
+        <!-- Validate Module -->
+        <script src="scripts/validate/validate.module.js"></script>
+        <script src="scripts/validate/constants.js"></script>
+        <script src="scripts/validate/config.js"></script>
+        <script src="scripts/validate/validate.password.characters.directive.js"></script>
+        <script src="scripts/validate/validate.match.directive.js"></script>
+        <script src="scripts/validate/validate.record.availability.directive.js"></script>  
+
+        <!-- Filter Module -->
+        <script src="scripts/filters/filters.module.js"></script>
+        <script src="scripts/filters/capitalize.filter.js"></script>
+
+        <!-- UI Bootstrap -->
+        <script src="scripts/ui-bootstrap/tabs.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

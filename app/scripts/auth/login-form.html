@@ -1,0 +1,67 @@
+<form name="loginForm" id="loginForm" ng-submit="vm.login()" autocomplete="off" novalidate>
+	<fieldset>
+		<div class="alert alert-danger ng-show-animation" data-ng-show="vm.loginError" role="alert">
+			<p>
+				<i class="fa fa-exclamation-circle"></i>
+				&nbsp;&nbsp;
+				{{ vm.loginError  }}
+			</p>
+		</div>
+		<!-- Email address -->
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="loginEmail">Email address</label>
+			<input  class="form-control"
+					type="email"
+					name="loginEmail"
+					id="loginEmail"
+					data-ng-model="vm.user.email"
+					placeholder="Enter email address"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="loginForm.loginEmail.$error">
+				<span data-ng-message="required">Enter email address</span>
+				<span data-ng-message="email">Enter valid email address</span>
+			</p>
+		</div>
+		<!-- Password -->
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="loginPassword">Password</label>
+			<input  class="form-control"
+					type="password"
+					name="loginPassword"
+					id="loginPassword"
+					data-ng-model="vm.user.password"
+					placeholder="Enter password"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="loginForm.loginPassword.$error">
+				<span data-ng-message="required">Enter password</span>
+			</p>
+		</div>
+		<!-- Login -->
+		<div class="form-group">
+				<button class="btn btn-custom text-uppercase"
+						type="submit"
+						ng-disabled="vm.loginProcessing"
+						role="button">
+					<i class="fa fa-spinner fa-spin" ng-show="vm.loginProcessing"></i>
+					<i class="fa fa-lock" ng-hide="vm.loginProcessing"></i>
+					&nbsp;&nbsp;
+					Login
+				</button>
+			</div>
+		</div>
+		<!-- Login with Facebook -->
+		<div class="form-group">
+			<button class="btn btn-custom text-uppercase"
+					type="button"
+					ng-click="vm.oAuthLogin('facebook')"
+					ng-disabled="vm.oAuthLoginProcessing"
+					role="button">
+				<i class="fa fa-spinner fa-spin" ng-show="vm.oAuthLoginProcessing"></i>
+				<i class="fa fa-facebook" ng-hide="vm.oAuthLoginProcessing"></i>
+				</span>
+				&nbsp;&nbsp;
+				Login with Facebook
+			</button>
+		</div>
+	</fieldset>
+</form>

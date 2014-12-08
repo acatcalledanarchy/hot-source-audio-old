@@ -1,0 +1,13 @@
+<div class="cart-summary">
+	<span class="badge visible-lg">
+		<i class="fa fa-shopping-cart"></i>
+		{{ ngCart.totalItems() }}
+		<ng-pluralize count="ngCart.totalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+		&nbsp;&nbsp;|&nbsp;&nbsp;
+		{{ ngCart.totalCost() | currency: '£' }}
+	</span> 
+	<span class="badge hidden-lg">
+		<i class="fa fa-shopping-cart"></i>
+		{{ ngCart.totalCost() | currency: '£' }}
+	</span>
+</div>

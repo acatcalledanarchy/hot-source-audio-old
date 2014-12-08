@@ -1,0 +1,86 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-uppercase">{{ vm.pageTitle }}</h1>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-4 animate-repeat" ng-repeat="product in vm.products">
+					<div class="well well-custom">
+						<div class="row product">
+							<div class="col-xs-12">
+								<img class="img-responsive" ng-src="/images/yoga-lessons-icon.png" alt="{{ product.name }}">
+								<h2 class="text-uppercase">
+									{{ product.name }}
+									<span class="pull-right">
+										{{ product.price | currency: '£' }}
+									</span>
+								</h2>
+								<h5 class="text-uppercase">
+									<span class="pull-left">
+										{{ product.date }}
+									</span>
+									<span class="pull-right">
+										{{ product.venue }}
+									</span>
+								</h5>
+								<br>
+								<h5 class="row">
+									<span class="col-xs-4">
+										{{ product.startTime }}
+									</span>
+									<span class="col-xs-4 text-center">
+										until
+									</span>
+									<span class="col-xs-4 text-right">
+										{{ product.endTime }}
+									</span>
+								</h5>
+								<p class="custom">
+									{{ product.description }}  
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="form-group">
+									<add-to-cart id="{{ product.$id }}" name="{{ product.name }}" price="{{ product.price }}" product-type="{{ vm.productType }}" quantity="1" data="item">
+										<i class="fa {{ vm.fontAwesomeIcon }}"></i>
+										&nbsp;&nbsp;
+										{{ vm.buyNowLabel }}
+									</add-to-cart>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group" ng-show="{{ vm.signedIn() && vm.isAdmin() }}">
+								<div class="col-xs-6">
+									<a href="#/{{ vm.shopTitle | lowercase }}/{{ product.$id }}" class="btn btn-default btn-custom text-uppercase" ng-disabled="vm.editingProduct">
+										<i class="fa fa-spinner fa-spin" ng-show="vm.editingProduct"></i>
+										<i class="fa fa-edit" ng-hide="vm.editingProduct"></i>
+										&nbsp;&nbsp;
+										Edit
+									</a>
+								</div>
+								<div class="col-xs-6">
+									<button class="btn btn-custom text-uppercase" ng-click="vm.deleteProduct(product)" ng-disabled="vm.deletingProduct">
+										<i class="fa fa-spinner fa-spin" ng-show="vm.deletingProduct"></i>
+										<i class="fa fa-trash" ng-hide="vm.deletingProduct"></i>
+										&nbsp;&nbsp;
+										Delete
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6" ng-show="vm.signedIn() && vm.isAdmin()">
+					<product-form product="product" product-action="add" product-type="{{ vm.productType }}" font-awesome-icon="{{ vm.fontAwesomeIcon }}" product-quantity-label="{{ vm.productQuantityLabel }}" shop-title-slug="{{ vm.shopTitle | lowercase }}"></product-form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<p>&nbsp;</p>
+		</div>
+	</div>
+</div>

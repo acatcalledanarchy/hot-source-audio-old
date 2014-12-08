@@ -1,0 +1,58 @@
+.btn-custom,
+.btn-custom:focus {
+	width: 100%;
+	text-align: left;
+	color: white;
+	background: #4EBBEE;
+}
+
+.btn-custom[disabled] {
+	border-color: #4EBBEE;
+	color: #4EBBEE;
+	background: white !important;
+	cursor: default !important;
+	opacity: 1 !important;
+}
+
+.btn-custom:hover {
+	color: #4EBBEE;
+	background: white;
+	border-color: #4EBBEE;
+}
+
+/* Error messages animations */
+.ng-show-animate.ng-hide-add {
+ 	webkit-animation: fadeIn 0.3s both ease-in;
+	-moz-animation: fadeIn 0.3s both ease-in;
+	animation: fadeIn 0.3s both ease-in;   	
+}
+
+.ng-show-animate.ng-hide-remove {
+	-webkit-animation: fadeOut 0.3s both ease-in;
+	-moz-animation: fadeOut 0.3s both ease-in;
+	animation: fadeOut 0.3s both ease-in;   
+}
+
+.ng-messages-animation.ng-active {
+	-webkit-animation: fadeIn 0.3s both ease-in;
+	-moz-animation: fadeIn 0.3s both ease-in;
+	animation: fadeIn 0.3s both ease-in; 	
+}
+
+.ng-messages-animation.ng-inactive {
+	-webkit-animation: fadeOut 0.3s both ease-in;
+	-moz-animation: fadeOut 0.3s both ease-in;
+	animation: fadeOut 0.3s both ease-in; 	
+}
+
+.ng-show-animation.ng-enter {
+	-webkit-animation: fadeIn 0.3s both ease-in;
+	-moz-animation: fadeIn 0.3s both ease-in;
+	animation: fadeIn 0.3s both ease-in; 	
+}
+
+.ng-show-animation.ng-leave {
+	-webkit-animation: fadeOut 0.3s both ease-in;
+	-moz-animation: fadeOut 0.3s both ease-in;
+	animation: fadeOut 0.3s both ease-in; 		
+}

@@ -1,0 +1,124 @@
+<form name="registerForm" id="registerForm" data-ng-submit="vm.register()" autocomplete="off" novalidate>
+	<fieldset>
+		<div class="alert alert-danger ng-show-animation" data-ng-show="registerError" role="alert">
+			<p>
+				<i class="fa fa-exclamation-circle"></i>
+				&nbsp;&nbsp;
+				{{ vm.registerError }}
+			</p>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerUsername">Username</label>
+			<input  class="form-control"
+					type="text"
+					name="registerUsername"
+					id="registerUsername"
+					data-ng-model="vm.user.username"
+					placeholder="Choose a username"
+					minlength="8"
+					maxlength="20"
+					record-availability-validator="username"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerUsername.$error">
+				<span data-ng-message="required">Enter your chosen username</span>
+				<span data-ng-message="minlength">Enter 8 characters or more</span>
+				<span data-ng-message="maxlength">Enter 20 characters or less</span>
+				<span data-ng-message="loading">Checking database...</span>
+				<span data-ng-message="available">Sorry but this username is already taken</span>
+			</p>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerFirstName">First name</label>
+			<input 	class="form-control"
+					type="text"
+					name="registerFirstName"
+					id="registerFirstName"
+					data-ng-model="vm.user.firstName"
+					placeholder="Enter first name"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerFirstName.$error">
+				<span data-ng-message="required">Enter your first name</span>
+			</p>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerSurname">Surname</label>
+			<input  class="form-control"
+					type="text"
+					name="registerSurname"
+					id="registerSurname"
+					data-ng-model="vm.user.surname"
+					placeholder="Enter surname"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerSurname.$error">
+				<span data-ng-message="required">Enter your surname</span>
+			</p>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerEmail">Email address</label>
+			<input  class="form-control"
+					type="email"
+					name="registerEmail"
+					id="registerEmail"
+					data-ng-model="vm.user.email"
+					placeholder="Enter email address"
+					record-availability-validator="email"
+					required>
+			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerEmail.$error">
+				<span data-ng-message="required">Enter your email address</span>
+				<span data-ng-message="email">Enter valid email address</span>
+				<span data-ng-message="loading">Checking database...</span>
+  				<span data-ng-message="available">Sorry, but this email address is already taken</span>
+			</p>
+		</div>
+		<!-- Password -->
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerPassword">Choose a password</label>
+			<input  class="form-control"
+					type="password"
+					name="registerPassword"
+					id="registerPassword"
+					data-ng-model="vm.user.password"
+					placeholder="Choose a password"
+					minlength="8"
+					maxlength="16"
+					password-characters-validator
+					required>
+			<p class="help-block ng-messages-animation" ng-messages="registerForm.registerPassword.$error">
+					<span data-ng-message="required">Enter password</span>
+					<span data-ng-message="minlength">Enter 8 characters or more</span>
+					<span data-ng-message="maxlength">Enter 16 characters of less</span>
+					<span data-ng-message="taken">Sorry this email address is already taken</span>
+					<span data-ng-message="passwordcharacters">
+						Your password must consist of alphabetical or numeric characters.
+						It must also contain at least one special character, a number as well as an uppercase letter.
+					</span>
+
+			</p>
+		</div>
+		<div class="form-group" show-errors>
+			<label class="sr-only" for="registerConfirmPassword">Confirm your chosen password</label>
+			<input  class="form-control"
+					type="password"
+					name="registerConfirmPassword"
+					id="registerConfirmPassword"
+					data-ng-model="vm.user.confirmPassword"
+					placeholder="Confirm password"
+					data-match-validator="vm.user.password"
+					required>
+			<p class="help-block ng-messages-animation" ng-messages="registerForm.registerConfirmPassword.$error">
+				<span ng-message="required">Confirm your chosen password</span>
+				<span ng-message="match">Your password choice must match</span>
+			</p>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-custom text-uppercase"
+					type="submit"
+					ng-disabled="vm.registerProcessing">
+				<i class="fa fa-spinner fa-spin" ng-show="vm.registerProcessing"></i>
+				<i class="fa fa-edit" ng-hide="vm.registerProcessing"></i>
+				&nbsp;&nbsp;
+				Register
+			</button>
+		</div>
+	</fieldset>
+</form>

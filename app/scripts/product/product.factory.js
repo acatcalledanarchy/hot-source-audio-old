@@ -32,6 +32,9 @@
 			},
 			delete: function(product) {
 				return products.$remove(product);
+			},
+			getAll: function() {
+				return products.$asArray();
 			}
 		};
 

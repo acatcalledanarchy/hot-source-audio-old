@@ -14,8 +14,6 @@
 
 		var vm = this;
 		vm.users = Auth.all;
-
-		console.log(vm.users);
 	}
 
 })();

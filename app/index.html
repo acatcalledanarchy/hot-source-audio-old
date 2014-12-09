@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
     <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
     <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/fullcalendar.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -31,7 +32,6 @@
     <header ui-view="header"></header>
     <section class="page {{ vm.pageBackgroundClass }}" id="page-background" ui-view="page-background"></section>
     <section class="page-content {{ vm.pageContentClass }}" id="page-content" ui-view="page-content"></section>
-    <section ui-view="page-overlay" class="page-overlay"></section>
     <footer ui-view="footer"></footer>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,6 +78,9 @@
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="bower_components/fullcalendar/fullcalendar.js"></script>
+    <script src="bower_components/angular-ui-calendar/src/calendar.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -93,9 +96,18 @@
         <script src="scripts/auth/auth.controller.js"></script>
         <script src="scripts/auth/login.form.controller.js"></script>
         <script src="scripts/auth/register.form.controller.js"></script>
-        <script src="scripts/auth/my.account.controller.js"></script>
-        <script src="scripts/auth/change-password-form.directive.js"></script>
-        <script src="scripts/auth/profile.factory.js"></script>
+
+        <!-- My account -->
+        <script src="scripts/my-account/my-account.module.js"></script>
+        <script src="scripts/my-account/my-account.routes.js"></script>
+        <script src="scripts/my-account/my.account.controller.js"></script>
+        <script src="scripts/my-account/change-password-form.directive.js"></script>
+        <script src="scripts/my-account/profile.factory.js"></script>
+        <script src="scripts/my-account/profile.controller.js"></script>
+        <script src="scripts/my-account/orders.table.controller.js"></script>
+        <script src="scripts/my-account/products.table.controller.js"></script>
+        <script src="scripts/my-account/users.table.controller.js"></script>
+        <script src="scripts/my-account/calendar.controller.js"></script>
 
         <!-- ngCart -->
         <script src="scripts/ngCart/ngCart.js"></script>
@@ -137,7 +149,6 @@
         <script src="scripts/home/home.controller.js"></script>
         <script src="scripts/layout/footer.controller.js"></script>
         <script src="scripts/layout/header.controller.js"></script>
-        <script src="scripts/layout/overlay.controller.js"></script>
 
         <!-- Validate Module -->
         <script src="scripts/validate/validate.module.js"></script>

@@ -33,11 +33,6 @@
 					controller:  'HomeCtrl',
 					controllerAs: 'vm'
 				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -65,12 +60,7 @@
 					templateUrl:  'scripts/about/about.html',
 					controller:  'AboutCtrl',
 					controllerAs: 'vm'
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -98,12 +88,7 @@
 					templateUrl: 'scripts/contact/contact.html',
 					controller: 'ContactCtrl',
 					controllerAs: 'vm'
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -131,12 +116,7 @@
 					templateUrl: 'scripts/error/error.html',
 					controller: 'ErrorCtrl',
 					controllerAs: 'vm'
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},		
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',

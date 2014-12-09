@@ -1,0 +1,36 @@
+<h3 class="text-uppercase">Users</h3>
+<div class="well well-custom">
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>First name</th>
+					<th>Last name</th>
+					<th>Username</th>
+					<th>Email address</th>
+					<th>Created on</th>
+					<!--
+					<th>Last login</th>
+					-->
+					<th>Administrator?</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="user in vm.users">
+					{{ user }}
+					<td>{{ user.first_name }}</td>
+					<td>{{ user.surname }}</td>
+					<td>{{ user.username }}</td>
+					<td>{{ user.email }}</td>
+					<td>{{ user.created_on | date: 'dd/MM/yyyy HH:mm:ss' }}</td>
+					<!--
+					<td>{{ user.last_login }}</td>
+					-->
+					<td>
+						<i class="fa" ng-class="user.isAdmin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

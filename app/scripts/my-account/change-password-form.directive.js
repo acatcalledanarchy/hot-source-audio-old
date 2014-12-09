@@ -5,7 +5,7 @@
 	'use strict';
 
 	angular
-		.module('app.auth')
+		.module('app.my-account')
 		.directive('changePasswordForm', changePasswordForm);
 
 	function changePasswordForm() {
@@ -16,7 +16,7 @@
 			scope: {
 				user: '='
 			},
-			templateUrl: 'scripts/auth/change-password-form.html',
+			templateUrl: 'scripts/my-account/change-password-form.html',
 		};
 
 		return directive;

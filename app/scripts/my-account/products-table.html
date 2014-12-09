@@ -1,0 +1,36 @@
+<h3 class="text-uppercase">{{ vm.shopTitle }}</h3>
+<div class="well well-custom">
+	<div class="table-responsive" ng-hide="vm.products.length == 0">
+		<table class="table table-striped ngCart cart">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+					<th>Venue</th>
+					<th>Start time</th>
+					<th>End time</th>
+					<th>Price</th>
+					<th>{{ vm.productQuantityLabel | capitalize }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="product in vm.products">
+					<td>{{ product.name }}</td>
+					<td>{{ product.date }}</td>
+					<td>{{ product.venue }}</td>
+					<td>{{ product.startTime }}</td>
+					<td>{{ product.endTime }}</td>
+					<td>{{ product.price | currency: '£' }}</td>
+					<td>{{ product.quantity }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="alert alert-danger" ng-show="vm.products.length == 0">
+		<p>
+			<i class="fa fa-exclaimation-circle"></i>
+			&nbsp;&nbsp;
+			Please add {{ vm.productType }}
+		</p>
+	</div>
+</div>

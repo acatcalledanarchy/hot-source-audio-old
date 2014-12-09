@@ -5,7 +5,7 @@
 	'use strict';
 
 	angular
-		.module('app.auth')
+		.module('app.my-account')
 		.factory('Profile', Profile);
 
 	Profile.$inject = ['$window', 'FIREBASE_URL', '$firebase', 'Order', '$q'];

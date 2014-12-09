@@ -1,0 +1,53 @@
+<h3 class="text-uppercase">
+	<span ng-hide="vm.isAdmin()">Your orders</span>
+	<span ng-show="vm.isAdmin()">Website orders</span>
+</h3>
+<div class="well well-custom">
+	<div ng-repeat="order in vm.orders | orderBy: 'orderTime'" ng-hide="vm.orders.length == 0">
+		<h5>
+			{{ order.orderTime | date: 'dd/MM/yyyy @ HH:mm:ss' }}
+			<span class="pull-right" ng-show="vm.isAdmin()">{{ order.creatorUID }}</span>
+		</h5>
+		<div class="table-responsive">
+			<table class="table table-striped ngCart cart">
+				<thead>
+					<tr>
+						<th>{{ vm.productType | capitalize }}</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr ng-show="vm.ngCart.getTax()">
+						<th></th>
+						<th>Tax ({{ order.taxRate }}%):</th>
+						<th>{{ order.totalTax | currency: '£' }}</th>
+						<th></th>
+					</tr>
+	                <tr>
+	                    <th></th>
+	                    <th></th>
+	                    <th>Total:</th>
+	                    <th>{{ order.totalCost | currency: '£' }}</th>
+	                </tr>
+     	   		</tfoot>
+				<tbody>
+					<tr ng-repeat="product in order.products">
+						<td>{{ product.name }}</td>
+						<td>{{ product.price | currency: '£' }}</td>
+						<td>{{ product.quantity }}</td>
+						<td>{{ product.price * product.quantity | currency: '£' }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="alert alert-info" role="alert" ng-show="vm.orders.length == 0">
+		<p>
+			<i class="fa fa-info-circle"></i>
+			&nbsp;&nbsp;
+			No orders present.
+		</p>
+	</div>	
+</div>

@@ -5,7 +5,7 @@
 	'use strict';
 
 	angular
-		.module('app.auth')
+		.module('app.my-account')
 		.config(config);
 
 	config.$inject = ['$stateProvider', 'WEBSITE_SETTINGS'];
@@ -15,8 +15,8 @@
 		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
 
 		$stateProvider
-		.state('login', {
-			url: '/login',
+		.state('my-account', {
+			url: '/my-account',
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -28,8 +28,8 @@
 					controllerAs: 'vm'
 				},
 				'page-content': {
-					templateUrl: 'scripts/auth/login.html',
-					controller: 'AuthCtrl',
+					templateUrl: 'scripts/my-account/my-account.html',
+					controller: 'MyAccountCtrl',
 					controllerAs: 'vm',
 					resolve: {
 						user: function(Auth) {
@@ -37,14 +37,29 @@
 						}
 					}
 				},
-				'login-form@login': {
-					templateUrl: 'scripts/auth/login-form.html',
-					controller: 'LoginFormCtrl',
+				'profile@my-account': {
+					templateUrl: 'scripts/my-account/profile.html',
+					controller: 'ProfileCtrl',
 					controllerAs: 'vm'
 				},
-				'register-form@login': {
-					templateUrl: 'scripts/auth/register-form.html',
-					controller: 'RegisterFormCtrl',
+				'orders@my-account': {
+					templateUrl: 'scripts/my-account/orders-table.html',
+					controller: 'OrdersCtrl',
+					controllerAs: 'vm'
+				},
+				'products@my-account': {
+					templateUrl: 'scripts/my-account/products-table.html',
+					controller: 'ProductsCtrl',
+					controllerAs: 'vm'
+				},
+				'users@my-account': {
+					templateUrl: 'scripts/my-account/users-table.html',
+					controller: 'UsersCtrl',
+					controllerAs: 'vm'
+				},
+				'calendar@my-account': {
+					templateUrl: 'scripts/my-account/calendar.html',
+					controller: 'CalendarCtrl',
 					controllerAs: 'vm'
 				},
 				'footer': {
@@ -54,7 +69,7 @@
 				}
 			},
 			data: {
-				pageTitle: 'Login' + websiteTitle,
+				pageTitle: 'My account'  + websiteTitle,
 				pageBodyClass: 'auth'
 			}
 		});

@@ -1,0 +1,41 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 class="text-uppercase">My account</h1>
+			<div class="well well-custom">
+				<tabset>
+					<tab heading="Profile">
+						<tabpane>
+							<div data-ui-view="profile"></div>
+						</tabpane>
+					</tab>
+					<tab heading="Orders">
+						<tabpane>
+							<div data-ui-view="orders"></div>
+						</tabpane>
+					</tab>
+					<tab heading="{{ vm.shopTitle }}" ng-show="vm.isAdmin()">
+						<tabpane>
+							<div data-ui-view="products"></div>
+						</tabpane>
+					</tab>
+					<tab heading="Calendar" ng-show="vm.isAdmin()">
+						<tabpane>
+							<div data-ui-view="calendar"></div>
+						</tabpane>
+					</tab>
+					<tab heading="Users" ng-show="vm.isAdmin()">
+						<tabpane>
+							<div data-ui-view="users"></div>
+						</tabpane>
+					</tab>
+					<tab heading="Change password">
+						<tabpane>
+							<div data-change-password-form user="vm.user.profile"></div>
+						</tabpane>
+					</tab>
+				</tabset>
+			</div>
+		</div>
+	</div>
+</div>

@@ -38,12 +38,7 @@
 							return Auth.resolveUser();
 						}
 					}
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -77,11 +72,6 @@
 						}
 					}
 				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -114,12 +104,7 @@
 							return Auth.resolveUser();
 						}
 					}
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -152,12 +137,7 @@
 							return Auth.resolveUser();
 						}
 					}
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -169,46 +149,6 @@
 				pageBodyClass: 'checkout'
 			}
 		})
-		/*
-		.state('payment-completed', {
-			url: '/payment-completed',
-			views: {
-				'header': {
-					templateUrl: 'scripts/layout/header.html',
-					controller: 'HeaderCtrl',
-					controllerAs: 'vm'
-				},
-				'page-background': {
-					controller: 'CheckoutBackgroundCtrl',
-					controllerAs: 'vm'
-				},
-				'page-content': {
-					templateUrl: 'scripts/shop/payment-completed.html',
-					controller: 'PaymentCompletedCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
-				'footer': {
-					templateUrl: 'scripts/layout/footer.html',
-					controller: 'FooterCtrl',
-					controllerAs: 'vm'
-				}
-			},
-			data: {
-				pageTitle: 'Payment completed' + websiteTitle,
-				pageBodyClass: 'checkout'
-			}
-		})
-		*/
 		.state('payment-cancelled', {
 			url: '/payment-cancelled',
 			views: {
@@ -225,12 +165,7 @@
 					templateUrl: 'scripts/shop/payment-cancelled.html',
 					controller: 'CheckoutCtrl',
 					controllerAs: 'vm'
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
-				},				
+				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -263,11 +198,6 @@
 							return Auth.resolveUser();
 						}
 					}
-				},
-				'page-overlay': {
-					templateUrl: 'scripts/layout/overlay.html',
-					controller: 'OverlayCtrl',
-					controllerAs: 'vm'
 				},
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',

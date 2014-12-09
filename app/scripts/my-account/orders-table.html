@@ -5,8 +5,9 @@
 <div class="well well-custom">
 	<div ng-repeat="order in vm.orders | orderBy: 'orderTime'" ng-hide="vm.orders.length == 0">
 		<h5>
-			{{ order.orderTime | date: 'dd/MM/yyyy @ HH:mm:ss' }}
-			<span class="pull-right" ng-show="vm.isAdmin()">{{ order.creatorUID }}</span>
+			{{ order.profile.first_name }} {{ order.profile.surname }}
+			<span class="pull-right" ng-show="vm.isAdmin()">{{ order.orderTime | date: 'dd/MM/yyyy HH:mm:ss' }}
+			</span>
 		</h5>
 		<div class="table-responsive">
 			<table class="table table-striped ngCart cart">

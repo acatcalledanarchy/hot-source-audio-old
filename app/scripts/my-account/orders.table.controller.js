@@ -19,6 +19,10 @@
 		if (Auth.isAdmin) {	
 			vm.orders = Order.all;
 			vm.orders.$loaded().then(function(orders) {
+				for(var i = 0; i < orders.length; i++) {
+					var profile = Auth.get(orders[i].creatorUID);
+					orders[i].profile = profile;
+				}
 				vm.orders = orders;
 			});				
 		} else {

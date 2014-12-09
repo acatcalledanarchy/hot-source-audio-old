@@ -15,29 +15,6 @@
 		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
 
 		$stateProvider
-		.state('calendar', {
-			url: '/calendar',
-			views: {
-				'header': {
-					templateUrl: 'scripts/layout/header.html',
-					controller: 'HeaderCtrl',
-					controllerAs: 'vm'
-				},
-				'page-background': {
-					controller: 'AuthBackgroundCtrl',
-					controllerAs: 'vm'
-				},
-				'page-content': {
-					templateUrl: 'scripts/my-account/calendar.html',
-					controller: 'CalendarCtrl'
-				},
-				'footer': {
-					templateUrl: 'scripts/layout/footer.html',
-					controller: 'FooterCtrl',
-					controllerAs: 'vm'
-				}
-			}
-		})
 		.state('my-account', {
 			url: '/my-account',
 			views: {

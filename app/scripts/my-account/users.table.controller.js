@@ -14,6 +14,9 @@
 
 		var vm = this;
 		vm.users = Auth.all;
+		vm.users.$loaded().then(function(users){
+			vm.users = users;
+		});
 	}
 
 })();

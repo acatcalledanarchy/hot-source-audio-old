@@ -14,15 +14,17 @@
 
 		var vm = this;
 		vm.isAdmin = Auth.isAdmin;
-		vm.orders = {};
 		vm.productType = WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE;
 
-		if (Auth.isAdmin) {
-			Profile.getOrders(Auth.user.uid).then(function(orders) {
+		if (Auth.isAdmin) {	
+			vm.orders = Order.all;
+			vm.orders.$loaded().then(function(orders) {
 				vm.orders = orders;
 			});				
 		} else {
-			vm.orders = Order.all;
+			Profile.getOrders(Auth.user.uid).then(function(orders) {
+				vm.orders = orders;
+			});
 		}
 	}
 

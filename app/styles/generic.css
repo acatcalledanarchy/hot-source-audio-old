@@ -5,6 +5,10 @@ body {
 	min-height: 100%;
 }
 
+html * {
+    outline: 0 !important;
+}
+
 .page {
 	position:absolute;
 	width: 100%;

@@ -9,93 +9,63 @@
 		.module('app.my-account')
 		.controller('CalendarCtrl', CalendarCtrl);
 
-	CalendarCtrl.$inject = ['$scope', 'Product', '$modal', 'moment'];
+	CalendarCtrl.$inject = ['Product', '$modal', 'moment'];
 
-	function CalendarCtrl($scope, Product, $modal, moment) {
+	function CalendarCtrl(Product, $modal, moment) {
 
 		var vm = this;
-		vm.eventSources = [];
+		vm.events = [];
 		vm.products = Product.all;
-
-		/*
 		vm.products.$loaded().then(function(products) {
 			for(var i = 0; i < products.length; i++ ) {
-				//var product = products[i];
-				
-				var startTime = new Date(y, m, d - 5);
-				var endTime = new Date(y, m, d - 2);
+				var product = products[i],
+					title = product.name,
+					thisEvent = {
+						title: title,
+						type: 'info',
+						starts_at: moment(products[i].date + ' : ' + products[i].startTime),
+						ends_at: moment(products[i].date + ' : ' + products[i].endTime)
+					};
 
-				var eventSource = {
-					title: name,
-					start: startTime,
-					end: endTime
-				};
-				vm.eventSources.push(eventSource);
+				vm.events.push(thisEvent);
 			}
 		});
-		*/
 
-	var currentYear = moment().year();
-    var currentMonth = moment().month();
+	    vm.calendarView = 'month';
+	    vm.calendarDay = new Date();
 
-    $scope.events = [
-      {
-        title: 'Event 1',
-        type: 'warning',
-        starts_at: new Date(currentYear,currentMonth,25,8,30),
-        ends_at: new Date(currentYear,currentMonth,25,9,30)
-      },
-      {
-        title: 'Event 2',
-        type: 'info',
-        starts_at: new Date(currentYear,currentMonth,19,7,30),
-        ends_at: new Date(currentYear,currentMonth,25,9,30)
-      },
-      {
-        title: 'This is a really long event title',
-        type: 'important',
-        starts_at: new Date(currentYear,currentMonth,25,6,30),
-        ends_at: new Date(currentYear,currentMonth,25,6,60)
-      },
-    ];
+	    function showModal(action, event) {
+			$modal.open({
+				templateUrl: 'modalContent.html', //!XXX This may be a quick win?
+				controller: function(vm, $modalInstance) {
+					vm.$modalInstance = $modalInstance;
+					vm.action = action;
+					vm.event = event;
+				}
+			});
+	    }
 
-    $scope.calendarView = 'month';
-    $scope.calendarDay = new Date();
+	    vm.eventClicked = function(event) {
+			showModal('Clicked', event);
+	    };
 
-    function showModal(action, event) {
-      $modal.open({
-        templateUrl: 'modalContent.html',
-        controller: function($scope, $modalInstance) {
-          $scope.$modalInstance = $modalInstance;
-          $scope.action = action;
-          $scope.event = event;
-        }
-      });
-    }
+	    vm.eventEdited = function(event) {
+			showModal('Edited', event);
+	    };
 
-    $scope.eventClicked = function(event) {
-      showModal('Clicked', event);
-    };
+	    vm.eventDeleted = function(event) {
+			showModal('Deleted', event);
+	    };
 
-    $scope.eventEdited = function(event) {
-      showModal('Edited', event);
-    };
+	    vm.setCalendarToToday = function() {
+			vm.calendarDay = new Date();
+	    };
 
-    $scope.eventDeleted = function(event) {
-      showModal('Deleted', event);
-    };
-
-    $scope.setCalendarToToday = function() {
-      $scope.calendarDay = new Date();
-    };
-
-    $scope.toggle = function($event, field, event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      event[field] = !event[field];
-    };
-
+	    vm.toggle = function($event, field, event) {
+			$event.preventDefault();
+			$event.stopPropagation();
+			event[field] = !event[field];
+	    };
 	}		
 
 })();

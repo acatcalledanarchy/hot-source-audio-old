@@ -16,7 +16,9 @@
 		vm.isAdmin = Auth.isAdmin;
 		vm.productType = WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE;
 
-		if (Auth.isAdmin) {	
+		var isAdmin = Auth.isAdmin();
+
+		if (isAdmin) {	
 			vm.orders = Order.all;
 			vm.orders.$loaded().then(function(orders) {
 				for(var i = 0; i < orders.length; i++) {
@@ -26,10 +28,8 @@
 				vm.orders = orders;
 			});				
 		} else {
-			console.log('Auth user UID: ' + Auth.user.uid);
 			Profile.getOrders(Auth.user.uid).then(function(orders) {
 				vm.orders = orders;
-				console.log(vm.orders);
 			});
 		}
 	}

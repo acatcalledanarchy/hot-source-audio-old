@@ -56,7 +56,10 @@
 		      return !!Service.user.provider;
 		    },
 			isAdmin: function() {
-				return typeof Service.user.profile !== 'undefined' ? Service.user.profile.isAdmin : false;
+				if( Service.user.profile !== 'undefined' && Service.user.profile.isAdmin !== 'undefined' && Service.user.profile.isAdmin) {
+					return true;
+				}
+				return false;
 			},
 		    user: {}
 		};

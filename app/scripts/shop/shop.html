@@ -57,7 +57,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="form-group" data-ng-if="{{ vm.signedIn() && vm.isAdmin() }}">
+							<div class="form-group" data-ng-show="{{ vm.signedIn() && vm.isAdmin() }}">
 								<div class="col-xs-6">
 									<a data-ng-ref="#/{{ vm.shopTitle | lowercase }}/{{ product.$id }}" class="btn btn-default btn-custom text-uppercase" data-ng-disabled="vm.editingProduct">
 										<i class="fa fa-spinner fa-spin" data-ng-if="vm.editingProduct"></i>

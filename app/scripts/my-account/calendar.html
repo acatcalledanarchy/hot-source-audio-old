@@ -25,3 +25,15 @@
 		<mwl-calendar calendar-events="vm.events" calendar-view="vm.calendarView" calendar-current-day="vm.calendarDay" calendar-control="vm.calendarControl" calendar-event-click="vm.eventClicked($event)" calendar-edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'" calendar-delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'" calendar-edit-event-click="vm.eventEdited($event)" calendar-delete-event-click="vm.eventDeleted($event)" calendar-auto-open="true"></mwl-calendar>
 	</div>	
 </div>
+<script type="text/ng-template" id="modalContent.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Event action occurred!</h3>
+		</div>
+		<div class="modal-body">
+		<p>Action: <pre>{{ action }}</pre></p>
+		<p>Event: <pre>{{ event | json }}</pre></p>
+		</div>
+		<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="$modalInstance.close()">OK</button>
+	</div>
+</script>

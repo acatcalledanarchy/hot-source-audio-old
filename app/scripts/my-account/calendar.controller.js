@@ -23,11 +23,13 @@
 					thisEvent = {
 						title: title,
 						type: 'info',
-						starts_at: moment(products[i].date + ' : ' + products[i].startTime),
-						ends_at: moment(products[i].date + ' : ' + products[i].endTime)
+						starts_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' : ' + product.startTime)),
+						ends_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' : ' + product.endTime))
 					};
 
 				vm.events.push(thisEvent);
+
+				console.log(vm.events);
 			}
 		});
 
@@ -36,11 +38,11 @@
 
 	    function showModal(action, event) {
 			$modal.open({
-				templateUrl: 'modalContent.html', //!XXX This may be a quick win?
-				controller: function(vm, $modalInstance) {
-					vm.$modalInstance = $modalInstance;
-					vm.action = action;
-					vm.event = event;
+				templateUrl: 'modalContent.html',
+				controller: function($scope, $modalInstance) {
+					$scope.$modalInstance = $modalInstance;
+					$scope.action = action;
+					$scope.event = event;
 				}
 			});
 	    }

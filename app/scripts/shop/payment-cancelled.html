@@ -8,9 +8,18 @@
 						<span aria-hidden="true">&times;</span>
 						<span class="sr-only">Close</span>
 					</button>
+				 	<i class="fa fa-exclamation-circle"></i>
 					<p>Payment cancelled.</p>
 				</div>
-				<cart base-url="{{ vm.baseUrl }}" pay-pal-email-address="{{ vm.payPalEmailAddress }}"></cart>
+				<div data-cart
+					data-base-url="{{ vm.baseUrl }}"
+					data-website-logo="{{ vm.websiteLogo }}"
+					data-pay-pal-email-address="{{ vm.payPalEmailAddress }}"
+					data-signed-in="{{ vm.signedIn() }}"
+					data-user-md5-hash="{{ vm.userMd5Hash }}"
+					data-shop-title-slug="{{ vm.shopTitle | lowercase }}"
+					data-font-awesome-icon="{{ vm.fontAwesomeIcon }}">
+				</div>
 			</div>
 		</div>
 		<div class="col-xs-3"></div>

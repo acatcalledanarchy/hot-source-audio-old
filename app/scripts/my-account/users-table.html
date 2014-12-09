@@ -16,7 +16,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="user in vm.users">
+				<tr data-ng-repeat="user in vm.users">
 					{{ user }}
 					<td>{{ user.first_name }}</td>
 					<td>{{ user.surname }}</td>
@@ -27,7 +27,7 @@
 					<td>{{ user.last_login }}</td>
 					-->
 					<td>
-						<i class="fa" ng-class="user.isAdmin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
+						<i class="fa" data-ng-class="user.isAdmin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
 					</td>
 				</tr>
 			</tbody>

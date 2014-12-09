@@ -13,8 +13,8 @@
 	function addToCart(ngCart) {
         
         var directive = {
-            restrict: 'E',
             controller: 'CartController',
+            link: link,
             scope: {
                 id: '@',
                 name: '@',
@@ -23,14 +23,12 @@
                 productType: '@',
                 data: '='
             },
+            restrict: 'AE',
             transclude: true,
-            templateUrl: 'scripts/shop/add-to-cart.html',
-            link: link
+            templateUrl: 'scripts/shop/add-to-cart.html'
         };
 
         return directive;
-
-        /*---------------------------------------------*/
 
         function link(scope, element, attrs) {
             scope.attrs = attrs;

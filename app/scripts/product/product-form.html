@@ -1,7 +1,7 @@
 <div class="well well-custom">
 	<h2 class="text-uppercase">
-		<span ng-if="productAction == 'add'">Add {{ productType }}</span>
-		<span ng-if="productAction == 'edit'">Edit {{ productType }}</span>
+		<span data-ng-if="productAction == 'add'">Add {{ productType }}</span>
+		<span data-ng-if="productAction == 'edit'">Edit {{ productType }}</span>
 	</h2>
 	<div class="alert alert-danger" data-ng-show="productError" role="alert">
 		<p>
@@ -10,27 +10,27 @@
 			{{ productError }}
 		</p>
 	</div>
-	<form name="productForm" id="productForm" novalidate ng-submit="submitProductForm()">
+	<form name="productForm" id="productForm" data-ng-submit="submitProductForm()" novalidate>
 		<fieldset>
-			<div class="form-group" show-errors>
+			<div class="form-group" data-show-errors>
 				<label class="text-uppercase" for="productName">Name</label>
 				<input class="form-control"
 						type="text"
 						name="productName"
 						id="productName"
-						ng-model="product.name"
+						data-ng-model="product.name"
 						placeholder="Enter name"
 						required>
 				<p class="help-block ng-messages-animation" data-ng-messages="productForm.productName.$error">
 					<span data-ng-message="required">Enter name</span>
 				</p>
 			</div>
-			<div class="form-group" show-errors>
+			<div class="form-group" data-show-errors>
 				<label class="text-uppercase" for="productDescription">Description</label>
 				<textarea class="form-control"
 						name="productDescription"
 						id="productDescription"
-						ng-model="product.description"
+						data-ng-model="product.description"
 						placeholder="Enter description"
 						required></textarea>
 				<p class="help-block ng-messages-animation" data-ng-messages="productForm.productDescription.$error">
@@ -39,13 +39,13 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productDate">Date</label>
 						<input class="form-control"
 								type="text"
 								name="productDate"
 								id="productDate"
-								ng-model="product.date"
+								data-ng-model="product.date"
 								placeholder="DD/MM/YYYY"
 								pattern="\d{1,2}/\d{1,2}/\d{4}"
 								required>
@@ -56,13 +56,13 @@
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productVenue">Venue</label>
 						<input class="form-control"
 								type="text"
 								name="productVenue"
 								id="productVenue"
-								ng-model="product.venue"
+								data-ng-model="product.venue"
 								placeholder="Enter venue"
 								required>
 						<p class="help-block ng-messages-animation" data-ng-messages="productForm.productVenue.$error">
@@ -73,13 +73,13 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productStartTime">Start time</label>
 						<input class="form-control"
 								type="text"
 								name="productStartTime"
 								id="productStartTime"
-								ng-model="product.startTime"
+								data-ng-model="product.startTime"
 								placeholder="HH:MM"
 								pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}"
 								required>
@@ -90,13 +90,13 @@
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productEndTime">End time</label>
 						<input class="form-control"
 								type="text"
 								name="productEndTime"
 								id="productEndTime"
-								ng-model="product.endTime"
+								data-ng-model="product.endTime"
 								placeholder="HH:MM"
 								pattern="([0-1]{1}[0-9]{1}|20|21|22|23):[0-5]{1}[0-9]{1}"
 								required>
@@ -109,7 +109,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productPrice">Price</label>
 						<div class="input-group">
 							<div class="input-group-addon">&pound;</div>
@@ -117,7 +117,7 @@
 									type="text"
 									name="productPrice"
 									id="productPrice"
-									ng-model="product.price"
+									data-ng-model="product.price"
 									placeholder="eg: 10.00"
 									pattern="^\d+(\.|\,)\d{2}$"
 									required>
@@ -129,13 +129,13 @@
 					</div>
 				</div>
 				<div class="col-xs-6">
-					<div class="form-group" show-errors>
+					<div class="form-group" data-show-errors>
 						<label class="text-uppercase" for="productQuantity">{{ productQuantityLabel }}</label>
 						<input class="form-control"
 								type="text"
 								name="productQuantity"
 								id="productQuantity"
-								ng-model="product.quantity"
+								data-ng-model="product.quantity"
 								placeholder="Enter no. of {{ productQuantityLabel }}"
 								pattern="\d*"
 								required>
@@ -149,11 +149,11 @@
 			<div class="form-group">
 				<button class="btn btn-custom text-uppercase"
 						type="submit"
-						ng-disabled="vm.productFormSubmitted">
-					<span ng-show="productFormSubmitted">
+						data-ng-disabled="vm.productFormSubmitted">
+					<span data-ng-if="productFormSubmitted">
 						<i class="fa fa-spinner fa-spin"></i>
 					</span>
-					<span ng-hide="productFormSubmitted">
+					<span data-ng-if="!productFormSubmitted">
 						<i class="fa {{ fontAwesomeIcon }}"></i>
 					</span>
 					&nbsp;&nbsp;

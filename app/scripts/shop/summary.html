@@ -2,7 +2,9 @@
 	<span class="badge visible-lg">
 		<i class="fa fa-shopping-cart"></i>
 		{{ ngCart.totalItems() }}
-		<ng-pluralize count="ngCart.totalItems()" when="{1: 'item', 'other':'items'}"></ng-pluralize>
+		<span data-ng-pluralize
+			data-count="ngCart.totalItems()"
+			data-when="{1: 'item', 'other':'items'}"></span>
 		&nbsp;&nbsp;|&nbsp;&nbsp;
 		{{ ngCart.totalCost() | currency: '£' }}
 	</span> 

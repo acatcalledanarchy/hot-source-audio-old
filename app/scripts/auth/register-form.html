@@ -1,6 +1,6 @@
 <form name="registerForm" id="registerForm" data-ng-submit="vm.register()" autocomplete="off" novalidate>
 	<fieldset>
-		<div class="alert alert-danger ng-show-animation" data-ng-show="registerError" role="alert">
+		<div class="alert alert-danger ng-show-animation" data-ng-if="registerError" role="alert">
 			<p>
 				<i class="fa fa-exclamation-circle"></i>
 				&nbsp;&nbsp;
@@ -9,7 +9,7 @@
 		</div>
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="registerUsername">Username</label>
-			<input  class="form-control"
+			<input class="form-control"
 					type="text"
 					name="registerUsername"
 					id="registerUsername"
@@ -17,7 +17,7 @@
 					placeholder="Choose a username"
 					minlength="8"
 					maxlength="20"
-					record-availability-validator="username"
+					data-record-availability-validator="username"
 					required>
 			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerUsername.$error">
 				<span data-ng-message="required">Enter your chosen username</span>
@@ -29,7 +29,7 @@
 		</div>
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="registerFirstName">First name</label>
-			<input 	class="form-control"
+			<input class="form-control"
 					type="text"
 					name="registerFirstName"
 					id="registerFirstName"
@@ -55,13 +55,13 @@
 		</div>
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="registerEmail">Email address</label>
-			<input  class="form-control"
+			<input class="form-control"
 					type="email"
 					name="registerEmail"
 					id="registerEmail"
 					data-ng-model="vm.user.email"
 					placeholder="Enter email address"
-					record-availability-validator="email"
+					data-record-availability-validator="email"
 					required>
 			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerEmail.$error">
 				<span data-ng-message="required">Enter your email address</span>
@@ -73,7 +73,7 @@
 		<!-- Password -->
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="registerPassword">Choose a password</label>
-			<input  class="form-control"
+			<input class="form-control"
 					type="password"
 					name="registerPassword"
 					id="registerPassword"
@@ -81,7 +81,7 @@
 					placeholder="Choose a password"
 					minlength="8"
 					maxlength="16"
-					password-characters-validator
+					data-password-characters-validator
 					required>
 			<p class="help-block ng-messages-animation" ng-messages="registerForm.registerPassword.$error">
 					<span data-ng-message="required">Enter password</span>
@@ -105,17 +105,17 @@
 					placeholder="Confirm password"
 					data-match-validator="vm.user.password"
 					required>
-			<p class="help-block ng-messages-animation" ng-messages="registerForm.registerConfirmPassword.$error">
-				<span ng-message="required">Confirm your chosen password</span>
-				<span ng-message="match">Your password choice must match</span>
+			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerConfirmPassword.$error">
+				<span data-ng-message="required">Confirm your chosen password</span>
+				<span data-ng-message="match">Your password choice must match</span>
 			</p>
 		</div>
 		<div class="form-group">
 			<button class="btn btn-custom text-uppercase"
 					type="submit"
-					ng-disabled="vm.registerProcessing">
-				<i class="fa fa-spinner fa-spin" ng-show="vm.registerProcessing"></i>
-				<i class="fa fa-edit" ng-hide="vm.registerProcessing"></i>
+					data-ng-disabled="vm.registerProcessing">
+				<i class="fa fa-spinner fa-spin" data-ng-if="vm.registerProcessing"></i>
+				<i class="fa fa-edit" data-ng-if="!vm.registerProcessing"></i>
 				&nbsp;&nbsp;
 				Register
 			</button>

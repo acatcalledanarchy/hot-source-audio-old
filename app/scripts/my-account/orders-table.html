@@ -1,13 +1,19 @@
 <h3 class="text-uppercase">
-	<span ng-hide="vm.isAdmin()">Your orders</span>
-	<span ng-show="vm.isAdmin()">Website orders</span>
+	<span data-ng-if="!vm.isAdmin()">Your orders</span>
+	<span data-ng-if="vm.isAdmin()">Website orders</span>
 </h3>
 <div class="well well-custom">
-	<div ng-repeat="order in vm.orders | orderBy: 'orderTime'" ng-hide="vm.orders.length == 0">
+	<div class="alert alert-info" role="alert" data-ng-if="vm.orders.length == 0">
+		<p>
+			<i class="fa fa-info-circle"></i>
+			&nbsp;&nbsp;
+			No orders present.
+		</p>
+	</div>	
+	<div data-ng-repeat="order in vm.orders | orderBy: 'orderTime'" data-ng-if="vm.orders.length != 0">
 		<h5>
-			{{ order.profile.first_name }} {{ order.profile.surname }}
-			<span class="pull-right" ng-show="vm.isAdmin()">{{ order.orderTime | date: 'dd/MM/yyyy HH:mm:ss' }}
-			</span>
+			{{ order.orderTime | date: 'dd/MM/yyyy HH:mm:ss' }}
+			<span data-ng-if="vm.isAdmin()" class="pull-right">{{ order.profile.first_name }} {{ order.profile.surname }}</span>
 		</h5>
 		<div class="table-responsive">
 			<table class="table table-striped ngCart cart">
@@ -20,7 +26,7 @@
 					</tr>
 				</thead>
 				<tfoot>
-					<tr ng-show="vm.ngCart.getTax()">
+					<tr data-ng-if="vm.ngCart.getTax()">
 						<th></th>
 						<th>Tax ({{ order.taxRate }}%):</th>
 						<th>{{ order.totalTax | currency: '£' }}</th>
@@ -34,7 +40,7 @@
 	                </tr>
      	   		</tfoot>
 				<tbody>
-					<tr ng-repeat="product in order.products">
+					<tr data-ng-repeat="product in order.products">
 						<td>{{ product.name }}</td>
 						<td>{{ product.price | currency: '£' }}</td>
 						<td>{{ product.quantity }}</td>
@@ -44,11 +50,4 @@
 			</table>
 		</div>
 	</div>
-	<div class="alert alert-info" role="alert" ng-show="vm.orders.length == 0">
-		<p>
-			<i class="fa fa-info-circle"></i>
-			&nbsp;&nbsp;
-			No orders present.
-		</p>
-	</div>	
 </div>

@@ -2,7 +2,13 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<h1 class="text-uppercase">{{ vm.shopTitle }}</h1>
-			<product-form product="vm.product" product-action="edit" product-type="{{ vm.productType }}" font-awesome-icon="{{ vm.fontAwesomeIcon }}" product-quantity-label="{{ vm.productQuantityLabel }}" shop-title-slug="{{ vm.shopTitle | lowercase }}"></product-form>
+			<div data-product-form
+				data-product="vm.product"
+				data-product-action="edit"
+				data-product-type="{{ vm.productType }}"
+				data-font-awesome-icon="{{ vm.fontAwesomeIcon }}"
+				data-product-quantity-label="{{ vm.productQuantityLabel }}"
+				data-shop-title-slug="{{ vm.shopTitle | lowercase }}"></div>
 		</div>
 	</div>
 </div>

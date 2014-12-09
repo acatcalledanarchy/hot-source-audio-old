@@ -22,7 +22,17 @@
 			</div>
 		</div>
 		<br>
-		<mwl-calendar calendar-events="vm.events" calendar-view="vm.calendarView" calendar-current-day="vm.calendarDay" calendar-control="vm.calendarControl" calendar-event-click="vm.eventClicked($event)" calendar-edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'" calendar-delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'" calendar-edit-event-click="vm.eventEdited($event)" calendar-delete-event-click="vm.eventDeleted($event)" calendar-auto-open="true"></mwl-calendar>
+		<div data-mwl-calendar
+			data-calendar-events="vm.events"
+			data-calendar-view="vm.calendarView"
+			data-calendar-current-day="vm.calendarDay"
+			data-calendar-control="vm.calendarControl"
+			data-calendar-event-click="vm.eventClicked($event)"
+			data-calendar-edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
+			data-calendar-delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
+			data-calendar-edit-event-click="vm.eventEdited($event)"
+			data-calendar-delete-event-click="vm.eventDeleted($event)"
+			data-calendar-auto-open="true"></div>
 	</div>	
 </div>
 <script type="text/ng-template" id="modalContent.html">

@@ -20,7 +20,7 @@
                 userMd5Hash: '@',
                 websiteLogo: '@'
             },
-            restrict : 'E',
+            restrict : 'AE',
             controller : 'CartController',
             templateUrl: 'scripts/shop/cart.html'
         };

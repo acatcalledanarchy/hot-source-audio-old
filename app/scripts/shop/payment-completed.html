@@ -3,18 +3,18 @@
 		<div class="col-xs-12">
 			<h1 class="text-uppercase">Checkout</h1>
 			<div class="well well-custom">
-				<div class="alert alert-danger" role="alert" ng-show="vm.orderError">
+				<div class="alert alert-danger" role="alert" data-ng-if="vm.orderError">
 					<i class="fa fa-alert"></i>
 					&nbsp;&nbsp;
 					{{ vm.orderError }}
 				</div>
-				<div class="alert alert-success" role="alert" ng-hide="vm.orderError">
+				<div class="alert alert-success" role="alert" data-ng-if="!vm.orderError">
 					<p>Payment completed.</p>
 				</div>
-				<div class="row" ng-hide="vm.orderError">
+				<div class="row" data-ng-hide="vm.orderError">
 					<div class="col-xs-6"></div>
 					<div class="col-xs-6">
-						<a class="btn btn-custom text-uppercase" ui-sref="my-account">
+						<a class="btn btn-custom text-uppercase" data-ui-sref="my-account">
 							<i class="fa {{vm.fontAwesomeIcon }}"></i>
 							To view your orders click here
 						</a>

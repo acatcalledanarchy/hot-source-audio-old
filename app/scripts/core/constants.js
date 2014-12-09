@@ -9,7 +9,7 @@
     var WEBSITE_SETTINGS = {
         TITLE: 'Lovely Yoga',
         LOGO: 'yoga-lessons-logo.png',
-        BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/#/',
+        BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
         SHOP: {
             BUY_NOW_LABEL: 'Book lesson',
             FONT_AWESOME_ICON: 'fa-ticket',

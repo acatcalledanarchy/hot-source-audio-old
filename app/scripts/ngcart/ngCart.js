@@ -126,7 +126,6 @@ angular.module('ngCart', [])
         this.empty = function () {
             this.$cart.items = [];
             localStorage.removeItem('cart');
-            toastr.info('Emptied basket');
         };
 
         this.$restore = function(storedCart) {

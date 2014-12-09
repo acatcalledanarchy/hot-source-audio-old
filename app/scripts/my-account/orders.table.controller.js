@@ -26,8 +26,10 @@
 				vm.orders = orders;
 			});				
 		} else {
+			console.log('Auth user UID: ' + Auth.user.uid);
 			Profile.getOrders(Auth.user.uid).then(function(orders) {
 				vm.orders = orders;
+				console.log(vm.orders);
 			});
 		}
 	}

@@ -1,16 +1,15 @@
-<form name="loginForm" id="loginForm" ng-submit="vm.login()" autocomplete="off" novalidate>
+<form name="loginForm" id="loginForm" data-ng-submit="vm.login()" autocomplete="off" novalidate>
 	<fieldset>
-		<div class="alert alert-danger ng-show-animation" data-ng-show="vm.loginError" role="alert">
+		<div class="alert alert-danger ng-show-animation" data-ng-if="vm.loginError" role="alert">
 			<p>
 				<i class="fa fa-exclamation-circle"></i>
 				&nbsp;&nbsp;
 				{{ vm.loginError  }}
 			</p>
 		</div>
-		<!-- Email address -->
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="loginEmail">Email address</label>
-			<input  class="form-control"
+			<input class="form-control"
 					type="email"
 					name="loginEmail"
 					id="loginEmail"
@@ -22,10 +21,9 @@
 				<span data-ng-message="email">Enter valid email address</span>
 			</p>
 		</div>
-		<!-- Password -->
 		<div class="form-group" show-errors>
 			<label class="sr-only" for="loginPassword">Password</label>
-			<input  class="form-control"
+			<input class="form-control"
 					type="password"
 					name="loginPassword"
 					id="loginPassword"
@@ -36,28 +34,26 @@
 				<span data-ng-message="required">Enter password</span>
 			</p>
 		</div>
-		<!-- Login -->
 		<div class="form-group">
 				<button class="btn btn-custom text-uppercase"
 						type="submit"
-						ng-disabled="vm.loginProcessing"
+						data-ng-disabled="vm.loginProcessing"
 						role="button">
-					<i class="fa fa-spinner fa-spin" ng-show="vm.loginProcessing"></i>
-					<i class="fa fa-lock" ng-hide="vm.loginProcessing"></i>
+					<i class="fa fa-spinner fa-spin" data-ng-if="vm.loginProcessing"></i>
+					<i class="fa fa-lock" data-ng-if="!vm.loginProcessing"></i>
 					&nbsp;&nbsp;
 					Login
 				</button>
 			</div>
 		</div>
-		<!-- Login with Facebook -->
 		<div class="form-group">
 			<button class="btn btn-custom text-uppercase"
 					type="button"
-					ng-click="vm.oAuthLogin('facebook')"
-					ng-disabled="vm.oAuthLoginProcessing"
+					data-ng-click="vm.oAuthLogin('facebook')"
+					data-ng-disabled="vm.oAuthLoginProcessing"
 					role="button">
-				<i class="fa fa-spinner fa-spin" ng-show="vm.oAuthLoginProcessing"></i>
-				<i class="fa fa-facebook" ng-hide="vm.oAuthLoginProcessing"></i>
+				<i class="fa fa-spinner fa-spin" data-ng-if="vm.oAuthLoginProcessing"></i>
+				<i class="fa fa-facebook" data-ng-if="!vm.oAuthLoginProcessing"></i>
 				</span>
 				&nbsp;&nbsp;
 				Login with Facebook

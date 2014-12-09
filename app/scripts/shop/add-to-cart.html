@@ -1,13 +1,13 @@
-<div ng-hide="attrs.id">
-    <button class="btn btn-custom text-uppercase" ng-disabled="true" role="button" ng-transclude></button>
+<div data-ng-if="!attrs.id">
+    <button class="btn btn-custom text-uppercase" data-ng-disabled="true" role="button" data-ng-transclude></button>
 </div>
-<div ng-show="attrs.id">
-    <div ng-hide="inCart()">
-        <button class="btn btn-custom text-uppercase" ng-click="ngCart.addItem(id, name, price, quantity, data)" role="button"
-           ng-transclude>
+<div data-ng-if="attrs.id">
+    <div data-ng-hide="inCart()">
+        <button class="btn btn-custom text-uppercase" data-ng-click="ngCart.addItem(id, name, price, quantity, data)" role="button"
+           data-ng-transclude>
         </button>
     </div>
-    <button class="btn btn-custom text-uppercase" ng-show="inCart()" disabled="disabled">
+    <button class="btn btn-custom text-uppercase" data-ng-show="inCart()" disabled="disabled">
     	<i class="fa fa-check"></i>
     	This {{ productType }} is in your basket
     </button>

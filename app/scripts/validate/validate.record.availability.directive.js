@@ -14,10 +14,7 @@
 
 		var directive = {
 			link: link,
-			require: 'ngModel',
-			scope: {
-				ignoreAvailability: '@'
-			}
+			require: 'ngModel'
 		};
 
 		return directive;
@@ -26,8 +23,6 @@
 
 		function link(scope, element, attrs, ngModel) {
 
-			console.log(scope.ignoreAvailability);
-				
 			var firebaseIndex = attrs.recordAvailabilityValidator;
 
 			ngModel.$parsers.push(function(value) {

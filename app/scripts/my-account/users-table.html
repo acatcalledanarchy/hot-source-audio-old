@@ -23,7 +23,7 @@
 					<td>{{ user.created_on | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>{{ user.last_login | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>
-						<i class="fa" data-ng-class="user.isAdmin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
+						<i class="fa" data-ng-class="user.is_admin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
 					</td>
 				</tr>
 			</tbody>

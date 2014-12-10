@@ -21,6 +21,7 @@
 			vm.registerProcessing = true;
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.registerForm.$valid) {
+				$scope.$broadcast('show-errors-reset');
 				Auth.register(vm.user).then(function(user) {
 					return Auth.login(vm.user).then(function() {
 					 	user.firstName = vm.user.firstName;

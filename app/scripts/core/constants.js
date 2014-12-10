@@ -15,8 +15,9 @@
             FONT_AWESOME_ICON: 'fa-ticket',
             PAY_PAL_EMAIL_ADDRESS: 'acatcalledanarchy@gmail.com',
             PRODUCT_QUANTITY_LABEL: 'places',
-            PRODUCT_TYPE: 'lesson',
-            TITLE: 'Lessons'
+            PRODUCT_ORDER_LABEL: 'bookings',
+            PRODUCT_TYPE: 'class',
+            TITLE: 'Classes'
         }
     };
 

@@ -1,7 +1,4 @@
-<h3 class="text-uppercase">
-	<span data-ng-if="!vm.isAdmin()">Your orders</span>
-	<span data-ng-if="vm.isAdmin()">Website orders</span>
-</h3>
+<h3 class="text-uppercase">{{ vm.productOrderLabel }}</h3>
 <div class="well well-custom">
 	<div class="alert alert-info" role="alert" data-ng-if="vm.orders.length == 0">
 		<p>
@@ -10,11 +7,21 @@
 			No orders present.
 		</p>
 	</div>	
-	<div data-ng-repeat="order in vm.orders | orderBy: 'orderTime'" data-ng-if="vm.orders.length != 0">
-		<h5>
-			{{ order.orderTime | date: 'dd/MM/yyyy HH:mm:ss' }}
-			<span data-ng-if="vm.isAdmin()" class="pull-right">{{ order.profile.first_name }} {{ order.profile.surname }}</span>
-		</h5>
+	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length != 0">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6">
+				<h5>{{ order.orderTime | date: 'dd/MM/yyyy' }}</h5>
+				<h4>{{ order.orderTime | date: 'h:mma' | lowercase }}</h4>
+			</div>
+			<div class="col-xs-12 col-sm-6">
+				<div data-ng-if="vm.isAdmin()">
+					<h5 class="text-right hidden-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>
+					<h4 class="text-right hidden-xs">{{ order.profile.email }}</h4>
+					<h5 class="visible-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>
+					<h4 class="visible-xs">{{ order.profile.email }}</h4>
+				</div>
+			</div>
+		</div>
 		<div class="table-responsive">
 			<table class="table table-striped ngCart cart">
 				<thead>

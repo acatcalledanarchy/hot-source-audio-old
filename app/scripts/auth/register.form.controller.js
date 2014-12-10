@@ -16,8 +16,6 @@
 		vm.registerProcessing = false;
 		vm.register = register;
 
-		/*---------------------------------------------*/
-
 		function register() {
 			vm.registerProcessing = true;
 			$scope.$broadcast('show-errors-check-validity');

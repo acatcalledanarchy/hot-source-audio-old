@@ -18,15 +18,13 @@
 		vm.login = login;
 		vm.loginProcessing = false;
 		
-		/*---------------------------------------------*/
-
 		function login() {
 			vm.loginProcessing = true;
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.loginForm.$valid) {
 				Auth.login(vm.user).then(function () {
-				$location.path('/home');
-				}, function (error) {
+					$location.path('/home');
+				}, function(error) {
 					vm.loginProcessing = false;
 					vm.loginError = error.toString();
 					vm.loginError = vm.loginError.replace('Error: FirebaseSimpleLogin:', '');

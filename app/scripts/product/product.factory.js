@@ -24,17 +24,17 @@
 					return productRef;
 				});
 			},
-			get: function(productId) {
-				return $firebase(ref.child('products').child(productId)).$asObject();
-			},
-			update: function(product) {
-				return product.$save();
-			},
 			delete: function(product) {
 				return products.$remove(product);
 			},
+			get: function(productId) {
+				return $firebase(ref.child('products').child(productId)).$asObject();
+			},
 			getAll: function() {
 				return products.$asArray();
+			},
+			update: function(product) {
+				return product.$save();
 			}
 		};
 

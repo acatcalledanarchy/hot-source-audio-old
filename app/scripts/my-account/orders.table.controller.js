@@ -14,8 +14,9 @@
 
 		var vm = this;
 		vm.isAdmin = Auth.isAdmin;
+		vm.productOrderLabel = WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL;
 		vm.productType = WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE;
-
+		
 		var isAdmin = Auth.isAdmin();
 
 		if (isAdmin) {	

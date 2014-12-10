@@ -20,6 +20,9 @@
 		
 		var Service = {
 			all: users,
+			changePassword: function(emailAddress, oldPassword, newPassword) {
+				return auth.$changePassword(emailAddress, oldPassword, newPassword);
+			},
 		    createProfile: function(user) {
 				var profile = {
 					username: user.username,
@@ -35,11 +38,17 @@
 			get: function(userId) {
 				return $firebase(ref.child('profile').child(userId)).$asObject();
 			},
+			isAdmin: function() {
+				if( Service.user.profile !== 'undefined' && Service.user.profile.isAdmin !== 'undefined' && Service.user.profile.isAdmin) {
+					return true;
+				}
+				return false;
+			},
 		    login: function(user) {
 		      	return auth.$login('password', user);
 		    },
 		    logout: function () {
-		      auth.$logout();
+				auth.$logout();
 		    },
     		oAuthLogin: function(provider) {
 				return auth.$login(provider, {
@@ -50,16 +59,13 @@
 				return auth.$createUser(user.email, user.password);
 		    },
 		    resolveUser: function() {
-		      return auth.$getCurrentUser();
+				return auth.$getCurrentUser();
 		    },
 		    signedIn: function() {
-		      return !!Service.user.provider;
+				return !!Service.user.provider;
 		    },
-			isAdmin: function() {
-				if( Service.user.profile !== 'undefined' && Service.user.profile.isAdmin !== 'undefined' && Service.user.profile.isAdmin) {
-					return true;
-				}
-				return false;
+			update: function(user) {
+				return user.$save();
 			},
 		    user: {}
 		};

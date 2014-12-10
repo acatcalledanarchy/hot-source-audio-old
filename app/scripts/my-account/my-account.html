@@ -9,7 +9,7 @@
 							<div data-ui-view="profile"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Orders">
+					<tab heading="{{ vm.productOrderLabel | capitalize }}">
 						<tabpane>
 							<div data-ui-view="orders"></div>
 						</tabpane>
@@ -24,14 +24,14 @@
 							<div data-ui-view="calendar"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Users" ng-show="vm.isAdmin()">
+					<tab heading="Customers" ng-show="vm.isAdmin()">
 						<tabpane>
 							<div data-ui-view="users"></div>
 						</tabpane>
 					</tab>
 					<tab heading="Change password">
 						<tabpane>
-							<div data-change-password-form data-user="vm.user.profile"></div>
+							<div data-change-password-form data-email-address="{{ vm.user.email }}"></div>
 						</tabpane>
 					</tab>
 				</tabset>

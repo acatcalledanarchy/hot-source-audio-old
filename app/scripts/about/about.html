@@ -3,19 +3,29 @@
 		<div class="col-xs-12">
 		<h1 class="text-uppercase">About {{ vm.websiteTitle }}</h1>
 		<div class="well well-custom">
-		 	<map zoom="11" 
-			center="[40.74, -74.18]" 
-			disable-default-u-i="true"
-			disable-double-click-zoom="true"
-			draggable="false"
-			draggable-cursor="help"
-			dragging-cursor="move"
-			keyboard-shortcuts="false"
-			max-zoom="12"
-			min-zoom="8"
-			tilt="45"
-			map-type-id="TERRAIN">
-			</map>
+			<div class="google-map-container"
+				data-map
+				data-zoom="11" 
+				data-center="[ {{ vm.latitude }}, {{ vm.longitude }} ]" 
+				data-disable-default-u-i="false"
+				data-disable-double-click-zoom="true"
+				data-draggable="false"
+				data-draggable-cursor="help"
+				data-dragging-cursor="move"
+				data-keyboard-shortcuts="false"
+				data-max-zoom="15"
+				data-min-zoom="10"
+				data-tilt="0"
+				data-height="100%"
+				data-map-type-id="ROADMAP">
+				<marker class="marker"
+					data-position="[ {{ vm.latitude }}, {{ vm.longitude }} ]"
+					data-title="{{ vm.shopTitle }}"
+					data-animation="Animation.DROP"
+					data-draggable="true"
+					data-visible="true"
+					data-icon="images/{{vm.googleMapMarkerIcon }}"></marker>
+			</div>
 		</div>
 	</div>
 </div>

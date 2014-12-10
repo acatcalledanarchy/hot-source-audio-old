@@ -19,6 +19,7 @@
 		var vm = this;
 		vm.isAdmin = Auth.isAdmin;
 		vm.productOrderLabel = WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL;
+		vm.pageContentClass	= 'page-content-auth';
 		vm.shopTitle = WEBSITE_SETTINGS.SHOP.TITLE;
 		vm.signedIn = Auth.signedIn;
 		vm.user = user;

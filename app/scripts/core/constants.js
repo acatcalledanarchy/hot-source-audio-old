@@ -5,8 +5,8 @@
     
     'use strict';
 
-    var FIREBASE_ACCOUNT = 'http://oi-digital';
-    var WEBSITE_SETTINGS = {
+    var FIREBASE_ACCOUNT = 'http://oi-digital',
+        WEBSITE_SETTINGS = {
         TITLE: 'Lovely Yoga',
         LOGO: 'yoga-lessons-logo.png',
         BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
@@ -18,6 +18,11 @@
             PRODUCT_ORDER_LABEL: 'bookings',
             PRODUCT_TYPE: 'class',
             TITLE: 'Classes'
+        },
+        GOOGLEMAP: {
+            LATITUDE: 49.2167,
+            LONGITUDE: -2.1167,
+            MARKER_ICON: 'yoga-lessons-marker.png'
         }
     };
 

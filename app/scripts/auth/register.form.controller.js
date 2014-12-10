@@ -23,7 +23,6 @@
 			if ($scope.registerForm.$valid) {
 				Auth.register(vm.user).then(function(user) {
 					return Auth.login(vm.user).then(function() {
-					 	user.username = vm.user.username;
 					 	user.firstName = vm.user.firstName;
 					 	user.surname = vm.user.surname;
 						return Auth.createProfile(user);
@@ -32,7 +31,7 @@
 					});
 				}, function (error) {
 					vm.registerProcessing = false;
-					vm.registerError = error.toString();
+					vm.registerError = error.toString().replace('Error: FirebaseSimpleLogin: ', '');
 				});
 			} else {
 				vm.registerProcessing = false;

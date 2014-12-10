@@ -1,6 +1,6 @@
 <form name="registerForm" id="registerForm" data-ng-submit="vm.register()" autocomplete="off" novalidate>
 	<fieldset>
-		<div class="alert alert-danger animate-if" data-ng-if="registerError" role="alert">
+		<div class="alert alert-danger animate-if" data-ng-if="vm.registerError" role="alert">
 			<p>
 				<i class="fa fa-exclamation-circle"></i>
 				&nbsp;&nbsp;
@@ -42,6 +42,7 @@
 					data-ng-model="vm.user.email"
 					placeholder="Enter email address"
 					data-record-availability-validator="email"
+					ignore-availbility="vm.ignoreAvailability"
 					required>
 			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerEmail.$error">
 				<span data-ng-message="required">Enter your email address</span>
@@ -94,8 +95,7 @@
 			<button class="btn btn-custom text-uppercase"
 					type="submit"
 					data-ng-disabled="vm.registerProcessing">
-				<i class="fa fa-spinner fa-spin" data-ng-if="vm.registerProcessing"></i>
-				<i class="fa fa-edit" data-ng-if="!vm.registerProcessing"></i>
+				<i class="fa" data-ng-class="( vm.registerProcessing ) ? 'fa-spinner fa-spin' : 'fa-edit'"></i>
 				&nbsp;&nbsp;
 				Register
 			</button>

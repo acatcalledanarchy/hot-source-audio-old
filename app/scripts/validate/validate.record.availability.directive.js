@@ -8,15 +8,16 @@
 		.module('app.validate')
 		.directive('recordAvailabilityValidator', recordAvailabilityValidator);
 
-	/* latedef: true */
 	recordAvailabilityValidator.$inject = ['$http', 'Firebase', 'FIREBASE_URL'];
 
 	function recordAvailabilityValidator($http, Firebase, FIREBASE_URL) {
 
 		var directive = {
-			/* latedef: true */
 			link: link,
-			require: 'ngModel'
+			require: 'ngModel',
+			scope: {
+				ignoreAvailability: '@'
+			}
 		};
 
 		return directive;
@@ -24,6 +25,8 @@
 		/*---------------------------------------------*/
 
 		function link(scope, element, attrs, ngModel) {
+
+			console.log(scope.ignoreAvailability);
 				
 			var firebaseIndex = attrs.recordAvailabilityValidator;
 

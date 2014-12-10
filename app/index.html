@@ -30,21 +30,35 @@
     <![endif]-->
 
     <!--
+    | -> SHOP STUFF
+    |
     | * Create total number of products when adding product
     | * Display total number of products in administration area
     | * Only display product when available ( or display sold out banner )
     | * Decrease products when bought
+    |
+    | -> DATABASE STUFF
+    |
     | * Add is_admin / signed_in vars globally rather than resolving them individually here and there
+    | * Sort out camelcasing for Firebase record properties as they're mixed at the moment
+    |
+    | -> COSMETICS
+    |
     | * Fix CSS issue with background image <div> height
-    | * Fix issue where My account doesn't scroll in occasionally
     | * Change colours of Toastr to white white blue / green border & copy 
-    | * Update GoogleMap to point to somewhere in Jersey and add parameter to constants
-    | * Doublecheck Registration form error not displaying ( delete SimpleLogin parameter but not overall account to test )
-    | * Update PayPal sandbox account email address and password
+    | * Fix issue where My account doesn't scroll in occasionally
+    |
+    | -> MY ACCOUNT / ADMINISTRATION
+    |
     | * My account > Customers > make Admin?
     | * My account > Tabs > add icons?
+    |
+    | -> MISCELLANEOUS
+    |
+    | * Record availability directive needs to not display when form processing
+    | * Update PayPal sandbox account email address and password
     | * WEBSITE_SETTINGS passed in rather than individual parameters
-    | * Sort out camelcasing for Firebase record properties as they're mixed at the moment
+    | * Add Google Analytics via clicks I guess?
     -->
 
     <header ui-view="header"></header>

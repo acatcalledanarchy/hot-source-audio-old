@@ -29,6 +29,8 @@
 					md5_hash: user.md5_hash,
 					email: user.email,
 					first_name: user.firstName,
+					last_login: '',
+					is_admin: false,
 					surname: user.surname,
 					created_on: new Date().getTime()
 				};
@@ -39,8 +41,8 @@
 				return $firebase(ref.child('profile').child(userId)).$asObject();
 			},
 			isAdmin: function() {
-				if( Service.user.profile !== 'undefined' && Service.user.profile.isAdmin !== 'undefined' && Service.user.profile.isAdmin) {
-					return true;
+				if(Service.user.profile && Service.user.profile.is_admin) {
+					return Service.user.profile.is_admin;
 				}
 				return false;
 			},
@@ -64,9 +66,6 @@
 		    signedIn: function() {
 				return !!Service.user.provider;
 		    },
-			update: function(user) {
-				return user.$save();
-			},
 		    user: {}
 		};
 
@@ -74,7 +73,9 @@
 			toastr.success('Logged in');
 			angular.copy(user, Service.user);
 			Service.user.profile = $firebase(ref.child('profile').child(Service.user.uid)).$asObject();
-			// Update last login
+
+			var userRef = $firebase(ref.child('profile').child(Service.user.uid));
+			userRef.$update({ last_login: new Date().getTime() });
 		});
 
 		$rootScope.$on('$firebaseSimpleLogin:logout', function() {

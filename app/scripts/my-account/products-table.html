@@ -1,13 +1,13 @@
 <h3 class="text-uppercase">{{ vm.shopTitle }}</h3>
 <div class="well well-custom">
-	<div class="alert alert-danger" data-ng-if="vm.products.length == 0">
+	<div class="alert alert-danger" data-ng-if="!vm.products.length">
 		<p>
-			<i class="fa fa-exclaimation-circle"></i>
+			<i class="fa fa-exclamation-circle"></i>
 			&nbsp;&nbsp;
-			Please add {{ vm.productType }}
+			Please add {{ vm.shopTitle | lowercase }}.
 		</p>
 	</div>
-	<div class="table-responsive" data-ng-if="vm.products.length != 0">
+	<div class="table-responsive" data-ng-if="vm.products.length">
 		<table class="table table-striped ngCart cart">
 			<thead>
 				<tr>

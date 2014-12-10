@@ -1,13 +1,13 @@
 <h3 class="text-uppercase">{{ vm.productOrderLabel }}</h3>
 <div class="well well-custom">
-	<div class="alert alert-info" role="alert" data-ng-if="vm.orders.length == 0">
+	<div class="alert alert-info" role="alert" data-ng-if="!vm.orders.length">
 		<p>
 			<i class="fa fa-info-circle"></i>
 			&nbsp;&nbsp;
-			No orders present.
+			No {{ vm.productOrderLabel | lowercase }} at present.
 		</p>
 	</div>	
-	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length != 0">
+	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<h5>{{ order.orderTime | date: 'dd/MM/yyyy' }}</h5>

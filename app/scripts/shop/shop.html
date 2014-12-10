@@ -59,17 +59,15 @@
 						<div class="row">
 							<div class="form-group" data-ng-show="{{ vm.signedIn() && vm.isAdmin() }}">
 								<div class="col-xs-6">
-									<a data-ng-ref="#/{{ vm.shopTitle | lowercase }}/{{ product.$id }}" class="btn btn-default btn-custom text-uppercase" data-ng-disabled="vm.editingProduct">
-										<i class="fa fa-spinner fa-spin" data-ng-if="vm.editingProduct"></i>
-										<i class="fa fa-edit" data-ng-if="!vm.editingProduct"></i>
+									<a href="#/{{ vm.shopTitle | lowercase }}/{{ product.$id }}" class="btn btn-default btn-custom text-uppercase" data-ng-disabled="vm.editingProduct">
+										<i class="fa" data-ng-class="( vm.editingProduct ) ? 'fa-spin fa-spinner' : 'fa-edit'"></i>
 										&nbsp;&nbsp;
 										Edit
 									</a>
 								</div>
 								<div class="col-xs-6">
 									<button class="btn btn-custom text-uppercase" data-ng-click="vm.deleteProduct(product)" data-ng-disabled="vm.deletingProduct">
-										<i class="fa fa-spinner fa-spin" data-ng-if="vm.deletingProduct"></i>
-										<i class="fa fa-trash" data-ng-if="!vm.deletingProduct"></i>
+										<i class="fa" data-ng-class="( vm.deletingProduct ) ? 'fa-spin fa-spinner' : 'fa-trash'"></i>
 										&nbsp;&nbsp;
 										Delete
 									</button>

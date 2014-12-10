@@ -14,7 +14,7 @@
 	function productForm($filter, $location, Product, Auth) {
 
 		var directive = {
-			restrict: 'E',
+			restrict: 'AE',
 			replace: true,
 			scope: {
 				product: '=',

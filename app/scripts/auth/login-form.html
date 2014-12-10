@@ -39,8 +39,7 @@
 						type="submit"
 						data-ng-disabled="vm.loginProcessing"
 						role="button">
-					<i class="fa fa-spinner fa-spin" data-ng-if="vm.loginProcessing"></i>
-					<i class="fa fa-lock" data-ng-if="!vm.loginProcessing"></i>
+					<i class="fa" data-ng-class="( vm.loginProcessing ) ? 'fa-spin fa-spinner' : 'fa-lock'"></i>
 					&nbsp;&nbsp;
 					Login
 				</button>
@@ -52,8 +51,7 @@
 					data-ng-click="vm.oAuthLogin('facebook')"
 					data-ng-disabled="vm.oAuthLoginProcessing"
 					role="button">
-				<i class="fa fa-spinner fa-spin" data-ng-if="vm.oAuthLoginProcessing"></i>
-				<i class="fa fa-facebook" data-ng-if="!vm.oAuthLoginProcessing"></i>
+				<i class="fa" data-ng-class="( vm.oAuthLoginProcessing ) ? 'fa-spin fa-spinner' : 'fa-facebook'"></i>
 				</span>
 				&nbsp;&nbsp;
 				Login with Facebook

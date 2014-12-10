@@ -150,12 +150,7 @@
 				<button class="btn btn-custom text-uppercase"
 						type="submit"
 						data-ng-disabled="vm.productFormSubmitted">
-					<span data-ng-if="productFormSubmitted">
-						<i class="fa fa-spinner fa-spin"></i>
-					</span>
-					<span data-ng-if="!productFormSubmitted">
-						<i class="fa {{ fontAwesomeIcon }}"></i>
-					</span>
+					<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
 					&nbsp;&nbsp;
 					{{ productAction }} {{ productType }}
 				</button>

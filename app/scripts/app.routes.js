@@ -132,12 +132,13 @@
 		$urlRouterProvider.otherwise('/home');
 	}
 
-	runBlock.$inject = ['$rootScope', '$state', '$stateParams'];
+	runBlock.$inject = ['$rootScope', '$state', '$stateParams', 'WEBSITE_SETTINGS'];
 
-	function runBlock($rootScope, $state, $stateParams) {
+	function runBlock($rootScope, $state, $stateParams, WEBSITE_SETTINGS) {
 		$rootScope.$on('$stateChangeSuccess', function() {
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
+			$rootScope.$stateParams.googleAnalyticsTrackingId = WEBSITE_SETTINGS.GOOGLE.ANALYTICS.TRACKING_ID; //!XXX This maybe a terrible hack?
 		});
 	} 
 

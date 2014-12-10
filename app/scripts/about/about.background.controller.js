@@ -12,7 +12,6 @@
 
 		var vm = this;
 		vm.pageBackgroundClass = 'page-background-about';
-	
 	}
 
 })();

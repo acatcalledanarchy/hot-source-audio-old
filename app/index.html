@@ -28,7 +28,6 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
     <!--
     | -> SHOP STUFF
     |
@@ -47,6 +46,8 @@
     | * Fix CSS issue with background image <div> height
     | * Change colours of Toastr to white blue / green border & copy 
     | * Fix issue where My account doesn't scroll in occasionally
+    | * Preload background images when first accessing site
+    | * GoogleMaps disable marker dragging
     |
     | -> MY ACCOUNT / ADMINISTRATION
     |
@@ -58,21 +59,21 @@
     | * Update PayPal sandbox account email address and password
     | * WEBSITE_SETTINGS passed in rather than individual parameters
     | * Add Google Analytics via clicks I guess?
+    |
+    | * Out out ngCart and assimilate into site?
     -->
 
     <header ui-view="header"></header>
     <section class="page {{ vm.pageBackgroundClass }}" id="page-background" ui-view="page-background"></section>
     <section class="page-content {{ vm.pageContentClass }}" id="page-content" ui-view="page-content"></section>
     <footer ui-view="footer"></footer>
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
+    <script>
        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+       ga('create', 'UA-57546047-1');
+       /* ga('send', 'pageview');*/
     </script>
 
     <!-- build:js(.) scripts/oldieshim.js -->
@@ -160,10 +161,6 @@
 
         <!-- ngCart -->
         <script src="scripts/ngCart/ngCart.js"></script>
-        <!--
-        <script src="scripts/ngCart/ngCart.directives.js"></script>
-        -->
-
 
         <!-- Shop -->
         <script src="scripts/shop/shop.module.js"></script>

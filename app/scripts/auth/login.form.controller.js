@@ -19,6 +19,7 @@
 		vm.loginProcessing = false;
 		
 		function login() {
+			vm.loginError = false;
 			vm.loginProcessing = true;
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.loginForm.$valid) {
@@ -26,14 +27,12 @@
 					$location.path('/home');
 				}, function(error) {
 					vm.loginProcessing = false;
-					vm.loginError = error.toString();
-					vm.loginError = vm.loginError.replace('Error: FirebaseSimpleLogin:', '');
+					vm.loginError = error.toString().replace('Error: FirebaseSimpleLogin:', '');
 				});
 			} else {
 				vm.loginProcessing = false;
 			}
 		}
-
 	
 		function oAuthLogin(provider) {
 			vm.oAuthLoginProcessing = true;

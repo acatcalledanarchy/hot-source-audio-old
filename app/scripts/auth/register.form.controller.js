@@ -17,6 +17,7 @@
 		vm.register = register;
 
 		function register() {
+			vm.registerError = false;
 			vm.registerProcessing = true;
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.registerForm.$valid) {

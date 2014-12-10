@@ -1,4 +1,4 @@
-/* Enter / leave */
+/* Page */
 .page.ng-enter {
 	animation: fadeIn 0.25s both ease-in;
 }
@@ -13,4 +13,21 @@
 
 .page-content.ng-leave {
 	animation: slideOutLeft 0.25s both ease-in;
+}
+
+/* If */
+.animate-if.ng-enter,
+.animate-if.ng-leave {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.25s;
+}
+
+.animate-if.ng-enter,
+.animate-if.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.animate-if.ng-leave,
+.animate-if.ng-enter.ng-enter-active {
+    opacity: 1;
 }

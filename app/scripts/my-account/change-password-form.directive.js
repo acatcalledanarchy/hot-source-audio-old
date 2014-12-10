@@ -26,6 +26,8 @@
 		function link(scope) {
 			scope.changePasswordProcessing = false;
 			scope.changePassword = function() {
+				scope.changePasswordSuccess = false;
+				scope.changePasswordError = false;
 				scope.changePasswordProcessing = true;
 				scope.$broadcast('show-errors-check-validity');
 				if (scope.changePasswordForm.$valid) {

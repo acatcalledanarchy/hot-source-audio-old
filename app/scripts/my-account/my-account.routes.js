@@ -40,7 +40,12 @@
 				'profile@my-account': {
 					templateUrl: 'scripts/my-account/profile.html',
 					controller: 'ProfileCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						user: function(Auth) {
+							return Auth.resolveUser();
+						}
+					}
 				},
 				'orders@my-account': {
 					templateUrl: 'scripts/my-account/orders-table.html',

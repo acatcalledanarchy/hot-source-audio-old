@@ -29,6 +29,24 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+    <!--
+    | * Create total number of products when adding product
+    | * Display total number of products in administration area
+    | * Only display product when available ( or display sold out banner )
+    | * Decrease products when bought
+    | * Add is_admin / signed_in vars globally rather than resolving them individually here and there
+    | * Fix CSS issue with background image <div> height
+    | * Fix issue where My account doesn't scroll in occasionally
+    | * Change colours of Toastr to white white blue / green border & copy 
+    | * Update GoogleMap to point to somewhere in Jersey and add parameter to constants
+    | * Doublecheck Registration form error not displaying ( delete SimpleLogin parameter but not overall account to test )
+    | * Update PayPal sandbox account email address and password
+    | * My account > Customers > make Admin?
+    | * My account > Tabs > add icons?
+    | * WEBSITE_SETTINGS passed in rather than individual parameters
+    | * Sort out camelcasing for Firebase record properties as they're mixed at the moment
+    -->
+
     <header ui-view="header"></header>
     <section class="page {{ vm.pageBackgroundClass }}" id="page-background" ui-view="page-background"></section>
     <section class="page-content {{ vm.pageContentClass }}" id="page-content" ui-view="page-content"></section>

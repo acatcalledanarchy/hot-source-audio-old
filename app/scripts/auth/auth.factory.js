@@ -25,11 +25,10 @@
 			},
 		    createProfile: function(user) {
 				var profile = {
-					username: user.username,
 					md5_hash: user.md5_hash,
 					email: user.email,
 					first_name: user.firstName,
-					last_login: '',
+					last_login: new Date().getTime(),
 					is_admin: false,
 					surname: user.surname,
 					created_on: new Date().getTime()

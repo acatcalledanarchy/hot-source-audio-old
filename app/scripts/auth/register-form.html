@@ -8,26 +8,6 @@
 			</p>
 		</div>
 		<div class="form-group" show-errors>
-			<label class="sr-only" for="registerUsername">Username</label>
-			<input class="form-control"
-					type="text"
-					name="registerUsername"
-					id="registerUsername"
-					data-ng-model="vm.user.username"
-					placeholder="Choose a username"
-					minlength="8"
-					maxlength="20"
-					data-record-availability-validator="username"
-					required>
-			<p class="help-block ng-messages-animation" data-ng-messages="registerForm.registerUsername.$error">
-				<span data-ng-message="required">Enter your chosen username</span>
-				<span data-ng-message="minlength">Enter 8 characters or more</span>
-				<span data-ng-message="maxlength">Enter 20 characters or less</span>
-				<span data-ng-message="loading">Checking database...</span>
-				<span data-ng-message="available">Sorry but this username is already taken</span>
-			</p>
-		</div>
-		<div class="form-group" show-errors>
 			<label class="sr-only" for="registerFirstName">First name</label>
 			<input class="form-control"
 					type="text"

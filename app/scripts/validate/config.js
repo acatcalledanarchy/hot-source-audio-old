@@ -1,6 +1,6 @@
 /*jshint latedef: false */
 
-(function() {
+/*(function() {
 
 	'use strict';
 
@@ -14,4 +14,4 @@
 		showErrorsConfigProvider.trigger('keypress');
 	}
 
-})();
+})();*/

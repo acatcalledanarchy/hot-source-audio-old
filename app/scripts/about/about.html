@@ -3,28 +3,46 @@
 		<div class="col-xs-12">
 		<h1 class="text-uppercase">About {{ vm.websiteTitle }}</h1>
 		<div class="well well-custom">
-			<div class="google-map-container"
-				data-map
-				data-zoom="11" 
-				data-center="[ {{ vm.latitude }}, {{ vm.longitude }} ]" 
-				data-disable-default-u-i="false"
-				data-disable-double-click-zoom="true"
-				data-draggable="false"
-				data-draggable-cursor="help"
-				data-dragging-cursor="move"
-				data-keyboard-shortcuts="false"
-				data-max-zoom="15"
-				data-min-zoom="10"
-				data-tilt="0"
-				data-height="100%"
-				data-map-type-id="ROADMAP">
-				<marker class="marker"
-					data-position="[ {{ vm.latitude }}, {{ vm.longitude }} ]"
-					data-title="{{ vm.shopTitle }}"
-					data-animation="Animation.DROP"
-					data-draggable="true"
-					data-visible="true"
-					data-icon="images/{{vm.googleMapMarkerIcon }}"></marker>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4">
+					<h2 class="text-uppercase">{{ vm.websiteTitle }}</h2>
+					<p>
+						{{ vm.address.LINE_1 }}
+						<br>
+						{{ vm.address.LINE_2 }}
+						<br>
+						{{ vm.address.PARISH }}
+						<br>
+						{{ vm.address.ISLAND }}
+						<br>
+						{{ vm.address.POSTCODE }}
+					</p>
+				</div>			
+				<div class="col-xs-12 col-sm-8">
+					<div class="google-map-container"
+						data-map
+						data-zoom="11" 
+						data-center="[ {{ vm.latitude }}, {{ vm.longitude }} ]" 
+						data-disable-default-u-i="false"
+						data-disable-double-click-zoom="true"
+						data-draggable="false"
+						data-draggable-cursor="help"
+						data-dragging-cursor="move"
+						data-keyboard-shortcuts="false"
+						data-max-zoom="15"
+						data-min-zoom="10"
+						data-tilt="0"
+						data-height="100%"
+						data-map-type-id="ROADMAP">
+						<marker class="marker"
+							data-position="[ {{ vm.latitude }}, {{ vm.longitude }} ]"
+							data-title="{{ vm.shopTitle }}"
+							data-animation="Animation.DROP"
+							data-draggable="true"
+							data-visible="true"
+							data-icon="images/{{vm.googleMapMarkerIcon }}"></marker>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -13,7 +13,8 @@
 	function AboutCtrl($log, WEBSITE_SETTINGS) {
 
   		var vm = this;
-  		vm.latitude = WEBSITE_SETTINGS.GOOGLEMAP.LATITUDE;
+  		vm.address = WEBSITE_SETTINGS.ADDRESS;
+		vm.latitude = WEBSITE_SETTINGS.GOOGLEMAP.LATITUDE;
   		vm.longitude = WEBSITE_SETTINGS.GOOGLEMAP.LONGITUDE;
 		vm.googleMapMarkerIcon = WEBSITE_SETTINGS.GOOGLEMAP.MARKER_ICON;
 		vm.pageContentClass	= 'page-content-about';

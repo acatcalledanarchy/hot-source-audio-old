@@ -23,6 +23,13 @@
             LATITUDE: 49.2167,
             LONGITUDE: -2.1167,
             MARKER_ICON: 'yoga-lessons-marker.png'
+        },
+        ADDRESS: {
+            LINE_1: '10 Heavenly Place',
+            LINE_2: 'Rohais',
+            PARISH: 'St. Saviour',
+            ISLAND: 'Jersey',
+            POSTCODE: 'JE1 12B'
         }
     };
 

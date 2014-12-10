@@ -82,8 +82,8 @@ footer p {
 .page-content.ng-leave { z-index: 1005; }
 
 /* Checkout */
-.ngCart.cart span[ng-click] {
-    cursor: pointer;
+.ngCart.cart .fa {
+	cursor: pointer;
 }
 
 .ngCart.cart .fa.disabled {

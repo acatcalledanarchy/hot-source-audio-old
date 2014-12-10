@@ -96,11 +96,9 @@
             <input type="hidden" name="return" value="{{ baseUrl }}#/checkout/{{ userMd5Hash }}">
             <input type="hidden" name="cancel_return" value="{{ baseUrl }}#/payment-cancelled">
             <button class="btn btn-primary text-uppercase pull-right" role="button" data-ng-disabled="ngCart.getPayPalProcessing()">
-                 <i class="fa fa-spinner fa-spin" data-ng-if="ngCart.getPayPalProcessing()"></i>
-                 <i class="fa fa-paypal" data-ng-if="!ngCart.getPayPalProcessing()"></i>
+                <i class="fa" data-ng-class="( ngCart.getPayPalProcessing() ) ? 'fa-spin fa-spinner' : 'fa-paypal'"></i>
                 &nbsp;&nbsp;
                 Buy now with PayPal
-                </span>
             </button>
         </form>
     </div>

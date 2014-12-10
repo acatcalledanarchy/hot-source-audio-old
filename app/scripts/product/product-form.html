@@ -146,14 +146,38 @@
 					</div>
 				</div>
 			</div>
+			<div class="row" ng-if="productAction == 'edit'">
+				<div class="col-xs-6">
+					<a class="btn btn-custom text-uppercase" ui-sref="{{ shopTitleSlug }}">
+						<i class="fa fa-arrow-left"></i>
+						&nbsp;&nbsp;
+						Back to {{ shopTitleSlug }}
+					</a>
+				</div>
+				<div class="col-xs-6">
+					<button class="btn btn-custom text-uppercase"
+							type="submit"
+							data-ng-disabled="vm.productFormSubmitted">
+						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
+						&nbsp;&nbsp;
+						{{ productAction }} {{ productType }}
+					</button>
+				</div>
+			</div>
+			<div class="row" ng-if="productAction == 'add'">
+				<div class="col-xs-12">
+					<button class="btn btn-custom text-uppercase"
+							type="submit"
+							data-ng-disabled="vm.productFormSubmitted">
+						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
+						&nbsp;&nbsp;
+						{{ productAction }} {{ productType }}
+					</button>	
+				</div>
+			</div>
+
+
 			<div class="form-group">
-				<button class="btn btn-custom text-uppercase"
-						type="submit"
-						data-ng-disabled="vm.productFormSubmitted">
-					<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
-					&nbsp;&nbsp;
-					{{ productAction }} {{ productType }}
-				</button>
 			</div>
 		</fieldset>
 	</form>

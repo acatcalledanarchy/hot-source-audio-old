@@ -19,10 +19,15 @@
             PRODUCT_TYPE: 'class',
             TITLE: 'Classes'
         },
-        GOOGLEMAP: {
-            LATITUDE: 49.2167,
-            LONGITUDE: -2.1167,
-            MARKER_ICON: 'yoga-lessons-marker.png'
+        GOOGLE: {
+            MAP: {
+                LATITUDE: 49.2167,
+                LONGITUDE: -2.1167,
+                MARKER_ICON: 'yoga-lessons-marker.png'
+            },
+            ANALYTICS: {
+                KEY: ''
+            }
         },
         ADDRESS: {
             LINE_1: '10 Heavenly Place',

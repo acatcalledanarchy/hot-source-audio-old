@@ -1,30 +1,30 @@
 <!doctype html>
 <html class="no-js" ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <title ng-bind="$state.current.data.pageTitle"></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
-    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
-    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
-    <link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" type="text/css" href="styles/animations.css">
-    <link rel="stylesheet" type="text/css" href="styles/generic.css">
-    <link rel="stylesheet" type="text/css" href="styles/google.maps.css">
-    <link rel="stylesheet" type="text/css" href="styles/yoga.css">
-    <!-- endbuild -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sintony:400,700">
-  </head>
-  <body ng-class="$state.current.data.pageBodyClass">
+<head>
+	<meta charset="utf-8">
+	<title ng-bind="$state.current.data.pageTitle"></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+	<link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+	<link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+	<link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" type="text/css" href="styles/animations.css">
+	<link rel="stylesheet" type="text/css" href="styles/generic.css">
+	<link rel="stylesheet" type="text/css" href="styles/google.maps.css">
+	<link rel="stylesheet" type="text/css" href="styles/yoga.css">
+	<!-- endbuild -->
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sintony:400,700">
+</head>
+<body ng-class="$state.current.data.pageBodyClass">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -48,6 +48,10 @@
     | * Fix issue where My account doesn't scroll in occasionally
     | * Preload background images when first accessing site
     | * GoogleMaps disable marker dragging
+    | * Scroll to top when changing views particularly for mobile where it's more noticable
+    | * Toastr don't fade out like John Papa's version does?
+    | * Social media: http://scotch.io/tutorials/css/css3-hidden-social-buttons
+    | * Sort out browse happy styling
     |
     | -> MY ACCOUNT / ADMINISTRATION
     |
@@ -60,22 +64,13 @@
     | * WEBSITE_SETTINGS passed in rather than individual parameters
     | * Add Google Analytics via clicks I guess?
     |
-    | * Out out ngCart and assimilate into site?
+    | * Sort out ngCart and assimilate into site?
     -->
 
     <header ui-view="header"></header>
     <section class="page {{ vm.pageBackgroundClass }}" id="page-background" ui-view="page-background"></section>
     <section class="page-content {{ vm.pageContentClass }}" id="page-content" ui-view="page-content"></section>
     <footer ui-view="footer"></footer>
-    <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-       ga('create', 'UA-57546047-1');
-       /* ga('send', 'pageview');*/
-    </script>
-
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -133,83 +128,90 @@
     <script src="bower_components/angulartics/src/angulartics-intercom.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-57546047-1', 'auto');
+        /*ga('send', 'pageview');*/
+    </script>
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.module.js"></script>
+	<script src="scripts/app.routes.js"></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.module.js"></script>
-        <script src="scripts/app.routes.js"></script>
+	<!-- Auth -->
+	<script src="scripts/auth/auth.module.js"></script>
+	<script src="scripts/auth/auth.routes.js"></script>
+	<script src="scripts/auth/auth.factory.js"></script>
+	<script src="scripts/auth/auth.background.controller.js"></script>
+	<script src="scripts/auth/auth.controller.js"></script>
+	<script src="scripts/auth/login.form.controller.js"></script>
+	<script src="scripts/auth/register.form.controller.js"></script>
 
-        <!-- Auth -->
-        <script src="scripts/auth/auth.module.js"></script>
-        <script src="scripts/auth/auth.routes.js"></script>
-        <script src="scripts/auth/auth.factory.js"></script>
-        <script src="scripts/auth/auth.background.controller.js"></script>
-        <script src="scripts/auth/auth.controller.js"></script>
-        <script src="scripts/auth/login.form.controller.js"></script>
-        <script src="scripts/auth/register.form.controller.js"></script>
+	<!-- My account -->
+	<script src="scripts/my-account/my-account.module.js"></script>
+	<script src="scripts/my-account/my-account.routes.js"></script>
+	<script src="scripts/my-account/my.account.controller.js"></script>
+	<script src="scripts/my-account/change-password-form.directive.js"></script>
+	<script src="scripts/my-account/profile.factory.js"></script>
+	<script src="scripts/my-account/profile.controller.js"></script>
+	<script src="scripts/my-account/orders.table.controller.js"></script>
+	<script src="scripts/my-account/products.table.controller.js"></script>
+	<script src="scripts/my-account/users.table.controller.js"></script>
+	<script src="scripts/my-account/calendar.controller.js"></script>
 
-        <!-- My account -->
-        <script src="scripts/my-account/my-account.module.js"></script>
-        <script src="scripts/my-account/my-account.routes.js"></script>
-        <script src="scripts/my-account/my.account.controller.js"></script>
-        <script src="scripts/my-account/change-password-form.directive.js"></script>
-        <script src="scripts/my-account/profile.factory.js"></script>
-        <script src="scripts/my-account/profile.controller.js"></script>
-        <script src="scripts/my-account/orders.table.controller.js"></script>
-        <script src="scripts/my-account/products.table.controller.js"></script>
-        <script src="scripts/my-account/users.table.controller.js"></script>
-        <script src="scripts/my-account/calendar.controller.js"></script>
+	<!-- ngCart -->
+	<script src="scripts/ngCart/ngCart.js"></script>
 
-        <!-- ngCart -->
-        <script src="scripts/ngCart/ngCart.js"></script>
+	<!-- Shop -->
+	<script src="scripts/shop/shop.module.js"></script>
+	<script src="scripts/shop/shop.routes.js"></script>
+	<script src="scripts/shop/add-to-cart.directive.js"></script>
+	<script src="scripts/shop/cart.controller.js"></script>
+	<script src="scripts/shop/cart.directive.js"></script>
+	<script src="scripts/shop/checkout.background.controller.js"></script>
+	<script src="scripts/shop/checkout.controller.js"></script>
+	<script src="scripts/shop/order.factory.js"></script>
+	<script src="scripts/shop/payment.completed.controller.js"></script>
+	<script src="scripts/shop/shop.background.controller.js"></script>
+	<script src="scripts/shop/shop.controller.js"></script>
 
-        <!-- Shop -->
-        <script src="scripts/shop/shop.module.js"></script>
-        <script src="scripts/shop/shop.routes.js"></script>
-        <script src="scripts/shop/add-to-cart.directive.js"></script>
-        <script src="scripts/shop/cart.controller.js"></script>
-        <script src="scripts/shop/cart.directive.js"></script>
-        <script src="scripts/shop/checkout.background.controller.js"></script>
-        <script src="scripts/shop/checkout.controller.js"></script>
-        <script src="scripts/shop/order.factory.js"></script>
-        <script src="scripts/shop/payment.completed.controller.js"></script>
-        <script src="scripts/shop/shop.background.controller.js"></script>
-        <script src="scripts/shop/shop.controller.js"></script>
+	<script src="scripts/shop/summary.directive.js"></script>
 
-        <script src="scripts/shop/summary.directive.js"></script>
+	<!-- Product -->
+	<script src="scripts/product/product.controller.js"></script>
+	<script src="scripts/product/product.factory.js"></script>
+	<script src="scripts/product/product-form.directive.js"></script>        
 
-        <!-- Product -->
-        <script src="scripts/product/product.controller.js"></script>
-        <script src="scripts/product/product.factory.js"></script>
-        <script src="scripts/product/product-form.directive.js"></script>        
-        
-        <!-- Core -->
-        <script src="scripts/core/core.module.js"></script>
-        <script src="scripts/core/constants.js"></script>
+	<!-- Core -->
+	<script src="scripts/core/core.module.js"></script>
+	<script src="scripts/core/constants.js"></script>
 
-        <!-- Layout -->
-        <script src="scripts/about/about.background.controller.js"></script>
-        <script src="scripts/about/about.controller.js"></script>
-        <script src="scripts/contact/contact.background.controller.js"></script>
-        <script src="scripts/contact/contact.controller.js"></script>
-        <script src="scripts/home/home.background.controller.js"></script>
-        <script src="scripts/home/home.controller.js"></script>
-        <script src="scripts/layout/footer.controller.js"></script>
-        <script src="scripts/layout/header.controller.js"></script>
+	<!-- Layout -->
+	<script src="scripts/about/about.background.controller.js"></script>
+	<script src="scripts/about/about.controller.js"></script>
+	<script src="scripts/contact/contact.background.controller.js"></script>
+	<script src="scripts/contact/contact.controller.js"></script>
+	<script src="scripts/home/home.background.controller.js"></script>
+	<script src="scripts/home/home.controller.js"></script>
+	<script src="scripts/layout/footer.controller.js"></script>
+	<script src="scripts/layout/header.controller.js"></script>
 
-        <!-- Validate Module -->
-        <script src="scripts/validate/validate.module.js"></script>
-        <script src="scripts/validate/constants.js"></script>
-        <script src="scripts/validate/config.js"></script>
-        <script src="scripts/validate/validate.password.characters.directive.js"></script>
-        <script src="scripts/validate/validate.match.directive.js"></script>
-        <script src="scripts/validate/validate.record.availability.directive.js"></script>  
+	<!-- Validate Module -->
+	<script src="scripts/validate/validate.module.js"></script>
+	<script src="scripts/validate/constants.js"></script>
+	<script src="scripts/validate/config.js"></script>
+	<script src="scripts/validate/validate.password.characters.directive.js"></script>
+	<script src="scripts/validate/validate.match.directive.js"></script>
+	<script src="scripts/validate/validate.record.availability.directive.js"></script>  
 
-        <!-- Filter Module -->
-        <script src="scripts/filters/filters.module.js"></script>
-        <script src="scripts/filters/capitalize.filter.js"></script>
+	<!-- Filter Module -->
+	<script src="scripts/filters/filters.module.js"></script>
+	<script src="scripts/filters/capitalize.filter.js"></script>
 
-        <!-- UI Bootstrap -->
-        <script src="scripts/ui-bootstrap/tabs.js"></script>
-        <!-- endbuild -->
+	<!-- UI Bootstrap -->
+	<script src="scripts/ui-bootstrap/tabs.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

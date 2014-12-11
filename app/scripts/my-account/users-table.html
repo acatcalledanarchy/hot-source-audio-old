@@ -4,9 +4,11 @@
 		<table class="table table-striped">
 			<thead>
 				<tr>
+					<!--
+					<th></th>
+					-->
 					<th>First name</th>
 					<th>Last name</th>
-					<th>Username</th>
 					<th>Email address</th>
 					<th>Created on</th>
 					<th>Last login</th>
@@ -14,19 +16,31 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="user in vm.users">
-					{{ user }}
+				<tr data-ng-repeat="user in vm.users" ng-if="user.md5_hash">
+					<!--
+					<td>
+						<img class="img-circle" ng-src="//gravatar.com/avatar/{{ user.md5_hash }}" alt="{{ user.first_name }} {{ user.surname }}">
+					</td>
+					-->
 					<td>{{ user.first_name }}</td>
 					<td>{{ user.surname }}</td>
-					<td>{{ user.username }}</td>
 					<td>{{ user.email }}</td>
 					<td>{{ user.created_on | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>{{ user.last_login | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>
+						<input
+							
+							ng-model="user.is_admin"
+							type="checkbox"
+							
+							ng-click="vm.click(user.$id, user.is_admin)" ng-if="user.$id != vm.userId">
+						<!--
 						<i class="fa" data-ng-class="user.is_admin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
+						-->
 					</td>
 				</tr>
 			</tbody>
 		</table>
+		{{ vm.users }}
 	</div>
 </div>

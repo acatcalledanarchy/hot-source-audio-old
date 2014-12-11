@@ -65,6 +65,16 @@
 		    signedIn: function() {
 				return !!Service.user.provider;
 		    },
+		    update: function(user) {
+		    	return user.$save();
+		    },
+			updateAdminStatus: function(userId, isAdmin) {
+				var userRef = $firebase(ref.child('profile').child(userId)).$asObject();
+				userRef.$loaded().then(function(user) {
+					user.is_admin = isAdmin;
+					return Service.update(user);
+				});
+			},
 		    user: {}
 		};
 

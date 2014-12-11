@@ -37,8 +37,7 @@
 	
 		function oAuthLogin(provider) {
 			vm.oAuthLoginProcessing = true;
-			Auth.oAuthLogin(provider).then( function(auth) {
-				console.log(auth);
+			Auth.oAuthLogin(provider).then( function() {
 				$location.path('/home');
 			}, function (error) {
 				vm.oAuthLoginProcessing = false;

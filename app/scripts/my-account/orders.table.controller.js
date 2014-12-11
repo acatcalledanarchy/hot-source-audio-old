@@ -1,4 +1,5 @@
 /* jshint latedef: false */
+/* jshint camelcase: false */
 
 (function() {
 

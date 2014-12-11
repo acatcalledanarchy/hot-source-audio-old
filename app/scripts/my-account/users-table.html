@@ -26,7 +26,7 @@
 					<td>{{ user.created_on | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>{{ user.last_login | date: 'dd/MM/yyyy @ h:mma' }}</td>
 					<td>
-						<toggle-switch ng-model="user.is_admin" ng-click="vm.click(user.$id, user.is_admin)"><toggle-switch>
+						<toggle-switch ng-model="user.is_admin" ng-click="vm.click(user.$id, user.is_admin)" on-label="Yes" off-label="No"><toggle-switch>
 					</td>
 				</tr>
 			</tbody>

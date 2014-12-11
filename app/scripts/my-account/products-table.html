@@ -18,6 +18,7 @@
 					<th>End time</th>
 					<th>Price</th>
 					<th>{{ vm.productQuantityLabel | capitalize }}</th>
+					<th>{{ vm.productQuantityLabel | capitalize }} available</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -25,9 +26,10 @@
 					<td>{{ product.name }}</td>
 					<td>{{ product.date }}</td>
 					<td>{{ product.venue }}</td>
-					<td>{{ product.startTime }}</td>
-					<td>{{ product.endTime }}</td>
+					<td>{{ product.start_time }}</td>
+					<td>{{ product.end_time }}</td>
 					<td>{{ product.price | currency: '£' }}</td>
+					<td>{{ product.original_quantity }}</td>
 					<td>{{ product.quantity }}</td>
 				</tr>
 			</tbody>

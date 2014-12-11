@@ -38,6 +38,8 @@
 				if (scope.productForm.$valid) {
 					scope.product.creator_uid = Auth.user.uid;
 					scope.product.created_on = new Date().getTime();
+					scope.product.quantity = parseInt(scope.product.quantity);
+					scope.product.original_quantity = scope.product.quantity;
 					if (scope.productAction === 'edit') {
 						Product.update(scope.product).then(function() {
 							scope.productFormSubmitted = false;

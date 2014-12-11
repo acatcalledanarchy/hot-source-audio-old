@@ -36,6 +36,13 @@
 			},
 			update: function(product) {
 				return product.$save();
+			},
+			updateQuantity: function(productId) {
+				var productRef = $firebase(ref.child('products').child(productId)).$asObject();
+				productRef.$loaded().then(function(thisProduct) {
+					thisProduct.quantity = thisProduct.quantity - 1;
+					product.update(thisProduct);
+				});
 			}
 		};
 

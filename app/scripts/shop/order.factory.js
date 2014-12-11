@@ -10,9 +10,9 @@
 		.module('app.shop')
 		.factory('Order', Order);
 
-	Order.$inject = ['$firebase', 'FIREBASE_URL', 'ngCart', 'Auth'];
+	Order.$inject = ['$firebase', 'FIREBASE_URL', 'ngCart', 'Auth', 'Product'];
 
-	function Order($firebase, FIREBASE_URL, ngCart, Auth) {
+	function Order($firebase, FIREBASE_URL, ngCart, Auth, Product) {
 
 		var ref	= new Firebase(FIREBASE_URL);
 		var orders = $firebase(ref.child('orders')).$asArray();
@@ -20,28 +20,28 @@
 		var order = {
 			all: orders,
 			create: function() {
-				/* Need to decrease quantity by 1 for relevant products */
 				var products = ngCart.getCart().items,
 					taxRate = !ngCart.getCart().tax,
 					order = {
-						creatorUID: Auth.user.uid,
+						creator_uid: Auth.user.uid,
 						products: [],
-						totalCost: ngCart.totalCost(),
-						totalTax: ngCart.getTax(),
-						taxRate: taxRate,
-						orderTime: new Date().getTime()
+						total_cost: ngCart.totalCost(),
+						total_tax: ngCart.getTax(),
+						tax_rate: taxRate,
+						order_time: new Date().getTime()
 				};
 				for( var i in products ) {
-					var product = {
-						name: products[i]._name,
-						quantity: products[i]._quantity,
-						price: products[i]._price
-					};
-					order.products.push(product);
+					var productId = products[i]._id,
+						cartProduct = {
+							name: products[i]._name,
+							quantity: products[i]._quantity,
+							price: products[i]._price
+						};
+					order.products.push(cartProduct);
+					Product.updateQuantity(productId);
 				}
-				console.log(orders);
 				return orders.$add(order).then(function(orderRef) {
-					$firebase(ref.child('user_orders').child(order.creatorUID)).$push(orderRef.name());
+					$firebase(ref.child('user_orders').child(order.creator_uid)).$push(orderRef.name());
 					return orderRef;
 				});
 			},

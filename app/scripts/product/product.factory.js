@@ -1,4 +1,5 @@
 /* jshint latedef: false */
+/* jshint camelcase: false */
 /* global Firebase */
 
 (function() {
@@ -20,7 +21,7 @@
 			all: products,
 			create: function(product) {
 				return products.$add(product).then( function(productRef) {
-					$firebase(ref.child('user_products').child(product.creatorUID)).$push(productRef.name());
+					$firebase(ref.child('user_products').child(product.creator_uid)).$push(productRef.name());
 					return productRef;
 				});
 			},

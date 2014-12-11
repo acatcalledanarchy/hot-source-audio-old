@@ -1,4 +1,5 @@
-/* jshint latedef: false*/
+/* jshint latedef: false */
+/* jshint camelcase: false */
 /* global Firebase */
 
 (function() {
@@ -38,6 +39,7 @@
 					};
 					order.products.push(product);
 				}
+				console.log(orders);
 				return orders.$add(order).then(function(orderRef) {
 					$firebase(ref.child('user_orders').child(order.creatorUID)).$push(orderRef.name());
 					return orderRef;

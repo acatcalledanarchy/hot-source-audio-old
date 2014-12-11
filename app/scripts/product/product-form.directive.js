@@ -36,9 +36,8 @@
 				scope.productFormSubmitted = true;
 				scope.$broadcast('show-errors-check-validity');
 				if (scope.productForm.$valid) {
-					scope.product.creator = Auth.user.profile.username;
-					scope.product.creatorUID = Auth.user.uid;
-					scope.product.created_on = new Date().getTime();	
+					scope.product.creator_uid = Auth.user.uid;
+					scope.product.created_on = new Date().getTime();
 					if (scope.productAction === 'edit') {
 						Product.update(scope.product).then(function() {
 							scope.productFormSubmitted = false;

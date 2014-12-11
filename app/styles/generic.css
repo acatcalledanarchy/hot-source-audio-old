@@ -124,3 +124,15 @@ footer p {
 @-moz-document url-prefix() {
 	fieldset { display: table-cell; }
 }
+
+/* Toggle Switch */
+.toggle-switch {
+	border-color: #CCC;
+	min-width: 80px;
+}
+
+.toggle-switch span {
+	padding: 0px;
+	font-size: 11px;
+	text-transform: uppercase;
+}

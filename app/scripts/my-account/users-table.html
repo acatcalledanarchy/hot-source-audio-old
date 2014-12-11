@@ -16,7 +16,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="user in vm.users" ng-if="user.md5_hash">
+				<tr data-ng-repeat="user in vm.users" ng-if="user.md5_hash && user.$id != vm.userId">
 					<!--
 					<td>
 						<img class="img-circle" ng-src="//gravatar.com/avatar/{{ user.md5_hash }}" alt="{{ user.first_name }} {{ user.surname }}">
@@ -33,7 +33,7 @@
 							ng-model="user.is_admin"
 							type="checkbox"
 							
-							ng-click="vm.click(user.$id, user.is_admin)" ng-if="user.$id != vm.userId">
+							ng-click="vm.click(user.$id, user.is_admin)">
 						<!--
 						<i class="fa" data-ng-class="user.is_admin ? 'fa-check text-success' : 'fa-close text-danger'"></i>
 						-->

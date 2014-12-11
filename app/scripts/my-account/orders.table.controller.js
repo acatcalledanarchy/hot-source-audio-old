@@ -23,7 +23,7 @@
 			vm.orders = Order.all;
 			vm.orders.$loaded().then(function(orders) {
 				for(var i = 0; i < orders.length; i++) {
-					var profile = Auth.get(orders[i].creatorUID);
+					var profile = Auth.get(orders[i].creator_uid);
 					orders[i].profile = profile;
 				}
 				vm.orders = orders;

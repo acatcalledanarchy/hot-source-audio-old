@@ -10,8 +10,8 @@
 	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<h5>{{ order.orderTime | date: 'dd/MM/yyyy' }}</h5>
-				<h4>{{ order.orderTime | date: 'h:mma' | lowercase }}</h4>
+				<h5>{{ order.order_time | date: 'dd/MM/yyyy' }}</h5>
+				<h4>{{ order.order_time | date: 'h:mma' | lowercase }}</h4>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<div data-ng-if="vm.isAdmin()">
@@ -35,15 +35,15 @@
 				<tfoot>
 					<tr data-ng-if="vm.ngCart.getTax()">
 						<th></th>
-						<th>Tax ({{ order.taxRate }}%):</th>
-						<th>{{ order.totalTax | currency: '£' }}</th>
+						<th>Tax ({{ order.tax_rate }}%):</th>
+						<th>{{ order.total_tax | currency: '£' }}</th>
 						<th></th>
 					</tr>
 	                <tr>
 	                    <th></th>
 	                    <th></th>
 	                    <th>Total:</th>
-	                    <th>{{ order.totalCost | currency: '£' }}</th>
+	                    <th>{{ order.total_cost | currency: '£' }}</th>
 	                </tr>
      	   		</tfoot>
 				<tbody>

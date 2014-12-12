@@ -1,5 +1,6 @@
 /* jshint latedef: false */
 /* jshint camelcase: false */
+/* global _ */
 
 (function(){
 
@@ -9,23 +10,27 @@
 		.module('app.shop')
 		.controller('CheckoutCtrl', CheckoutCtrl);
 
-	function CheckoutCtrl(ngCart, Auth, user, WEBSITE_SETTINGS) {
+	CheckoutCtrl.$inject = ['ngCart', 'Auth', 'WEBSITE_SETTINGS'];
+
+	function CheckoutCtrl(ngCart, Auth, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.ngCart = ngCart;
 		vm.signedIn = Auth.signedIn;
-		vm.userProfile = {};
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 
-		Auth.get(Auth.user.uid).$loaded().then(function(user) {
-			console.log(user);
-			vm.userProfile = {
-				email: user.email,
-				firstName: user.first_name,
-				surname: user.surname,
-				md5Hash: user.md5_hash
-			};
-		});
+		if(!_.isEmpty(Auth.user)) {
+			Auth.user.profile.$loaded().then(function(profile) {
+				vm.userProfile = {
+					email: profile.email,
+					firstName: profile.first_name,
+					surname: profile.surname,
+					md5Hash: profile.md5_hash
+				};
+			});
+		} else {
+			vm.userProfile = {};
+		}
 	}
 
 })();

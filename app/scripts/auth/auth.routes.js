@@ -17,11 +17,6 @@
 		$stateProvider
 		.state('app.login', {
 			url: '/login',
-			resolve: {
-				user: function(Auth) {
-					return Auth.resolveUser();
-				}
-			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

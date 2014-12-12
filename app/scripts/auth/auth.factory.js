@@ -1,7 +1,6 @@
 /* jshint latedef: false */
 /* jshint camelcase: false */
 /* global Firebase */
-/* global _ */
 
 (function() {
 
@@ -46,15 +45,6 @@
 				}
 				return false;
 			},
-			newIsAdmin: function() {
-				if(_.isEmpty(Service.user)) {
-					return false;
-				} else{
-					Service.user.profile.$loaded().then(function(profile) {
-						return profile.is_admin;
-					});
-				}
-			},
 		    login: function(user) {
 		      	return auth.$login('password', user);
 		    },
@@ -70,6 +60,8 @@
 				return auth.$createUser(user.email, user.password);
 		    },
 		    resolveUser: function() {
+		    	console.log(auth.$getCurrentUser());
+
 				return auth.$getCurrentUser();
 		    },
 		    signedIn: function() {

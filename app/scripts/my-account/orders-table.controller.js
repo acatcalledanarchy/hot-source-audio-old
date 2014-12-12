@@ -18,8 +18,6 @@
 		//vm.orders = Order.all;
 		vm.orders = orders;
 
-		console.log(vm.orders);
-
 		/*Auth.user.profile.$loaded().then(function(profile) {
 			vm.isAdmin = profile.is_admin;
 			if(profile.is_admin) {

@@ -17,7 +17,12 @@
 
 		$stateProvider
 		.state('app', {
-			abstract: true
+			abstract: true,
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 		})
 		.state('app.home', {
 			url: '/',

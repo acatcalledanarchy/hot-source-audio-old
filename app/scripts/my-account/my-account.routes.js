@@ -17,6 +17,11 @@
 		$stateProvider
 		.state('my-account', {
 			url: '/my-account',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -30,22 +35,12 @@
 				'page-content': {
 					templateUrl: 'scripts/my-account/my-account.html',
 					controller: 'MyAccountCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'profile@my-account': {
 					templateUrl: 'scripts/my-account/profile.html',
 					controller: 'ProfileCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'orders@my-account': {
 					templateUrl: 'scripts/my-account/orders-table.html',
@@ -74,7 +69,7 @@
 				}
 			},
 			data: {
-				pageTitle: 'My account'  + websiteTitle,
+				pageTitle: 'My account' + websiteTitle,
 				pageBodyClass: 'auth'
 			}
 		});

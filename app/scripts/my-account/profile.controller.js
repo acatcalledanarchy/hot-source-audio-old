@@ -14,19 +14,19 @@
 	function ProfileCtrl(Auth) {
 
 		var vm = this;
-		
-		Auth.get(Auth.user.uid).$loaded().then(function(user) {
+
+		Auth.user.profile.$loaded().then(function(profile) {
     		vm.profile = {};
     		switch(Auth.user.provider) {
 				case 'password':
-					vm.profile.displayName = user.first_name + ' ' + user.surname;
-					vm.profile.avatar = '//www.gravatar.com/avatar/' + user.md5_hash;
-					vm.profile.emailAddress = user.email;
+					vm.profile.avatar = '//www.gravatar.com/avatar/' + profile.md5_hash;
+					vm.profile.displayName = profile.first_name + ' ' + profile.surname;
+					vm.profile.emailAddress = profile.email;
 				break;
 				case 'facebook':
-					vm.profile.displayName = Auth.user.displayName;
-					vm.profile.avatar = Auth.user.thirdPartyUserData.picture.data.url;
-					vm.profile.emailAddress = Auth.user.thirdPartyUserData.email;
+					vm.profile.avatar = profile.thirdPartyUserData.picture.data.url;
+					vm.profile.displayName = profile.displayName;
+					vm.profile.emailAddress = profile.thirdPartyUserData.email;
 				break;
 				case' twitter':
 				break;

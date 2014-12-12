@@ -19,6 +19,11 @@
 		$stateProvider
 		.state(shopTitleSlug, {
 			url: '/' + shopTitleSlug,
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -32,12 +37,7 @@
 				'page-content': {
 					templateUrl: 'scripts/shop/shop.html',
 					controller: 'ShopCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
@@ -52,6 +52,11 @@
 		})
 		.state(shopTitleSlug + 'detail', {
 			url: '/' + shopTitleSlug + '/:productId',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},			
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -65,12 +70,7 @@
 				'page-content': {
 					templateUrl: 'scripts/product/product.html',
 					controller: 'ProductCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
@@ -85,6 +85,11 @@
 		})
 		.state('checkout', {
 			url: '/checkout',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -98,12 +103,7 @@
 				'page-content': {
 					templateUrl: 'scripts/shop/checkout.html',
 					controller: 'CheckoutCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
@@ -117,6 +117,11 @@
 			}
 		})
 		.state('checkoutcomplete', {
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 			url: '/checkout/:userId',
 			views: {
 				'header': {
@@ -131,12 +136,7 @@
 				'page-content': {
 					templateUrl: 'scripts/shop/payment-completed.html',
 					controller: 'PaymentCompletedCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},			
 				'footer': {
 					templateUrl: 'scripts/layout/footer.html',
@@ -175,39 +175,6 @@
 			data: {
 				pageTitle: 'Payment cancelled' + websiteTitle,
 				pageBodyClass: 'checkout'
-			}
-		})
-		.state('my-orders', {
-			url: '/my-orders',
-			views: {
-				'header': {
-					templateUrl: 'scripts/layout/header.html',
-					controller: 'HeaderCtrl',
-					controllerAs: 'vm'
-				},
-				'page-background': {
-					controller: 'AuthBackgroundCtrl',
-					controllerAs: 'vm'
-				},
-				'page-content': {
-					templateUrl: 'scripts/order/order.html',
-					controller: 'OrderCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
-				},
-				'footer': {
-					templateUrl: 'scripts/layout/footer.html',
-					controller: 'FooterCtrl',
-					controllerAs: 'vm'
-				}
-			},
-			data: {
-				pageTitle: 'My orders'  + websiteTitle,
-				pageBodyClass: 'auth'
 			}
 		});
 	}

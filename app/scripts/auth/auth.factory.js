@@ -45,6 +45,15 @@
 				}
 				return false;
 			},
+			newIsAdmin: function(userId) {
+				//console.log('New is admin', userId);
+				var userRef = $firebase(ref.child('profile').child(userId)).$asObject();
+				userRef.$loaded().then(function(user) {
+					console.log(user);
+					console.log(user.is_admin);
+					return user.is_admin;
+				});
+			},
 		    login: function(user) {
 		      	return auth.$login('password', user);
 		    },

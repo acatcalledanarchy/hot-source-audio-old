@@ -12,7 +12,7 @@
 
 	function AuthCtrl(user, $location) {
 
-		if (user) {
+		if(user) {
 			$location.path('/my-account');
 		}
 

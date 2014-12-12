@@ -17,6 +17,11 @@
 		$stateProvider
 		.state('login', {
 			url: '/login',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser();
+				}
+			},
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -30,12 +35,7 @@
 				'page-content': {
 					templateUrl: 'scripts/auth/login.html',
 					controller: 'AuthCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						user: function(Auth) {
-							return Auth.resolveUser();
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'login-form@login': {
 					templateUrl: 'scripts/auth/login-form.html',

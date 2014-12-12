@@ -20,6 +20,9 @@
 			resolve: {
 				user: function(Auth) {
 					return Auth.resolveUser();
+				},
+				products: function(Product) {
+					return Product.all;
 				}
 			},
 			views: {
@@ -55,13 +58,7 @@
 				'products@app.my-account': {
 					templateUrl: 'scripts/my-account/products-table.html',
 					controller: 'ProductsCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						products: function(Product) {
-							return Product.all;
-						}
-					}
-				},
+					controllerAs: 'vm'				},
 				'users@app.my-account': {
 					templateUrl: 'scripts/my-account/users-table.html',
 					controller: 'UsersCtrl',

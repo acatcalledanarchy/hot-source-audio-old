@@ -9,16 +9,16 @@
 		.module('app.my-account')
 		.controller('CalendarCtrl', CalendarCtrl);
 
-	CalendarCtrl.$inject = ['Product', '$modal', 'moment', 'WEBSITE_SETTINGS'];
+	CalendarCtrl.$inject = ['products', 'Product', '$modal', 'moment', 'WEBSITE_SETTINGS'];
 
-	function CalendarCtrl(Product, $modal, moment, WEBSITE_SETTINGS) {
+	function CalendarCtrl(products, Product, $modal, moment, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.events = [];
 		vm.calendarView = 'month';
 	    vm.calendarDay = new Date();
 	    vm.getEvents = getEvents;
-		vm.products = Product.all;
+		vm.products = products;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	    	
 	    activate();

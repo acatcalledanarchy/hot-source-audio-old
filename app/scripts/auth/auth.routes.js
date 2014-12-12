@@ -15,7 +15,7 @@
 		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
 
 		$stateProvider
-		.state('login', {
+		.state('app.login', {
 			url: '/login',
 			resolve: {
 				user: function(Auth) {
@@ -23,31 +23,31 @@
 				}
 			},
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'AuthBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/auth/login.html',
 					controller: 'AuthCtrl',
 					controllerAs: 'vm'
 				},
-				'login-form@login': {
+				'login-form@app.login': {
 					templateUrl: 'scripts/auth/login-form.html',
 					controller: 'LoginFormCtrl',
 					controllerAs: 'vm'
 				},
-				'register-form@login': {
+				'register-form@app.login': {
 					templateUrl: 'scripts/auth/register-form.html',
 					controller: 'RegisterFormCtrl',
 					controllerAs: 'vm'
 				},
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'

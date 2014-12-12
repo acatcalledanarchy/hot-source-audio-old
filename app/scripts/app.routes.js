@@ -16,24 +16,27 @@
 		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
 
 		$stateProvider
-		.state('home', {
+		.state('app', {
+			abstract: true
+		})
+		.state('app.home', {
 			url: '/',
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'HomeBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl:  'scripts/home/home.html',
 					controller:  'HomeCtrl',
 					controllerAs: 'vm'
 				},
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -44,24 +47,24 @@
 				pageBodyClass: 'home'
 			}
 		})
-		.state('about', {
+		.state('app.about', {
 			url: '/about', 
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},		
-				'page-background': {
+				'page-background@': {
 					controller: 'AboutBackgroundCtrl',
 					controllerAs: 'vm'
 				},		
-				'page-content': {
+				'page-content@': {
 					templateUrl:  'scripts/about/about.html',
 					controller:  'AboutCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -72,24 +75,24 @@
 				pageBodyClass: 'about'
 			}
 		})
-		.state('contact', {
+		.state('app.contact', {
 			url: '/contact',
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},	
-				'page-background': {
+				'page-background@': {
 					controller: 'ContactBackgroundCtrl',
 					controllerAs: 'vm'
 				},			
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/contact/contact.html',
 					controller: 'ContactCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'

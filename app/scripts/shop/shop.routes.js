@@ -17,7 +17,7 @@
 		var shopTitleSlug = shopTitle.toLowerCase();
 
 		$stateProvider
-		.state(shopTitleSlug, {
+		.state('app.' + shopTitleSlug, {
 			url: '/' + shopTitleSlug,
 			resolve: {
 				user: function(Auth) {
@@ -25,21 +25,21 @@
 				}
 			},
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},	
-				'page-background': {
+				'page-background@': {
 					controller: 'ShopBackgroundCtrl',
 					controllerAs: 'vm'
 				},			
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/shop/shop.html',
 					controller: 'ShopCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -50,7 +50,7 @@
 				pageBodyClass: 'shop'
 			}
 		})
-		.state(shopTitleSlug + 'detail', {
+		.state('app.' + shopTitleSlug + 'detail', {
 			url: '/' + shopTitleSlug + '/:productId',
 			resolve: {
 				user: function(Auth) {
@@ -58,21 +58,21 @@
 				}
 			},			
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'ShopBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/product/product.html',
 					controller: 'ProductCtrl',
 					controllerAs: 'vm'
 				},
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -83,7 +83,7 @@
 				pageBodyClass: 'shop'
 			}
 		})
-		.state('checkout', {
+		.state('app.checkout', {
 			url: '/checkout',
 			resolve: {
 				user: function(Auth) {
@@ -91,21 +91,21 @@
 				}
 			},
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'CheckoutBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/shop/checkout.html',
 					controller: 'CheckoutCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -116,7 +116,7 @@
 				pageBodyClass: 'checkout'
 			}
 		})
-		.state('checkoutcomplete', {
+		.state('app.checkoutcomplete', {
 			resolve: {
 				user: function(Auth) {
 					return Auth.resolveUser();
@@ -124,21 +124,21 @@
 			},
 			url: '/checkout/:userId',
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'CheckoutBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/shop/payment-completed.html',
 					controller: 'PaymentCompletedCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -149,24 +149,24 @@
 				pageBodyClass: 'checkout'
 			}
 		})
-		.state('payment-cancelled', {
+		.state('app.payment-cancelled', {
 			url: '/payment-cancelled',
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'CheckoutBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/shop/payment-cancelled.html',
 					controller: 'CheckoutCtrl',
 					controllerAs: 'vm'
 				},			
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'

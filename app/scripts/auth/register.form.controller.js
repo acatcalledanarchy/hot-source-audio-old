@@ -28,7 +28,7 @@
 					 	user.surname = vm.user.surname;
 						return Auth.createProfile(user);
 					}).then(function() {
-						$location.path('/home');
+						$location.path('/');
 					});
 				}, function (error) {
 					vm.registerProcessing = false;

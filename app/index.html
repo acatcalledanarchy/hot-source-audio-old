@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title ng-bind="$state.current.data.pageTitle"></title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
@@ -31,7 +31,7 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-57546047-1', 'auto');
-  ga('send', 'pageview');
+  //ga('send', 'pageview');
 
 </script>
 </head>
@@ -53,7 +53,6 @@
     | * Change colours of Toastr to white blue / green border & copy 
     | * Fix issue where My account doesn't scroll in occasionally
     | * Preload background images when first accessing site
-    | * GoogleMaps disable marker dragging
     | * Scroll to top when changing views particularly for mobile where it's more noticable
     | * Toastr don't fade out like John Papa's version does?
     | * Social media: http://scotch.io/tutorials/css/css3-hidden-social-buttons
@@ -63,18 +62,12 @@
     | * Change delete button to red for usability
     | * Display 'Sold out' banner rather than hiding product in shop?
     |
-    | -> MY ACCOUNT / ADMINISTRATION
-    |
-    | * My account > Tabs > add icons?
-    |
     | -> MISCELLANEOUS
     |
     | * Update PayPal sandbox account email address and password
     | * WEBSITE_SETTINGS passed in rather than individual parameters
-    | * Add Google Analytics via clicks I guess?
     | * Message to display in shop area when no products available?
     | * Sort out John Papa style guide for Factories as it's all getting a little confusing the way it is at the moment
-    |
     | * Sort out ngCart and assimilate into site?
     -->
 
@@ -119,6 +112,25 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
     <script src="bower_components/angular-toggle-switch/angular-toggle-switch.js"></script>
+    <script src="bower_components/jquery-waypoints/waypoints.js"></script>
+    <script src="bower_components/SHA-1/sha1.js"></script>
+    <script src="bower_components/angularitics/src/angulartics.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-adobe.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-chartbeat.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-cnzz.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-flurry.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-ga-cordova.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-ga.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-gtm.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-kissmetrics.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-mixpanel.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-piwik.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-scroll.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-segmentio.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-splunk.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-woopra.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-marketo.js"></script>
+    <script src="bower_components/angularitics/src/angulartics-intercom.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

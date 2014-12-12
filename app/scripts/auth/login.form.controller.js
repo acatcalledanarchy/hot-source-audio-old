@@ -25,7 +25,7 @@
 			$scope.$broadcast('show-errors-check-validity');
 			if ($scope.loginForm.$valid) {
 				Auth.login(vm.user).then(function () {
-					$location.path('/home');
+					$location.path('/my-account');
 				}, function(error) {
 					vm.loginProcessing = false;
 					vm.loginError = error.toString().replace('Error: FirebaseSimpleLogin:', '');
@@ -38,7 +38,7 @@
 		function oAuthLogin(provider) {
 			vm.oAuthLoginProcessing = true;
 			Auth.oAuthLogin(provider).then( function() {
-				$location.path('/home');
+				$location.path('/my-account');
 			}, function (error) {
 				vm.oAuthLoginProcessing = false;
 				vm.authError = Auth.parseErrorMessage(error);

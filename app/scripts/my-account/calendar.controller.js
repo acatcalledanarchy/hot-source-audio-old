@@ -29,20 +29,18 @@
 
 	    function getEvents() {
 	    	vm.products.$loaded().then(function(products) {
-				for(var i = 0; i < products.length; i++ ) {
+				for(var i = 0; i < products.length; i++) {
 					var product = products[i],
 						title = product.name,
-						thisEvent = {
+						data = {
 							title: title,
 							type: 'info',
 							starts_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' ' + product.start_time)),
 							ends_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' ' + product.end_time))
 						};
 
-					vm.events.push(thisEvent);
+					vm.events.push(data);
 				}
-
-				console.log( vm.events );
 
 				return vm.events;
 			});

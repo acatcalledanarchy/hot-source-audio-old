@@ -17,7 +17,7 @@
 
 		$stateProvider
 		.state('home', {
-			url: '/home',
+			url: '/',
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',
@@ -129,7 +129,7 @@
 			}
 		});
 
-		$urlRouterProvider.otherwise('/home');
+		$urlRouterProvider.otherwise('/');
 	}
 
 	runBlock.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window', 'WEBSITE_SETTINGS'];

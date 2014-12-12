@@ -8,15 +8,12 @@
 		.module('app.my-account')
 		.controller('ProductsCtrl', ProductsCtrl);
 
-	ProductsCtrl.$inject = ['Product', 'WEBSITE_SETTINGS'];
+	ProductsCtrl.$inject = ['products', 'WEBSITE_SETTINGS'];
 
-	function ProductsCtrl(Product, WEBSITE_SETTINGS) {
+	function ProductsCtrl(products, WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.products = Product.all;
-		vm.products.$loaded().then(function(products) {
-			vm.products = products;
-		});	
+		vm.products = products;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 

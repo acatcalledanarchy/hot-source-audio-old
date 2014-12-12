@@ -1,7 +1,8 @@
 (function() {
-    
-    'use strict';
 
-    angular
-    	.module('app.auth', []);
+	'use strict';
+
+	angular
+		.module('app.auth', []);
+
 })();

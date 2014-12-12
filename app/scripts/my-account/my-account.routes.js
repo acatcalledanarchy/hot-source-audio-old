@@ -15,7 +15,7 @@
 		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
 
 		$stateProvider
-		.state('my-account', {
+		.state('app.my-account', {
 			url: '/my-account',
 			resolve: {
 				user: function(Auth) {
@@ -23,46 +23,61 @@
 				}
 			},
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background': {
+				'page-background@': {
 					controller: 'AuthBackgroundCtrl',
 					controllerAs: 'vm'
 				},
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/my-account/my-account.html',
 					controller: 'MyAccountCtrl',
 					controllerAs: 'vm'
 				},
-				'profile@my-account': {
+				'profile@app.my-account': {
 					templateUrl: 'scripts/my-account/profile.html',
 					controller: 'ProfileCtrl',
 					controllerAs: 'vm'
 				},
-				'orders@my-account': {
+				'orders@app.my-account': {
 					templateUrl: 'scripts/my-account/orders-table.html',
 					controller: 'OrdersCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						orders: function(Order) {
+							return Order.all;
+						}
+					}
 				},
-				'products@my-account': {
+				'products@app.my-account': {
 					templateUrl: 'scripts/my-account/products-table.html',
 					controller: 'ProductsCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						products: function(Product) {
+							return Product.all;
+						}
+					}
 				},
-				'users@my-account': {
+				'users@app.my-account': {
 					templateUrl: 'scripts/my-account/users-table.html',
 					controller: 'UsersCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						users: function(Auth) {
+							return Auth.all;
+						}
+					}
 				},
-				'calendar@my-account': {
+				'calendar@app.my-account': {
 					templateUrl: 'scripts/my-account/calendar.html',
 					controller: 'CalendarCtrl',
 					controllerAs: 'vm'
 				},
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'

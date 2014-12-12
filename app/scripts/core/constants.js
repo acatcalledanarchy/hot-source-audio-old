@@ -12,7 +12,7 @@
             BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
             SHOP: {
                 BUY_NOW_LABEL: 'Book lesson',
-                FONT_AWESOME_ICON: 'fa-ticket',
+                FONT_ICON: 'fa fa-ticket',
                 PAY_PAL_EMAIL_ADDRESS: 'acatcalledanarchy@gmail.com',
                 PRODUCT_QUANTITY_LABEL: 'places',
                 PRODUCT_ORDER_LABEL: 'bookings',

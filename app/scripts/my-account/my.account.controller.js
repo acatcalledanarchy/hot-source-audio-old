@@ -17,6 +17,7 @@
 		}
 		
 		var vm = this;
+		vm.fontIcon = WEBSITE_SETTINGS.SHOP.FONT_ICON;
 		vm.isAdmin = Auth.isAdmin;
 		vm.productOrderLabel = WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL;
 		vm.pageContentClass	= 'page-content-auth';

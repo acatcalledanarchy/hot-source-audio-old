@@ -182,6 +182,7 @@
       scope: {
         active: '=?',
         heading: '@',
+        icon: '@',
         onSelect: '&select', //This callback is called in contentHeadingTransclude
                             //once it inserts the tab's content into the dom
         onDeselect: '&deselect'

@@ -35,12 +35,14 @@
 						thisEvent = {
 							title: title,
 							type: 'info',
-							starts_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' : ' + product.startTime)),
-							ends_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' : ' + product.endTime))
+							starts_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' ' + product.start_time)),
+							ends_at: moment(new Date(product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3') + ' ' + product.end_time))
 						};
 
 					vm.events.push(thisEvent);
 				}
+
+				console.log( vm.events );
 
 				return vm.events;
 			});

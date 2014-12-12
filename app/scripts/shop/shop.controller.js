@@ -16,7 +16,7 @@
 		vm.buyNowLabel = WEBSITE_SETTINGS.SHOP.BUY_NOW_LABEL;
 		vm.deleteProduct = deleteProduct;
 		vm.deletingProduct = false;
-		vm.fontAwesomeIcon = WEBSITE_SETTINGS.SHOP.FONT_AWESOME_ICON;
+		vm.fontIcon = WEBSITE_SETTINGS.SHOP.FONT_ICON;
 		vm.isAdmin = Auth.isAdmin;
 		vm.pageTitle = WEBSITE_SETTINGS.TITLE + ' ' + WEBSITE_SETTINGS.SHOP.TITLE;
 		vm.productType = WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE;

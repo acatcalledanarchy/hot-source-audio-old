@@ -147,21 +147,25 @@
 				</div>
 			</div>
 			<div class="row" ng-if="productAction == 'edit'">
-				<div class="col-xs-12 col-sm-4">
-					<a class="btn btn-custom text-uppercase" ui-sref="{{ shopTitleSlug }}">
-						<i class="fa fa-arrow-left"></i>
-						&nbsp;&nbsp;
-						Back to {{ shopTitleSlug }}
-					</a>
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="form-group">
+						<a class="btn btn-custom text-uppercase" ui-sref="{{ shopTitleSlug }}">
+							<i class="fa fa-arrow-left"></i>
+							&nbsp;&nbsp;
+							Back to {{ shopTitleSlug }}
+						</a>
+					</div>
 				</div>
-				<div class="col-xs-12 col-sm-8">
-					<button class="btn btn-custom text-uppercase"
-							type="submit"
-							data-ng-disabled="vm.productFormSubmitted">
-						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
-						&nbsp;&nbsp;
-						{{ productAction }} {{ productType }}
-					</button>
+				<div class="col-xs-12 col-sm-6 col-md-8">
+					<div class="form-group">
+						<button class="btn btn-custom text-uppercase"
+								type="submit"
+								data-ng-disabled="vm.productFormSubmitted">
+							<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontIcon }}' "></i>
+							&nbsp;&nbsp;
+							{{ productAction }} {{ productType }}
+						</button>
+					</div>
 				</div>
 			</div>
 			<div class="row" ng-if="productAction == 'add'">
@@ -169,7 +173,7 @@
 					<button class="btn btn-custom text-uppercase"
 							type="submit"
 							data-ng-disabled="vm.productFormSubmitted">
-						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontAwesomeIcon }}' "></i>
+						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ fontIcon }}' "></i>
 						&nbsp;&nbsp;
 						{{ productAction }} {{ productType }}
 					</button>	

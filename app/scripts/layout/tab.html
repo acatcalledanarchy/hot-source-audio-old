@@ -1,3 +1,6 @@
 <li ng-class="{active: active, disabled: disabled}">
-	<a href ng-click="select()" tab-heading-transclude>{{ heading }}</a>
+	<a href ng-click="select()" tab-heading-transclude>
+		<span class="visible-xs">&nbsp;&nbsp;<i class="{{ icon }}"></i>&nbsp;&nbsp;</span>
+		<span class="hidden-xs">{{ heading }}</span>
+	</a>
 </li>

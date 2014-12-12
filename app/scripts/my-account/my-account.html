@@ -4,32 +4,32 @@
 			<h1 class="text-uppercase">My account</h1>
 			<div class="well well-custom">
 				<tabset>
-					<tab heading="Profile">
+					<tab heading="Profile" icon="fa fa-user">
 						<tabpane>
 							<div data-ui-view="profile"></div>
 						</tabpane>
 					</tab>
-					<tab heading="{{ vm.productOrderLabel | capitalize }}">
+					<tab heading="{{ vm.productOrderLabel | capitalize }}" icon="fa fa-credit-card">
 						<tabpane>
 							<div data-ui-view="orders"></div>
 						</tabpane>
 					</tab>
-					<tab heading="{{ vm.shopTitle }}" ng-show="vm.isAdmin()">
+					<tab heading="{{ vm.shopTitle }}" icon="{{ vm.fontIcon }}" ng-show="vm.isAdmin()">
 						<tabpane>
 							<div data-ui-view="products"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Calendar" ng-show="vm.isAdmin()">
+					<tab heading="Calendar" icon="fa fa-calendar" ng-show="vm.isAdmin()">
 						<tabpane>
 							<div data-ui-view="calendar"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Customers" ng-show="vm.isAdmin()">
+					<tab heading="Customers" icon="fa fa-users" ng-show="vm.isAdmin()">
 						<tabpane>
 							<div data-ui-view="users"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Change password">
+					<tab heading="Change password" icon="fa fa-lock">
 						<tabpane>
 							<div data-change-password-form data-email-address="{{ vm.user.email }}"></div>
 						</tabpane>

@@ -13,7 +13,10 @@
 	function ProductCtrl($scope, Auth, Product, WEBSITE_SETTINGS, $state, $stateParams) {
 
 		var vm = this;
-		vm.fontAwesomeIcon = WEBSITE_SETTINGS.SHOP.FONT_AWESOME_ICON;
+		vm.fontIcon = WEBSITE_SETTINGS.SHOP.FONT_ICON;
+
+console.log(vm.fontIcon);
+
 		vm.product = Product.get($stateParams.productId);
 		vm.productType = WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE;
 		vm.productQuantityLabel = WEBSITE_SETTINGS.SHOP.PRODUCT_QUANTITY_LABEL;

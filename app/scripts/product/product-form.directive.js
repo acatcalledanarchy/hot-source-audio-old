@@ -22,7 +22,7 @@
 				productType: '@',
 				productAction: '@',
 				productQuantityLabel: '@',
-				fontAwesomeIcon: '@'
+				fontIcon: '@'
 			},
 			templateUrl: 'scripts/product/product-form.html',
 			link: link

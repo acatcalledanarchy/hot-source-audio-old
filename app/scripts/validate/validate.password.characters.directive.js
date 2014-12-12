@@ -19,18 +19,13 @@
 
 		return directive;
 
-		/*---------------------------------------------*/
-
 		function link($scope, element, attrs, ngModel) {
 				
 			ngModel.$validators.passwordcharacters = function(value) {
-
 				var status = true;
-				
 				angular.forEach(REQUIRED_PATTERNS, function(pattern) {
 					status = status && pattern.test(value);
 				});
-				
 				return status;
 			}; 
 		}

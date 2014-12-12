@@ -18,11 +18,8 @@
 			replace: true,
 			scope: {
 				product: '=',
-				shopTitleSlug: '@',
-				productType: '@',
 				productAction: '@',
-				productQuantityLabel: '@',
-				fontIcon: '@'
+				websiteSettings: '='
 			},
 			templateUrl: 'scripts/product/product-form.html',
 			link: link

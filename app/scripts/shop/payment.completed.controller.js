@@ -20,8 +20,8 @@
 		} else {	
 			var vm = this;
 			vm.createOrder = createOrder;
-			vm.fontAwesomeIcon = WEBSITE_SETTINGS.SHOP.FONT_AWESOME_ICON;
 			vm.user = Auth.user;
+			vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 			activate();
 		}
 		

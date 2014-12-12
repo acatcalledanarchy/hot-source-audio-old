@@ -13,9 +13,9 @@
 	function FooterCtrl(WEBSITE_SETTINGS) {
 	
 		var vm = this;
-		vm.websiteTitle = WEBSITE_SETTINGS.TITLE;
 		vm.copyrightYear = getCopyrightYear();
-
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		
 		function getCopyrightYear() {
 			var d = new Date(),
 				year = d.getFullYear();

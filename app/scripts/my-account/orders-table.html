@@ -1,10 +1,10 @@
-<h3 class="text-uppercase">{{ vm.productOrderLabel }}</h3>
+<h3 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL }}</h3>
 <div class="well well-custom">
 	<div class="alert alert-info" role="alert" data-ng-if="!vm.orders.length">
 		<p>
 			<i class="fa fa-info-circle"></i>
 			&nbsp;&nbsp;
-			No {{ vm.productOrderLabel | lowercase }} at present.
+			No {{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL | lowercase }} at present.
 		</p>
 	</div>	
 	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length">

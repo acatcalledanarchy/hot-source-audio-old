@@ -19,7 +19,7 @@
 	    vm.calendarDay = new Date();
 	    vm.getEvents = getEvents;
 		vm.products = Product.all;
-		vm.shopTitle = WEBSITE_SETTINGS.SHOP.TITLE;
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	    	
 	    activate();
 

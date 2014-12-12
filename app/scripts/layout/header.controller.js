@@ -15,10 +15,8 @@
 		var vm = this;
 		vm.signedIn = Auth.signedIn;
 		vm.logout = Auth.logout;
-		vm.shopTitle = WEBSITE_SETTINGS.SHOP.TITLE;
 		vm.user = Auth.user;
-		vm.websiteLogo = WEBSITE_SETTINGS.LOGO;
-		vm.websiteTitle = WEBSITE_SETTINGS.TITLE;
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 
 })();

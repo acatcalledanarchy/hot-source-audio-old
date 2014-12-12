@@ -4,13 +4,9 @@
 			<h1 class="text-uppercase">Checkout</h1>
 			<div class="well well-custom">
 				<div data-cart
-					data-base-url="{{ vm.baseUrl }}"
-					data-website-logo="{{ vm.websiteLogo }}"
-					data-pay-pal-email-address="{{ vm.payPalEmailAddress }}"
+					data-website-settings="vm.WEBSITE_SETTINGS"
 					data-signed-in="{{ vm.signedIn() }}"
-					data-user-md5-hash="{{ vm.userMd5Hash }}"
-					data-shop-title-slug="{{ vm.shopTitle | lowercase }}"
-					data-font-awesome-icon="{{ vm.fontAwesomeIcon }}">
+					data-user-profile="vm.userProfile">
 				</div>
 			</div>
 		</div>

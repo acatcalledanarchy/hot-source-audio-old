@@ -14,7 +14,7 @@
 
 		var vm = this;
 		vm.pageContentClass	= 'page-content-home';
-		vm.websiteTitle = WEBSITE_SETTINGS.TITLE;
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 
 })();

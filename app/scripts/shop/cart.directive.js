@@ -13,12 +13,9 @@
         var directive = {
             scope: {
                 baseUrl: '@',
-                fontAwesomeIcon: '@',
-                payPalEmailAddress: '@',
-                shopTitleSlug: '@',
                 signedIn: '@',
-                userMd5Hash: '@',
-                websiteLogo: '@'
+                userProfile: '=',
+                websiteSettings: '='
             },
             restrict : 'AE',
             controller : 'CartController',

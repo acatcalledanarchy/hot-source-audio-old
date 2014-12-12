@@ -19,12 +19,10 @@
 
 		return directive;
 
-		/*---------------------------------------------*/
-
 		function link(scope, element, attrs, ngModel) {
-
+			
 			var firebaseIndex = attrs.recordAvailabilityValidator;
-
+			
 			ngModel.$parsers.push(function(value) {
 				setAsLoading(true);
 				setAsAvailable(false);

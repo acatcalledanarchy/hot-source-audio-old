@@ -8,13 +8,13 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" data-ui-sref="home">
-				<img class="img-responsive" alt="{{ vm.websiteTitle }}" data-ng-src="images/{{ vm.websiteLogo }}">
+				<img class="img-responsive" alt="{{ vm.WEBSITE_SETTINGS.TITLE }}" data-ng-src="images/{{ vm.WEBSITE_SETTINGS.LOGO }}">
 			</a>
 		</div>
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li> 
-					<a class="shop" data-ui-sref="{{ vm.shopTitle | lowercase }}" data-ui-sref-active="active">{{ vm.shopTitle }}</a>
+					<a class="shop" data-ui-sref="{{ vm.WEBSITE_SETTINGS.SHOP.TITLE | lowercase }}" data-ui-sref-active="active">{{ vm.WEBSITE_SETTINGS.SHOP.TITLE }}</a>
 				</li>
 				<li> 
 					<a class="about" data-ui-sref="about" data-ui-sref-active="active">About</a>

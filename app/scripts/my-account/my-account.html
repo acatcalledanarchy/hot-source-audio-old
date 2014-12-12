@@ -9,12 +9,12 @@
 							<div data-ui-view="profile"></div>
 						</tabpane>
 					</tab>
-					<tab heading="{{ vm.productOrderLabel | capitalize }}" icon="fa fa-credit-card">
+					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL | capitalize }}" icon="fa fa-credit-card">
 						<tabpane>
 							<div data-ui-view="orders"></div>
 						</tabpane>
 					</tab>
-					<tab heading="{{ vm.shopTitle }}" icon="{{ vm.fontIcon }}" ng-show="vm.isAdmin()">
+					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.TITLE }}" icon="{{ vm.WEBSITE_SETTINGS.SHOP.FONT_ICON }}" ng-show="vm.isAdmin()">
 						<tabpane>
 							<div data-ui-view="products"></div>
 						</tabpane>

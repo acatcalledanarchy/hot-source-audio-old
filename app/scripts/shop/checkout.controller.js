@@ -12,14 +12,20 @@
 	function CheckoutCtrl(ngCart, Auth, user, WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.baseUrl = WEBSITE_SETTINGS.BASE_URL;
-		vm.fontAwesomeIcon = WEBSITE_SETTINGS.SHOP.FONT_AWESOME_ICON;
 		vm.ngCart = ngCart;
-		vm.payPalEmailAddress = WEBSITE_SETTINGS.SHOP.PAY_PAL_EMAIL_ADDRESS;
-		vm.shopTitle = WEBSITE_SETTINGS.SHOP.TITLE;
 		vm.signedIn = Auth.signedIn;
-		vm.userMd5Hash = user ? user.md5_hash : false;
-		vm.websiteLogo = WEBSITE_SETTINGS.LOGO;
+		vm.userProfile = {};
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+
+		Auth.get(Auth.user.uid).$loaded().then(function(user) {
+			console.log(user);
+			vm.userProfile = {
+				email: user.email,
+				firstName: user.first_name,
+				surname: user.surname,
+				md5Hash: user.md5_hash
+			};
+		});
 	}
 
 })();

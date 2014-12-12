@@ -1,28 +1,28 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
-		<h1 class="text-uppercase">About {{ vm.websiteTitle }}</h1>
+		<h1 class="text-uppercase">About {{ vm.WEBSITE_SETTINGS.TITLE }}</h1>
 		<div class="well well-custom">
 			<div class="row">
 				<div class="col-xs-12 col-sm-4">
-					<h2 class="text-uppercase">{{ vm.websiteTitle }}</h2>
+					<h2 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
 					<p>
-						{{ vm.address.LINE_1 }}
+						{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_1 }}
 						<br>
-						{{ vm.address.LINE_2 }}
+						{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_2 }}
 						<br>
-						{{ vm.address.PARISH }}
+						{{ vm.WEBSITE_SETTINGS.ADDRESS.PARISH }}
 						<br>
-						{{ vm.address.ISLAND }}
+						{{ vm.WEBSITE_SETTINGS.ADDRESS.ISLAND }}
 						<br>
-						{{ vm.address.POSTCODE }}
+						{{ vm.WEBSITE_SETTINGS.ADDRESS.POSTCODE }}
 					</p>
 				</div>			
 				<div class="col-xs-12 col-sm-8">
 					<div class="google-map-container"
 						data-map
 						data-zoom="11" 
-						data-center="[ {{ vm.latitude }}, {{ vm.longitude }} ]" 
+						data-center="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]" 
 						data-disable-default-u-i="false"
 						data-disable-double-click-zoom="true"
 						data-draggable="false"
@@ -35,12 +35,12 @@
 						data-height="100%"
 						data-map-type-id="ROADMAP">
 						<marker class="marker"
-							data-position="[ {{ vm.latitude }}, {{ vm.longitude }} ]"
-							data-title="{{ vm.shopTitle }}"
+							data-position="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]"
+							data-title="{{ vm.WEBSITE_SETTINGS.TITLE }}"
 							data-animation="Animation.DROP"
 							data-draggable="false"
 							data-visible="true"
-							data-icon="images/{{vm.googleMapMarkerIcon }}"></marker>
+							data-icon="images/{{vm.WEBSITE_SETTINGS.GOOGLE.MAP.MARKER_ICON }}"></marker>
 					</div>
 				</div>
 			</div>

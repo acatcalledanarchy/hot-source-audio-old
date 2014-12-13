@@ -14,8 +14,8 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr data-ng-repeat="user in vm.users" data-ng-if="user.md5_hash && user.$id != vm.userId">
-					<td>
+				<tr data-ng-repeat="user in vm.users" data-ng-if="user.md5_hash && user.$id != vm.user.$id">
+					<td> 
 						<!--
 						<img class="img-circle" ng-src="//gravatar.com/avatar/{{ user.md5_hash }}" alt="{{ user.first_name }} {{ user.surname }}">
 						-->

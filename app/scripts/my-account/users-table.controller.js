@@ -14,7 +14,7 @@
 	function UsersCtrl(user, users, $scope, Auth) {
 
 		var vm = this;
-		vm.userId = user.uid;
+		vm.user = user;
 		vm.users = users;
 		vm.updateAdminStatus = function(userId, isAdmin) {
 			Auth.updateAdminStatus(userId, isAdmin);

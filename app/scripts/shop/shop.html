@@ -57,7 +57,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="form-group" data-ng-show="{{ vm.signedIn() && vm.isAdmin() }}">
+							<div class="form-group" data-ng-show="{{ vm.user && vm.user.is_admin }}">
 								<div class="col-xs-6">
 									<a href="#/{{ vm.WEBSITE_SETTINGS.SHOP.TITLE | lowercase }}/{{ product.$id }}" class="btn btn-default btn-custom text-uppercase" data-ng-disabled="vm.editingProduct">
 										<i class="fa" data-ng-class="( vm.editingProduct ) ? 'fa-spin fa-spinner' : 'fa-edit'"></i>
@@ -76,7 +76,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6" data-ng-show="vm.signedIn() && vm.isAdmin()">
+				<div class="col-xs-6" data-ng-show="vm.user && vm.user.is_admin">
 					<div data-product-form
 						data-product="product"
 						data-product-action="add"

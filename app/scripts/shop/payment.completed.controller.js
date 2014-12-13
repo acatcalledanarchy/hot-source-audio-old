@@ -20,7 +20,7 @@
 		} else {	
 			var vm = this;
 			vm.createOrder = createOrder;
-			vm.user = Auth.user;
+			vm.user = user;
 			vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 			activate();
 		}

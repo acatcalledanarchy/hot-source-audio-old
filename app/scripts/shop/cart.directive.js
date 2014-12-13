@@ -13,8 +13,7 @@
         var directive = {
             scope: {
                 baseUrl: '@',
-                signedIn: '@',
-                userProfile: '=',
+                user: '=',
                 websiteSettings: '='
             },
             restrict : 'AE',

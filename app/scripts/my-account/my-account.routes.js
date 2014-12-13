@@ -19,7 +19,9 @@
 			url: '/my-account',
 			resolve: {
 				user: function(Auth) {
-					return Auth.resolveUser();
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
 				},
 				products: function(Product) {
 					return Product.all;

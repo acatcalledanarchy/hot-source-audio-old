@@ -14,17 +14,17 @@
 							<div data-ui-view="orders"></div>
 						</tabpane>
 					</tab>
-					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.TITLE }}" icon="{{ vm.WEBSITE_SETTINGS.SHOP.FONT_ICON }}" ng-show="vm.isAdmin">
+					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.TITLE }}" icon="{{ vm.WEBSITE_SETTINGS.SHOP.FONT_ICON }}" ng-show="vm.user.is_admin">
 						<tabpane>
 							<div data-ui-view="products"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Calendar" icon="fa fa-calendar" ng-show="vm.isAdmin">
+					<tab heading="Calendar" icon="fa fa-calendar" ng-show="vm.user.is_admin">
 						<tabpane>
 							<div data-ui-view="calendar"></div>
 						</tabpane>
 					</tab>
-					<tab heading="Customers" icon="fa fa-users" ng-show="vm.isAdmin">
+					<tab heading="Customers" icon="fa fa-users" ng-show="vm.user.is_admin">
 						<tabpane>
 							<div data-ui-view="users"></div>
 						</tabpane>

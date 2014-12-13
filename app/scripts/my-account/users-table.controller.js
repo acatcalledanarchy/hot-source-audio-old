@@ -9,12 +9,12 @@
 		.module('app.my-account')
 		.controller('UsersCtrl', UsersCtrl);
 
-	UsersCtrl.$inject = ['users', '$scope', 'Auth'];
+	UsersCtrl.$inject = ['user', 'users', '$scope', 'Auth'];
 
-	function UsersCtrl(users, $scope, Auth) {
+	function UsersCtrl(user, users, $scope, Auth) {
 
 		var vm = this;
-		vm.userId = Auth.user.uid;
+		vm.userId = user.uid;
 		vm.users = users;
 		vm.updateAdminStatus = function(userId, isAdmin) {
 			Auth.updateAdminStatus(userId, isAdmin);

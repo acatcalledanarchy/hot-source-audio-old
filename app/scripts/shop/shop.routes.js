@@ -21,9 +21,11 @@
 			url: '/' + shopTitleSlug,
 			resolve: {
 				user: function(Auth) {
-					return Auth.resolveUser();
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
 				}
-			},
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -54,9 +56,11 @@
 			url: '/' + shopTitleSlug + '/:productId',
 			resolve: {
 				user: function(Auth) {
-					return Auth.resolveUser();
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
 				}
-			},			
+			},					
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -87,9 +91,11 @@
 			url: '/checkout',
 			resolve: {
 				user: function(Auth) {
-					return Auth.resolveUser();
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
 				}
-			},
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -117,12 +123,14 @@
 			}
 		})
 		.state('app.checkoutcomplete', {
+			url: '/checkout/:userId',
 			resolve: {
 				user: function(Auth) {
-					return Auth.resolveUser();
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
 				}
-			},
-			url: '/checkout/:userId',
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -151,6 +159,13 @@
 		})
 		.state('app.payment-cancelled', {
 			url: '/payment-cancelled',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

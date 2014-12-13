@@ -9,29 +9,28 @@
 		.module('app.my-account')
 		.controller('ProfileCtrl', ProfileCtrl);
 
-	ProfileCtrl.$inject = ['Auth'];
+	ProfileCtrl.$inject = ['user'];
 
-	function ProfileCtrl(Auth) {
+	function ProfileCtrl(user) {
 
 		var vm = this;
+		vm.profile = {};
+		vm.user = user;
 
-		Auth.user.profile.$loaded().then(function(profile) {
-    		vm.profile = {};
-    		switch(Auth.user.provider) {
-				case 'password':
-					vm.profile.avatar = '//www.gravatar.com/avatar/' + profile.md5_hash;
-					vm.profile.displayName = profile.first_name + ' ' + profile.surname;
-					vm.profile.emailAddress = profile.email;
-				break;
-				case 'facebook':
-					vm.profile.avatar = profile.thirdPartyUserData.picture.data.url;
-					vm.profile.displayName = profile.displayName;
-					vm.profile.emailAddress = profile.thirdPartyUserData.email;
-				break;
-				case' twitter':
-				break;
-			}
-		});
+		switch(vm.user.provider) {
+			case 'password':
+				vm.profile.avatar = '//www.gravatar.com/avatar/' + vm.user.md5_hash;
+				vm.profile.displayName = vm.user.first_name + ' ' + vm.user.surname;
+				vm.profile.emailAddress = vm.user.email;
+			break;
+			case 'facebook':
+				vm.profile.avatar = vm.user.thirdPartyUserData.picture.data.url;
+				vm.profile.displayName = vm.user.displayName;
+				vm.profile.emailAddress = vm.user.thirdPartyUserData.email;
+			break;
+			case' twitter':
+			break;
+		}
 	}
 
 })();

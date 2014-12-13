@@ -11,6 +11,7 @@
 				<img class="img-responsive" alt="{{ vm.WEBSITE_SETTINGS.TITLE }}" data-ng-src="images/{{ vm.WEBSITE_SETTINGS.LOGO }}">
 			</a>
 		</div>
+		<!--{{ vm.user | json }}-->
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li> 
@@ -24,23 +25,23 @@
 					<a class="contact" data-ui-sref="app.contact" data-ui-sref-active="active">Contact</a>
 				</li>
 				-->
-				<li data-ng-if="!vm.signedIn()">
+				<li data-ng-if="!vm.user">
 					<a class="auth" data-ui-sref="app.login" data-ui-sref-active="active">Login</a>
 				</li>
-				<li data-ng-if="vm.signedIn()">
+				<li data-ng-if="vm.user">
 					<a class="auth" data-ui-sref="app.my-account" data-ui-sref-active="active">My account</a>
 				</li>
-				<li data-ng-if="vm.signedIn()">
+				<li data-ng-if="vm.user">
 					<a class="auth" data-ui-sref="app.home" data-ng-click="vm.logout()">Logout</a>
 				</li>
 				<li class="hidden-xs">
 					<a class="checkout" data-ui-sref="app.checkout" data-ui-sref-active="active">
 						<summary></summary>
 					</a>
-				</li>	
-				<li class="hidden-xs" data-ng-if="vm.signedIn()">
+				</li>
+				<li class="hidden-xs" data-ng-if="vm.user">
 					<a class="my-profile" data-ui-sref="app.my-account">
-						<img class="img-circle" data-ng-src="//gravatar.com/avatar/{{ vm.user.profile.md5_hash }}" />
+						<img class="img-circle" data-ng-src="//gravatar.com/avatar/{{ vm.user.md5_hash }}" />
 					</a>
 				</li>		
 			</ul>

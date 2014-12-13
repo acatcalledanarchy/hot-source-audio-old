@@ -1,8 +1,6 @@
 <h3 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL }}</h3>
 <div class="well well-custom">
 	<div class="alert alert-info" role="alert" data-ng-if="!vm.orders.length">
-		{{ vm.orders | json }}
-		Orders length[{{ vm.orders.length }}]
 		<p>
 			<i class="fa fa-info-circle"></i>
 			&nbsp;&nbsp;
@@ -16,7 +14,7 @@
 				<h4>{{ order.order_time | date: 'h:mma' | lowercase }}</h4>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-				<div data-ng-if="vm.isAdmin">
+				<div data-ng-if="vm.user.is_admin">
 					<h5 class="text-right hidden-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>
 					<h4 class="text-right hidden-xs">{{ order.profile.email }}</h4>
 					<h5 class="visible-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>

@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-xs-6"></div>
             <div class="col-xs-6">
-                <a class="btn btn-custom text-uppercase" data-ui-sref="{{ websiteSettings.SHOP.TITLE | lowercase }}">
+                <a class="btn btn-custom text-uppercase" data-ui-sref="app.{{ websiteSettings.SHOP.TITLE | lowercase }}">
                     <i class="{{ websiteSettings.SHOP.FONT_ICON }}"></i>
                     &nbsp;&nbsp;
                     Continue shopping
@@ -104,7 +104,7 @@
     </div>
     <div class="col-xs-6"></div>
     <div class="col-xs-6" data-ng-if="signedIn != 'true'">
-        <a ui-sref="login" class="btn btn-custom text-uppercase pull-right">
+        <a ui-sref="app.login" class="btn btn-custom text-uppercase pull-right">
             <i class="fa fa-lock"></i>
             &nbsp;&nbsp;
             Please login or register to proceed to Checkout

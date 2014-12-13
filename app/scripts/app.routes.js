@@ -17,15 +17,17 @@
 
 		$stateProvider
 		.state('app', {
-			abstract: true,
-			resolve: {
-				user: function(Auth) {
-					return Auth.resolveUser();
-				}
-			},
+			abstract: true
 		})
 		.state('app.home', {
 			url: '/',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -54,6 +56,13 @@
 		})
 		.state('app.about', {
 			url: '/about', 
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -82,6 +91,13 @@
 		})
 		.state('app.contact', {
 			url: '/contact',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},			
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -110,6 +126,13 @@
 		})
 		.state('404', {
 			url: '/404',
+			resolve: {
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},			
 			views: {
 				'header': {
 					templateUrl: 'scripts/layout/header.html',

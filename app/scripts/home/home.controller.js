@@ -8,9 +8,9 @@
 		.module('app')
 		.controller('HomeCtrl', HomeCtrl);
 
-	HomeCtrl.$inject = ['Auth', 'WEBSITE_SETTINGS'];
+	HomeCtrl.$inject = ['user', 'Auth', 'WEBSITE_SETTINGS'];
 
-	function HomeCtrl(Auth, WEBSITE_SETTINGS) {
+	function HomeCtrl(user, Auth, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.pageContentClass	= 'page-content-home';

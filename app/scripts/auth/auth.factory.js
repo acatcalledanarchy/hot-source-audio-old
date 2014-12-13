@@ -10,9 +10,9 @@
 		.module('app.auth')
 		.factory('Auth', Auth);	
 
-	Auth.$inject = ['$firebase', '$firebaseSimpleLogin', 'FIREBASE_URL', '$rootScope', 'toastr'];
+	Auth.$inject = ['$firebase', '$firebaseSimpleLogin', 'FIREBASE_URL', '$rootScope', '$location', 'toastr'];
 
-	function Auth($firebase, $firebaseSimpleLogin, FIREBASE_URL, $rootScope, toastr) {
+	function Auth($firebase, $firebaseSimpleLogin, FIREBASE_URL, $rootScope, $location, toastr) {
 		
 		var ref = new Firebase(FIREBASE_URL);
 		var auth = $firebaseSimpleLogin(ref);
@@ -50,6 +50,7 @@
 		    },
 		    logout: function () {
 				auth.$logout();
+				$location.path('/');
 		    },
     		oAuthLogin: function(provider) {
 				return auth.$login(provider, {
@@ -60,9 +61,17 @@
 				return auth.$createUser(user.email, user.password);
 		    },
 		    resolveUser: function() {
-		    	console.log(auth.$getCurrentUser());
-
-				return auth.$getCurrentUser();
+		    	return auth.$getCurrentUser().then(function(user) {
+		    		if(user) {
+						return Service.get(user.uid).$loaded().then(function(profile) {
+							profile.provider = user.provider;
+							return profile;
+						});
+					} else {
+						return user;
+					}
+				});
+				//return userRef;
 		    },
 		    signedIn: function() {
 				return !!Service.user.provider;

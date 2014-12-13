@@ -8,12 +8,13 @@
 		.module('app')
 		.controller('ContactCtrl', ContactCtrl);
 
-	ContactCtrl.$inject = ['WEBSITE_SETTINGS'];
+	ContactCtrl.$inject = ['user', 'WEBSITE_SETTINGS'];
 
-	function ContactCtrl(WEBSITE_SETTINGS) {
+	function ContactCtrl(user, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.pageContentClass	= 'page-content-contact';
-		vm.websiteTitle = WEBSITE_SETTINGS.TITLE;
+		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.user = user;
 	}
 })();

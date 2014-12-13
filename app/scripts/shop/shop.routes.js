@@ -20,6 +20,7 @@
 		.state('app.' + shopTitleSlug, {
 			url: '/' + shopTitleSlug,
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
@@ -55,12 +56,13 @@
 		.state('app.' + shopTitleSlug + 'detail', {
 			url: '/' + shopTitleSlug + '/:productId',
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
 					});
 				}
-			},					
+			},				
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -90,6 +92,7 @@
 		.state('app.checkout', {
 			url: '/checkout',
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
@@ -125,12 +128,13 @@
 		.state('app.checkoutcomplete', {
 			url: '/checkout/:userId',
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
 					});
 				}
-			},			
+			},		
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -160,12 +164,13 @@
 		.state('app.payment-cancelled', {
 			url: '/payment-cancelled',
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
 					});
 				}
-			},			
+			},		
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

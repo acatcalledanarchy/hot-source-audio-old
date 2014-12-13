@@ -18,10 +18,8 @@
 		.state('app.login', {
 			url: '/login',
 			resolve: {
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
+				user: function(user) {
+					return user;
 				}
 			},			
 			views: {

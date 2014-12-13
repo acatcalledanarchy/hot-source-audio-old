@@ -18,13 +18,22 @@
 		.state('app.my-account', {
 			url: '/my-account',
 			resolve: {
+				Auth: 'Auth',
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
 					});
 				},
+				Product: 'Product',
 				products: function(Product) {
 					return Product.all;
+				},
+				Order: 'Order',
+				orders: function(Order) {
+					return Order.all;
+				},
+				users: function(Auth) {
+					return Auth.all;
 				}
 			},
 			views: {
@@ -50,26 +59,17 @@
 				'orders@app.my-account': {
 					templateUrl: 'scripts/my-account/orders-table.html',
 					controller: 'OrdersCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						orders: function(Order) {
-							return Order.all;
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'products@app.my-account': {
 					templateUrl: 'scripts/my-account/products-table.html',
 					controller: 'ProductsCtrl',
-					controllerAs: 'vm'				},
+					controllerAs: 'vm'
+				},
 				'users@app.my-account': {
 					templateUrl: 'scripts/my-account/users-table.html',
 					controller: 'UsersCtrl',
-					controllerAs: 'vm',
-					resolve: {
-						users: function(Auth) {
-							return Auth.all;
-						}
-					}
+					controllerAs: 'vm'
 				},
 				'calendar@app.my-account': {
 					templateUrl: 'scripts/my-account/calendar.html',

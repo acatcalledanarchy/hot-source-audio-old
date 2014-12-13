@@ -41,7 +41,7 @@
 				</li>
 				<li class="hidden-xs" data-ng-if="vm.user">
 					<a class="my-profile" data-ui-sref="app.my-account">
-						<img class="img-circle" data-ng-src="//gravatar.com/avatar/{{ vm.user.md5_hash }}" />
+						<img class="img-circle" data-ng-src="{{ vm.user.avatar }}" />
 					</a>
 				</li>		
 			</ul>

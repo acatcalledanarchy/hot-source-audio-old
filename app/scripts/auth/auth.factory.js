@@ -64,14 +64,26 @@
 		    	return auth.$getCurrentUser().then(function(user) {
 		    		if(user) {
 						return Service.get(user.uid).$loaded().then(function(profile) {
-							profile.provider = user.provider;
+							switch(user.provider) {
+								case 'password':
+									profile.avatar = '//www.gravatar.com/avatar/' + user.md5_hash;
+									profile.display_name = profile.first_name + ' ' + profile.surname;
+								break;
+								case 'facebook':
+									profile.avatar = user.thirdPartyUserData.picture.data.url;
+									profile.display_name = user.displayName;
+									profile.email = user.thirdPartyUserData.email;
+								break;
+								case' twitter':
+									console.log('Twitter');
+								break;
+							}
 							return profile;
 						});
 					} else {
 						return user;
 					}
 				});
-				//return userRef;
 		    },
 		    signedIn: function() {
 				return !!Service.user.provider;

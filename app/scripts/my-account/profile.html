@@ -1,13 +1,13 @@
 <h3 class="text-uppercase">Your profile</h3>
 <div class="well well-custom">	
-	<img class="img-responsive img-circle" data-ng-src="{{ vm.profile.avatar }}">
-	<h5>{{ vm.profile.displayName  }}</h5>
+	<img class="img-responsive img-circle" data-ng-src="{{ vm.user.avatar }}">
+	<h5>{{ vm.user.display_name  }}</h5>
 	<p>
-		<strong>{{ vm.profile.emailAddress }}</strong>
+		<strong>{{ vm.user.email }}</strong>
 	</p>
 	<!--
 	<p>
-		Created on: {{ vm.user.profile.created_on | date: 'dd/MM/yyyy @ HH:mm:ss'}}
+		Created on: {{ vm.user.created_on | date: 'dd/MM/yyyy @ HH:mm:ss'}}
 	</p>
 	-->
 </div>

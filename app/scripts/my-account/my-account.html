@@ -4,14 +4,14 @@
 			<h1 class="text-uppercase">My account</h1>
 			<div class="well well-custom">
 				<tabset>
-					<tab heading="Profile" icon="fa fa-user">
-						<tabpane>
-							<div data-ui-view="profile"></div>
-						</tabpane>
-					</tab>
 					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL | capitalize }}" icon="fa fa-credit-card">
 						<tabpane>
 							<div data-ui-view="orders"></div>
+						</tabpane>
+					</tab>
+					<tab heading="Profile" icon="fa fa-user">
+						<tabpane>
+							<div data-ui-view="profile"></div>
 						</tabpane>
 					</tab>
 					<tab heading="{{ vm.WEBSITE_SETTINGS.SHOP.TITLE }}" icon="{{ vm.WEBSITE_SETTINGS.SHOP.FONT_ICON }}" ng-show="vm.user.is_admin">

@@ -37,6 +37,7 @@
 				return profileRef.$set(user.uid, profile);
 			},
 			get: function(userId) {
+				console.log('Auth factory user id', userId);
 				return $firebase(ref.child('profile').child(userId)).$asObject();
 			},
 			isAdmin: function() {

@@ -7,7 +7,7 @@
 	'use strict';
 
 	angular
-		.module('app.shop')
+		.module('app.my-account')
 		.factory('Order', Order);
 
 	Order.$inject = ['$firebase', 'FIREBASE_URL', 'ngCart', 'Auth', 'Product'];

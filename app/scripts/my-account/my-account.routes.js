@@ -28,10 +28,6 @@
 				products: function(Product) {
 					return Product.all;
 				},
-				Order: 'Order',
-				orders: function(Order) {
-					return Order.all;
-				},
 				users: function(Auth) {
 					return Auth.all;
 				}
@@ -59,7 +55,13 @@
 				'orders@app.my-account': {
 					templateUrl: 'scripts/my-account/orders-table.html',
 					controller: 'OrdersCtrl',
-					controllerAs: 'vm'
+					controllerAs: 'vm',
+					resolve: {
+						Order: 'Order',
+						orders: function(Order) {
+							return Order.all;
+						}
+					}
 				},
 				'products@app.my-account': {
 					templateUrl: 'scripts/my-account/products-table.html',

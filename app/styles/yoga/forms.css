@@ -20,6 +20,28 @@
 	border-color: #4EBBEE;
 }
 
+.btn-danger-custom,
+.btn-danger-custom:focus {
+	width: 100%;
+	text-align: left;
+	color: white;
+	background: #a94442;
+}
+
+.btn-danger-custom[disabled] {
+	border-color: #a94442;
+	color: #a94442;
+	background: white !important;
+	cursor: default !important;
+	opacity: 1 !important;
+}
+
+.btn-danger-custom:hover {
+	color: #a94442;
+	background: white;
+	border-color: #a94442;
+}
+
 /* Error messages animations */
 .ng-show-animate.ng-hide-add {
  	webkit-animation: fadeIn 0.3s both ease-in;

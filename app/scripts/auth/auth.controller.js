@@ -8,16 +8,13 @@
 		.module('app.auth')
 		.controller('AuthCtrl', AuthCtrl);
 
-	AuthCtrl.$inject = ['user', '$location'];
+	AuthCtrl.$inject = ['user'];
 
-	function AuthCtrl(user, $location) {
-
-		if(user) {
-			$location.path('/my-account');
-		}
+	function AuthCtrl(user) {
 
 		var vm = this;
-  		vm.pageContentClass	= 'page-content-auth';		
+  		vm.pageContentClass	= 'page-content-auth';
+  		vm.user = user;	
 	}
 
 })();

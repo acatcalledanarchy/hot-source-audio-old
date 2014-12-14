@@ -5,18 +5,22 @@
 		<div class="well well-custom">
 			<div class="row">
 				<div class="col-xs-12 col-sm-4">
-					<h2 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
-					<p>
-						{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_1 }}
-						<br>
-						{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_2 }}
-						<br>
-						{{ vm.WEBSITE_SETTINGS.ADDRESS.PARISH }}
-						<br>
-						{{ vm.WEBSITE_SETTINGS.ADDRESS.ISLAND }}
-						<br>
-						{{ vm.WEBSITE_SETTINGS.ADDRESS.POSTCODE }}
-					</p>
+					<div class="row">
+						<div class="col-xs-12">
+							<h2 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
+							<p>
+								{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_1 }}
+								<br>
+								{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_2 }}
+								<br>
+								{{ vm.WEBSITE_SETTINGS.ADDRESS.PARISH }}
+								<br>
+								{{ vm.WEBSITE_SETTINGS.ADDRESS.ISLAND }}
+								<br>
+								{{ vm.WEBSITE_SETTINGS.ADDRESS.POSTCODE }}
+							</p>
+						</div>
+					</div>
 				</div>			
 				<div class="col-xs-12 col-sm-8">
 					<div class="google-map-container"

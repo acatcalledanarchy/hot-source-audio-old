@@ -94,7 +94,7 @@
                 <input type="hidden" name="shopping_url" value="{{ websiteSettings.BASE_URL }}#/{{ websiteSettings.SHOP.TITLE | lowercase }}">
                 <input type="hidden" name="ccp_logo_image" value="{{ websiteSettings.BASE_URL }}images/{{ websiteSettings.LOGO }}">
                 <input type="hidden" name="image_url" value="{{ websiteSettings.BASE_URL }}images/{{ websiteSettings.LOGO }}">
-                <input type="hidden" name="return" value="{{ websiteSettings.BASE_URL }}#/checkout/{{ user.md5Hash }}">
+                <input type="hidden" name="return" value="{{ websiteSettings.BASE_URL }}#/checkout/{{ user.md5_hash }}">
                 <input type="hidden" name="cancel_return" value="{{ websiteSettings.BASE_URL }}#/payment-cancelled">
                 <button class="btn btn-primary text-uppercase pull-right" role="button" data-ng-disabled="ngCart.getPayPalProcessing()">
                     <i class="fa" data-ng-class="( ngCart.getPayPalProcessing() ) ? 'fa-spin fa-spinner' : 'fa-paypal'"></i>

@@ -7,54 +7,96 @@
 			No {{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_ORDER_LABEL | lowercase }} at present.
 		</p>
 	</div>	
-	<div data-ng-repeat="order in vm.orders | orderBy: '-orderTime'" data-ng-if="vm.orders.length">
-		<div class="row">
-			<div class="col-xs-12 col-sm-6">
-				<h5>{{ order.order_time | date: 'dd/MM/yyyy' }}</h5>
-				<h4>{{ order.order_time | date: 'h:mma' | lowercase }}</h4>
-			</div>
-			<div class="col-xs-12 col-sm-6">
-				<div data-ng-if="vm.user.is_admin">
+	<div data-ng-repeat="order in vm.orders | orderBy: '-order_time'" data-ng-if="vm.orders.length">
+		<div data-ng-if="vm.user.is_admin">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<h5>{{ order.order_time | date: 'dd/MM/yyyy' }}</h5>
+					<h4>{{ order.order_time | date: 'h:mma' | lowercase }}</h4>
+				</div>
+				<div class="col-xs-12 col-sm-6">
 					<h5 class="text-right hidden-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>
 					<h4 class="text-right hidden-xs">{{ order.profile.email }}</h4>
 					<h5 class="visible-xs">{{ order.profile.first_name }} {{ order.profile.surname }}</h5>
 					<h4 class="visible-xs">{{ order.profile.email }}</h4>
 				</div>
 			</div>
+			<div class="table-responsive">
+				<table class="table table-striped ngCart cart">
+					<thead>
+						<tr>
+							<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE | capitalize }}</th>
+							<th>Price</th>
+							<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_QUANTITY_LABEL | capitalize }}</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr data-ng-if="vm.ngCart.getTax()">
+							<th></th>
+							<th>Tax ({{ order.tax_rate }}%):</th>
+							<th>{{ order.total_tax | currency: '£' }}</th>
+							<th></th>
+						</tr>
+		                <tr>
+		                    <th></th>
+		                    <th></th>
+		                    <th>Total:</th>
+		                    <th>{{ order.total_cost | currency: '£' }}</th>
+		                </tr>
+	     	   		</tfoot>
+					<tbody>
+						<tr data-ng-repeat="product in order.products">
+							<td>{{ product.name }}</td>
+							<td>{{ product.price | currency: '£' }}</td>
+							<td>{{ product.quantity }}</td>
+							<td>{{ product.price * product.quantity | currency: '£' }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-		<div class="table-responsive">
-			<table class="table table-striped ngCart cart">
-				<thead>
-					<tr>
-						<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE | capitalize }}</th>
-						<th>Price</th>
-						<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_QUANTITY_LABEL | capitalize }}</th>
-						<th>Total</th>
-					</tr>
-				</thead>
-				<tfoot>
-					<tr data-ng-if="vm.ngCart.getTax()">
-						<th></th>
-						<th>Tax ({{ order.tax_rate }}%):</th>
-						<th>{{ order.total_tax | currency: '£' }}</th>
-						<th></th>
-					</tr>
-	                <tr>
-	                    <th></th>
-	                    <th></th>
-	                    <th>Total:</th>
-	                    <th>{{ order.total_cost | currency: '£' }}</th>
-	                </tr>
-     	   		</tfoot>
-				<tbody>
-					<tr data-ng-repeat="product in order.products">
-						<td>{{ product.name }}</td>
-						<td>{{ product.price | currency: '£' }}</td>
-						<td>{{ product.quantity }}</td>
-						<td>{{ product.price * product.quantity | currency: '£' }}</td>
-					</tr>
-				</tbody>
-			</table>
+		<div data-ng-if="!vm.user.is_admin">
+			<div class="row" data-ng-if="vm.user.$id == order.creator_uid ">
+				<div class="col-xs-12">
+					<h5>{{ order.order_time | date: 'dd/MM/yyyy' }}</h5>
+					<h4>{{ order.order_time | date: 'h:mma' | lowercase }}</h4>
+				</div>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped ngCart cart">
+					<thead>
+						<tr>
+							<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE | capitalize }}</th>
+							<th>Price</th>
+							<th>{{ vm.WEBSITE_SETTINGS.SHOP.PRODUCT_QUANTITY_LABEL | capitalize }}</th>
+							<th>Total</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr data-ng-if="vm.ngCart.getTax()">
+							<th></th>
+							<th>Tax ({{ order.tax_rate }}%):</th>
+							<th>{{ order.total_tax | currency: '£' }}</th>
+							<th></th>
+						</tr>
+		                <tr>
+		                    <th></th>
+		                    <th></th>
+		                    <th>Total:</th>
+		                    <th>{{ order.total_cost | currency: '£' }}</th>
+		                </tr>
+	     	   		</tfoot>
+					<tbody>
+						<tr data-ng-repeat="product in order.products">
+							<td>{{ product.name }}</td>
+							<td>{{ product.price | currency: '£' }}</td>
+							<td>{{ product.quantity }}</td>
+							<td>{{ product.price * product.quantity | currency: '£' }}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
 </div>

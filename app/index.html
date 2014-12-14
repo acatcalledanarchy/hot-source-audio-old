@@ -24,41 +24,21 @@
 	<link rel="stylesheet" type="text/css" href="styles/yoga.css">
 	<!-- endbuild -->
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sintony:400,700">
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-57546047-1', 'auto');
-  //ga('send', 'pageview');
-
-</script>
 </head>
 <body ng-class="$state.current.data.pageBodyClass">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!--
-    |
-    | -> DATABASE STUFF
-    | * Orders not displaying for customers but they are for admin
-    |
     | -> COSMETICS
     |
-    | * Change colours of Toastr to white blue / green border & copy 
     | * Fix issue where My account doesn't scroll in occasionally
-    | * Preload background images when first accessing site
-    |   http://www.bennadel.com/blog/2597-preloading-images-in-angularjs-with-promises.htm
-    | * Hide calendar options and modal for time being
+    | * Sort out small stuff (ie: avatar basket links in menu on small)
     |
     | * Scroll to top when changing views particularly for mobile where it's more noticable
-    | * Toastr don't fade out like John Papa's version does?
-    | * Social media: http://scotch.io/tutorials/css/css3-hidden-social-buttons
     | * Sort out browse happy styling
     | * Hide Angular Loading spinner on small etc
     | * SASSify CSS
-    | * Change delete button to red for usability
     | * Display 'Sold out' banner rather than hiding product in shop?
     |
     | -> MISCELLANEOUS
@@ -66,7 +46,6 @@
     | * Message to display in shop area when no products available?
     | * Sort out John Papa style guide for Factories as it's all getting a little confusing the way it is at the moment
     | * Sort out ngCart and assimilate into site?
-    | * Navigate to Orders tab from Paymeny completed page is this possible?
     -->
 
     <header ui-view="header"></header>
@@ -79,9 +58,15 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
-
     <script src="//maps.google.com/maps/api/js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+        ga('create', 'UA-57546047-1', 'auto');
+    </script>    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -131,11 +116,9 @@
     <script src="bower_components/angularitics/src/angulartics-intercom.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.module.js"></script>
 	<script src="scripts/app.routes.js"></script>
-
 	<!-- Auth -->
 	<script src="scripts/auth/auth.module.js"></script>
 	<script src="scripts/auth/auth.routes.js"></script>
@@ -144,7 +127,6 @@
 	<script src="scripts/auth/auth.controller.js"></script>
 	<script src="scripts/auth/login.form.controller.js"></script>
 	<script src="scripts/auth/register.form.controller.js"></script>
-
 	<!-- My account -->
 	<script src="scripts/my-account/my-account.module.js"></script>
 	<script src="scripts/my-account/my-account.routes.js"></script>
@@ -152,14 +134,13 @@
 	<script src="scripts/my-account/change-password-form.directive.js"></script>
 	<script src="scripts/my-account/profile.factory.js"></script>
 	<script src="scripts/my-account/profile.controller.js"></script>
+    <script src="scripts/my-account/order.factory.js"></script>    
 	<script src="scripts/my-account/orders-table.controller.js"></script>
 	<script src="scripts/my-account/products-table.controller.js"></script>
 	<script src="scripts/my-account/users-table.controller.js"></script>
 	<script src="scripts/my-account/calendar.controller.js"></script>
-
 	<!-- ngCart -->
 	<script src="scripts/ngCart/ngCart.js"></script>
-
 	<!-- Shop -->
 	<script src="scripts/shop/shop.module.js"></script>
 	<script src="scripts/shop/shop.routes.js"></script>
@@ -168,22 +149,17 @@
 	<script src="scripts/shop/cart.directive.js"></script>
 	<script src="scripts/shop/checkout.background.controller.js"></script>
 	<script src="scripts/shop/checkout.controller.js"></script>
-	<script src="scripts/shop/order.factory.js"></script>
 	<script src="scripts/shop/payment.completed.controller.js"></script>
 	<script src="scripts/shop/shop.background.controller.js"></script>
 	<script src="scripts/shop/shop.controller.js"></script>
-
 	<script src="scripts/shop/summary.directive.js"></script>
-
 	<!-- Product -->
 	<script src="scripts/product/product.controller.js"></script>
 	<script src="scripts/product/product.factory.js"></script>
 	<script src="scripts/product/product-form.directive.js"></script>        
-
 	<!-- Core -->
 	<script src="scripts/core/core.module.js"></script>
 	<script src="scripts/core/constants.js"></script>
-
 	<!-- Layout -->
 	<script src="scripts/about/about.background.controller.js"></script>
 	<script src="scripts/about/about.controller.js"></script>
@@ -194,11 +170,9 @@
 	<script src="scripts/layout/footer.controller.js"></script>
 	<script src="scripts/layout/header.controller.js"></script>
     <script src="scripts/layout/tabs.module.js"></script>
-
     <!-- Errors -->
     <script src="scripts/error/error.background.controller.js"></script>
     <script src="scripts/error/error.controller.js"></script>
-
 	<!-- Validate Module -->
 	<script src="scripts/validate/validate.module.js"></script>
 	<script src="scripts/validate/constants.js"></script>
@@ -207,11 +181,9 @@
 	<script src="scripts/validate/validate.match.directive.js"></script>
     <script src="scripts/validate/validate.dont.match.directive.js"></script>
 	<script src="scripts/validate/validate.record.availability.directive.js"></script>  
-
 	<!-- Filter Module -->
 	<script src="scripts/filters/filters.module.js"></script>
 	<script src="scripts/filters/capitalize.filter.js"></script>
-
 	<!-- endbuild -->
 </body>
 </html>

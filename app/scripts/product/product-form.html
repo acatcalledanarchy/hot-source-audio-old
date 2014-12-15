@@ -1,7 +1,7 @@
 <div class="well well-custom">
 	<h2 class="text-uppercase">
-		<span data-ng-if="productAction == 'add'">Add {{ productType }}</span>
-		<span data-ng-if="productAction == 'edit'">Edit {{ productType }}</span>
+		<span data-ng-if="productAction == 'add'">Add {{ websiteSettings.SHOP.PRODUCT_TYPE }}</span>
+		<span data-ng-if="productAction == 'edit'">Edit {{ websiteSettings.SHOP.PRODUCT_TYPE }}</span>
 	</h2>
 	<div class="alert alert-danger" data-ng-show="productError" role="alert">
 		<p>

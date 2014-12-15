@@ -130,7 +130,7 @@
 				</div>
 				<div class="col-xs-6">
 					<div class="form-group" data-show-errors>
-						<label class="text-uppercase" for="productQuantity">{{ productQuantityLabel }}</label>
+						<label class="text-uppercase" for="productQuantity">{{ websiteSettings.SHOP.PRODUCT_QUANTITY_LABEL }}</label>
 						<input class="form-control"
 								type="text"
 								name="productQuantity"
@@ -140,7 +140,7 @@
 								pattern="\d*"
 								required>
 						<p class="help-block ng-messages-animation" data-ng-messages="productForm.productQuantity.$error">
-							<span data-ng-message="required">Enter no. of {{ productQuantityLabel }}</span>
+							<span data-ng-message="required">Enter no. of {{ websiteSettings.SHOP.PRODUCT_QUANTITY_LABEL }}</span>
 							<span data-ng-message="pattern">Enter number</span>
 						</p>
 					</div>

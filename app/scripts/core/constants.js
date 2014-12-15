@@ -10,6 +10,7 @@
             TITLE: 'Lovely Yoga',
             LOGO: 'yoga-lessons-logo.png',
             BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
+            HOMEPAGE_IMAGE: 'woman-meditating-ocean.jpg',
             SHOP: {
                 BUY_NOW_LABEL: 'Book lesson',
                 FONT_ICON: 'fa fa-ticket',

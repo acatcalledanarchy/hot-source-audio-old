@@ -24,25 +24,33 @@
 		vm.signedIn = Auth.signedIn;
 		vm.user = user;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
-
-	    /* config object */
 	    vm.uiConfig = {
-	      calendar:{
-	        editable: false,
-	        header:{
-	          left: 'prev,today,next',
-	          center: 'title',
-	          right: 'agendaDay,agendaWeek,month' 
-	        },
-	        defaultView: 'agendaWeek',
-	        eventClick: $scope.alertOnEventClick,
-	        eventDrop: $scope.alertOnDrop,
-	        eventResize: $scope.alertOnResize,
-	        eventRender: vm.eventRender
-	      }
+			calendar:{
+				columnFormat: {
+					month: 'dddd',
+					week: 'ddd d/M',
+					day: 'dddd'
+				},
+				defaultView: 'agendaWeek',
+				editable: false,
+				header: {
+					left: 'prev,today,next',
+					center: 'title',
+					right: 'agendaDay,agendaWeek,month' 	
+				},
+				//eventClick: $scope.alertOnEventClick,
+				eventRender: vm.eventRender,
+				titleFormat: {
+					month: 'MMMM yyyy',
+					week: 'd[ yyyy]{ \'&#8212;\'[ MMM] d MMMM, yyyy}',
+					day: 'dddd, d MMMM, yyyy'
+				}
+			}
 	    };
 
 		activate();
+
+		///////////////////////////////////////////////////////////////
 
 	    function activate() {
 	    	return vm.getEvents();
@@ -72,7 +80,7 @@
 							start: new Date(day + ' ' + products[i].start_time),
 							end: new Date(day + ' ' + products[i].end_time),
 							allDay: false,
-							description: product.description + 'Click to view',
+							description: product.description + '. Click to view, or to book a ' + vm.WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase(),
 							url: '/#/' + vm.WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase() + '/' + product.$id
 						};
 

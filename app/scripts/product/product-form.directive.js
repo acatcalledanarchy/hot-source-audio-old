@@ -37,6 +37,7 @@
 					scope.product.created_on = new Date().getTime();
 					scope.product.quantity = parseInt(scope.product.quantity);
 					scope.product.original_quantity = scope.product.quantity;
+					console.log(scope);
 					if (scope.productAction === 'edit') {
 						Product.update(scope.product).then(function() {
 							scope.productFormSubmitted = false;

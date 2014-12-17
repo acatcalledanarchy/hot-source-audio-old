@@ -80,7 +80,7 @@
 							start: new Date(day + ' ' + products[i].start_time),
 							end: new Date(day + ' ' + products[i].end_time),
 							allDay: false,
-							description: product.description + '. Click to view, or to book a ' + vm.WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase(),
+							description: product.description + '. Click to view, or book a ' + vm.WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE.toLowerCase(),
 							url: '/#/' + vm.WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase() + '/' + product.$id
 						};
 

@@ -12,7 +12,7 @@
             BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
             HOMEPAGE_IMAGE: 'woman-meditating-ocean.jpg',
             SHOP: {
-                BUY_NOW_LABEL: 'Book lesson',
+                BUY_NOW_LABEL: 'Book class',
                 FONT_ICON: 'fa fa-ticket',
                 PAY_PAL_EMAIL_ADDRESS: 'acatcalledanarchy@gmail.com',
                 PRODUCT_QUANTITY_LABEL: 'places',

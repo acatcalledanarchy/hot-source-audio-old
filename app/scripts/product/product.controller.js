@@ -8,14 +8,13 @@
 		.module('app.shop')
 		.controller('ProductCtrl', ProductCtrl);
 
-	ProductCtrl.$inject = ['$scope', 'Auth', 'Product', 'WEBSITE_SETTINGS', '$state', '$stateParams'];
+	ProductCtrl.$inject = ['user', 'Product', '$state', '$stateParams', 'WEBSITE_SETTINGS'];
 
-	function ProductCtrl($scope, Auth, Product, WEBSITE_SETTINGS, $state, $stateParams) {
+	function ProductCtrl(user, Product, $state, $stateParams, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.product = Product.get($stateParams.productId);
-		vm.signedIn = Auth.signedIn;
-		vm.user = Auth.user;
+		vm.user = user;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 

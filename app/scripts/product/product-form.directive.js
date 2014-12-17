@@ -41,7 +41,7 @@
 						Product.update(scope.product).then(function() {
 							scope.productFormSubmitted = false;
 					  	 	scope.$broadcast('show-errors-reset');
-							$location.path('/' + scope.shopTitleSlug);
+							$location.path('/' + scope.websiteSettings.SHOP.TITLE.toLowerCase());
 						}, function() {
 							scope.productFormSubmitted = false;
 						});

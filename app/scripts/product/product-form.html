@@ -161,9 +161,9 @@
 						<button class="btn btn-custom text-uppercase"
 								type="submit"
 								data-ng-disabled="vm.productFormSubmitted">
-							<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ websiteSettings.SHOP.FONT_ICON }}' "></i>
+							<i class="fa" data-ng-class="( vm.productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ websiteSettings.SHOP.FONT_ICON }}' "></i>
 							&nbsp;&nbsp;
-							Add {{ websiteSettings.SHOP.PRODUCT_TYPE }}
+							Edit {{ websiteSettings.SHOP.PRODUCT_TYPE }}
 						</button>
 					</div>
 				</div>
@@ -173,9 +173,9 @@
 					<button class="btn btn-custom text-uppercase"
 							type="submit"
 							data-ng-disabled="vm.productFormSubmitted">
-						<i class="fa" data-ng-class="( productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ websiteSettings.SHOP.FONT_ICON }}' "></i>
+						<i class="fa" data-ng-class="( vm.productFormSubmitted ) ? 'fa-spin fa-spinner' : '{{ websiteSettings.SHOP.FONT_ICON }}' "></i>
 						&nbsp;&nbsp;
-						Edit {{ websiteSettings.SHOP.PRODUCT_TYPE }}
+						Add {{ websiteSettings.SHOP.PRODUCT_TYPE }}
 					</button>	
 				</div>
 			</div>

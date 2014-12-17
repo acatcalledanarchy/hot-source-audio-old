@@ -23,7 +23,7 @@
 		vm.user = user;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	    vm.uiConfig = {
-			calendar:{
+			calendar: {
 				columnFormat: {
 					month: 'dddd',
 					week: 'ddd d/M',
@@ -40,7 +40,7 @@
 				eventRender: vm.eventRender,
 				titleFormat: {
 					month: 'MMMM yyyy',
-					week: 'd[ yyyy]{ \'&#8212;\'[ MMM] d MMMM, yyyy}',
+					week: 'd[ MMMM, yyyy]{ \'&#8212;\' d MMMM, yyyy}',
 					day: 'dddd, d MMMM, yyyy'
 				}
 			}

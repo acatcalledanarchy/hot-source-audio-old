@@ -9,19 +9,17 @@
 		.module('app.shop')
 		.controller('ShopCtrl', ShopCtrl);
 
-	ShopCtrl.$inject = ['$scope', '$compile', 'moment', 'user', 'Auth', 'Product', 'ngCart', 'WEBSITE_SETTINGS'];
+	ShopCtrl.$inject = ['$scope', '$compile', 'products', 'eventSources', 'moment', 'user', 'Product', 'WEBSITE_SETTINGS'];
 
-	function ShopCtrl($scope, $compile, moment, user, Auth, Product, ngCart, WEBSITE_SETTINGS) {
+	function ShopCtrl($scope, $compile, products, eventSources, moment, user, Product, WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.deleteProduct = deleteProduct;
 		vm.deletingProduct = false;
 		vm.events = [];
-		vm.eventSources = [vm.events];
+		vm.eventSources = eventSources;
 		vm.eventRender = eventRender;
-		vm.getEvents = getEvents;
-		vm.products = Product.all;
-		vm.signedIn = Auth.signedIn;
+		vm.products = products;
 		vm.user = user;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	    vm.uiConfig = {
@@ -48,13 +46,7 @@
 			}
 	    };
 
-		activate();
-
 		///////////////////////////////////////////////////////////////
-
-	    function activate() {
-	    	return vm.getEvents();
-	    }
 		
 		function deleteProduct(product) {
 			vm.deletingProduct = true;
@@ -68,32 +60,6 @@
 	                     'tooltip-append-to-body': true});
 	        $compile(element)($scope);
 	    }
-		
-		function getEvents() {
-	    	vm.products.$loaded().then(function(products) {
-				for(var i = 0; i < products.length; i++) {
-					var product = products[i],
-						title = product.name,
-						day = product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3'),
-						data = {
-							title: title,
-							start: new Date(day + ' ' + products[i].start_time),
-							end: new Date(day + ' ' + products[i].end_time),
-							allDay: false,
-							description: product.description + '. Click to view, or book a ' + vm.WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE.toLowerCase(),
-							url: '/#/' + vm.WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase() + '/' + product.$id
-						};
-
-					vm.events.push(data);
-				}
-
-				vm.eventSources = [{ color: '#f00',
-   									 textColor: 'yellow',
-   									 events: vm.events }];
-
-				return vm.eventSources;
-			});
-		}
 	}
 
 })();

@@ -1,4 +1,5 @@
-/*jshint latedef: false */
+/* jshint latedef: false */
+/* jshint camelcase: false */
 
 (function() {
 
@@ -24,6 +25,16 @@
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
+					});
+				},
+				products: function(Product) {
+					return Product.all.$loaded().then(function(products) {
+						return products;
+					});
+				},
+				eventSources: function(Product) {
+					return Product.convertToEvents().then(function(eventSources) {
+						return eventSources;
 					});
 				}
 			},			
@@ -60,6 +71,11 @@
 				user: function(Auth) {
 					return Auth.resolveUser().then(function(user) {
 						return user;
+					});
+				},
+				eventSources: function(Product) {
+					return Product.convertToEvents().then(function(eventSources) {
+						return eventSources;
 					});
 				}
 			},				

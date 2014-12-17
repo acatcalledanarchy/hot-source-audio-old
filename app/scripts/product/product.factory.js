@@ -10,9 +10,9 @@
 		.module('app.shop')
 		.factory('Product', Product);
 
-	Product.$inject = ['$firebase', 'FIREBASE_URL'];
+	Product.$inject = ['$firebase', 'FIREBASE_URL', 'WEBSITE_SETTINGS'];
 
-	function Product($firebase, FIREBASE_URL) {
+	function Product($firebase, FIREBASE_URL, WEBSITE_SETTINGS) {
 
 		var ref	= new Firebase(FIREBASE_URL);
 		var products = $firebase(ref.child('products')).$asArray();
@@ -25,6 +25,28 @@
 					return productRef;
 				});
 			},
+			convertToEvents: function() {
+				return product.all.$loaded().then(function(products) {
+					var events = [];
+					for(var i = 0; i < products.length; i++) {
+						var product = products[i],
+							title = product.name,
+							day = product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3'),
+							data = {
+								title: title,
+								start: new Date(day + ' ' + products[i].start_time),
+								end: new Date(day + ' ' + products[i].end_time),
+								allDay: false,
+								description: product.description + '. Click to view, or book a ' + WEBSITE_SETTINGS.SHOP.PRODUCT_TYPE.toLowerCase(),
+								url: '/#/' + WEBSITE_SETTINGS.SHOP.TITLE.toLowerCase() + '/' + product.$id
+							};
+						events.push(data);
+					}
+					return [{ color: '#4EBBEE',
+							  textColor: 'white',
+							  events: events }];
+				});
+			},			
 			delete: function(product) {
 				return products.$remove(product);
 			},

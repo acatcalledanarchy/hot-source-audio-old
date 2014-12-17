@@ -18,6 +18,7 @@
 			replace: true,
 			scope: {
 				product: '=',
+				eventSources: '=',
 				productAction: '@',
 				websiteSettings: '='
 			},
@@ -50,6 +51,15 @@
 						Product.create(scope.product).then( function() {
 							scope.productFormSubmitted = false;
 							scope.$broadcast('show-errors-reset');
+							var day = scope.product.date.replace( /(\d{2})\/(\d{2})\/(\d{4})/, '$2/$1/$3');
+						    scope.eventSources[0].events.push({
+								title: scope.product.name,
+								start: new Date(day + ' ' + scope.product.start_time),
+								end: new Date(day + ' ' + scope.product.end_time),
+								description: scope.product.description + '. Click to view, or book a ' + scope.websiteSettings.SHOP.PRODUCT_TYPE.toLowerCase(),
+								url: '/#/' + scope.websiteSettings.SHOP.TITLE.toLowerCase() + '/' + scope.product.$id,
+								allDay: false
+							});
 							scope.product = {};
 						}, function() {
 							scope.productFormSubmitted = false;

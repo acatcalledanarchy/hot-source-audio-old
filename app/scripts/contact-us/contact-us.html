@@ -15,34 +15,56 @@
 </div>
 <div class="row">
 	<div class="small-12 medium-6 columns">
-	<!-- Google Map Goes here -->
+		<div class="google-map-container"
+			data-map
+			data-zoom="11" 
+			data-center="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]" 
+			data-disable-default-u-i="false"
+			data-disable-double-click-zoom="true"
+			data-draggable="false"
+			data-draggable-cursor="default"
+			data-dragging-cursor="move"
+			data-keyboard-shortcuts="false"
+			data-max-zoom="15"
+			data-min-zoom="15"
+			data-tilt="0"
+			data-height="100%"
+			data-map-type-id="ROADMAP">
+			<marker class="marker"
+				data-position="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]"
+				data-title="{{ vm.WEBSITE_SETTINGS.TITLE }}"
+				data-animation="Animation.DROP"
+				data-draggable="false"
+				data-visible="true"
+				></marker>
+		</div>
 	</div>
 	 <div class="small-12 medium-6 columns">
 		<ul class="no-bullet">
-			<li id="email-info">
-			    <i class="icon-mail2"></i>&nbsp;&nbsp;<a href="#"></a>
+			<li>
+			    <i class="icon-mail-3"></i>&nbsp;&nbsp;<a href="mailto:{{ vm.WEBSITE_SETTINGS.EMAIL_ADDRESS }}">{{ vm.WEBSITE_SETTINGS.EMAIL_ADDRESS }}</a>
 			</li>
 			<li>
-			    <i class="icon-phone"></i>&nbsp;&nbsp;<a href="tel:+441481726622">+44 (0) 1481 726622</a>
+			    <i class="icon-phone"></i>&nbsp;&nbsp;<a href="tel:+441481726622">{{ vm.WEBSITE_SETTINGS.TELEPHONE_NUMBER }}</a>
 			</li>
 			<li>
-			    <i class="icon-print"></i>&nbsp;&nbsp;<a href="tel:+441481726918">+44 (0) 1481 726918</a>
+			    <i class="icon-print"></i>&nbsp;&nbsp;<a href="tel:+441481726918">{{ vm.WEBSITE_SETTINGS.FAX_NUMBER }}</a>
 			</li>
 		</ul>
 		<p>
-			<strong>Hot Source Audio Production</strong>
+			<strong>{{ vm.WEBSITE_SETTINGS.TITLE }}</strong>
 			<br />
-			PO Box 414,
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_1 }}
 			<br />
-			St Jacques,
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_2 }}
 			<br />
-			St Peter Port,
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.PARISH }}
 			<br />
-			Guernsey,
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.ISLAND }}
 			<br />
-			Channel Islands,
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.AREA }}
 			<br />
-			GY1 3WG
+			{{ vm.WEBSITE_SETTINGS.ADDRESS.POSTCODE }}
 		</p>
 	</div>
 </div>

@@ -23,19 +23,23 @@
                 <li data-ui-sref-active="active">
                     <a class="showreel" data-ui-sref="app.showreel">Showreel</a>
                 </li>
+                <!--
                 <li class="divider"></li>
                 <li data-ui-sref-active="active">
                      <a class="showreel" data-ui-sref="app.library-music">Library music</a>
                 </li>
+                -->
                 <li class="divider"></li>
                 <li data-ui-sref-active="active">
                     <a class="contact-us" data-ui-sref="app.contact-us">Contact us</a>
                 </li>
+                <!--
                 <li class="divider"></li>
                 <li data-ng-if="!vm.user" data-ui-sref-active="active">
                    	<a class="register" data-ui-sref="app.register">Register</a>
                 </li>
-                <li class="divider"></li>
+                -->
+                <li class="divider" data-ng-if="!vm.user"></li>
                 <li class="has-form" data-ng-if="!vm.user">
                     <a href="inc/login.php" class="button" data-reveal-id="modal" data-reveal-ajax="true">Login</a>
                 </li>

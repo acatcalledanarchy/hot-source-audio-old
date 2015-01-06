@@ -112,7 +112,7 @@
 		});
 
 		$rootScope.$on('$firebaseSimpleLogin:logout', function() {
-			toastr.warning('Logged out');
+			//toastr.warning('Logged out');
 			if(Service.user && Service.user.profile) {
 				Service.user.profile.$destroy();
 			}

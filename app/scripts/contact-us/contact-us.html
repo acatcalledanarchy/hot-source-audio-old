@@ -4,7 +4,7 @@
 	</div>
 </div>
 <div class="row">
-	<div class="small-12 columns">
+	<div class="small-12 medium-8 end columns">
 		<p>{{ vm.introCopy }}</p>
 	</div>
 </div>
@@ -44,6 +44,12 @@
 			</li>
 			<li>
 			    <i class="icon-print"></i>&nbsp;&nbsp;<a href="tel:+441481726918">{{ vm.WEBSITE_SETTINGS.FAX_NUMBER }}</a>
+			</li>
+			<li>
+				<i class="fi-social-facebook"></i>&nbsp;&nbsp;<a href="{{ vm.WEBSITE_SETTINGS.FACEBOOK_URL }}">{{ vm.WEBSITE_SETTINGS.FACEBOOK_URL }}</a>
+			</li>
+			<li>
+				<i class="fi-social-twitter"></i>&nbsp;&nbsp<a href="tel:{{ vm.WEBSITE_SETTINGS.TWITTER_URL }}">{{ vm.WEBSITE_SETTINGS.TWITTER_URL }}</a>
 			</li>
 		</ul>
 		<p>

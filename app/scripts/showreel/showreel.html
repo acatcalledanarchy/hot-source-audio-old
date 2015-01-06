@@ -4,16 +4,15 @@
     </div>
 </div>
 <div class="row">
-    <div class="small-12 columns">
+    <div class="small-12 medium-8 end columns">
         <p>{{ vm.introCopy }}</p>
     </div>
 </div>
 <div class="row">
     <div class="small-12 columns">
        	<!-- Showreel video goes here -->
-       	<videogular vg-theme="vm.videogular.theme">
-			<vg-video vg-src="vm.videogular.sources"
-					vg-tracks="vm.videogular.tracks">
+       	<videogular class="showreel-video-container" vg-theme="vm.videogular.theme">
+			<vg-video class="showreel-video" vg-src="vm.videogular.sources" vg-youtube="rel=1;showinfo=1">
 			</vg-video>
 			<vg-controls>
 				<vg-play-pause-button></vg-play-pause-button>
@@ -28,9 +27,9 @@
 				</vg-volume>
 				<vg-fullscreenButton></vg-fullscreenButton>
 			</vg-controls>
- 
 			<vg-overlay-play></vg-overlay-play>
 			<vg-poster-image vg-url='vm.videogular.plugins.poster'></vg-poster-image>
+			<vg-buffering></vg-buffering>
 		</videogular>
     </div>
 </div>

@@ -298,6 +298,10 @@ footer small {
     font-size: 14px;
 }
 
+footer a:hover i {
+    color: #F2267B;
+}
+
 footer a i {
     color: #FFF;
     font-size: 30px;

@@ -8,6 +8,7 @@ body {
 	height: 100%;
 }
 
+/*
 .page {
 	display: block;
 	position: absolute;
@@ -24,33 +25,6 @@ body {
 	height: 100%;
 }
 
-.page-content h1 {
-	margin-top: 120px;
-	display: inline-block;
-}
-
-.page-content .well-custom h1 {
-	margin-top: 0;
-	margin-bottom: 20px;
-}
-
-/* Footer */
-footer {
-	position: fixed;
-	z-index: 1006;
-	bottom: 0;
-	height: 40px;
-	width: 100%;
-	background: #f8f8f8;
-	border-top: 1px solid #e7e7e7;
-}
-
-footer p {
-	margin: 0;
-	height: 40px;
-	line-height: 40px;
-}
-
 .page { z-index: -3; }
 .page.ng-enter 		{ z-index: -2; }
 .page.ng-leave 		{ z-index: -1; }
@@ -65,24 +39,7 @@ footer p {
 	right: 0;
 	z-index: 1005;
 }
-
-/* Checkout */
-.ngCart.cart .fa {
-	cursor: pointer;
-}
-
-.ngCart.cart .fa.disabled {
-    color: #aaa;
-}
-
-/* Form errors */
-.form-group .help-block {
-  display: none;
-}
-
-.form-group.has-error .help-block {
-  display: block;
-}
+*/
 
 /* Remove annoying Bootstrap focus */
 * {
@@ -109,21 +66,4 @@ footer p {
 .animate-repeat.ng-enter.ng-enter-active {
   opacity:1;
   max-height:100%;
-}
-
-/* Fix responsive tables in Firefox */
-@-moz-document url-prefix() {
-	fieldset { display: table-cell; }
-}
-
-/* Toggle Switch */
-.toggle-switch {
-	border-color: #CCC;
-	min-width: 80px;
-}
-
-.toggle-switch span {
-	padding: 0px;
-	font-size: 11px;
-	text-transform: uppercase;
 }

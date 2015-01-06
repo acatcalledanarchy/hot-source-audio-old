@@ -29,7 +29,9 @@
                 ISLAND: 'Guernsey',
                 AREA: 'Channel Islands',
                 POSTCODE: 'GY1 3WG'
-            }
+            },
+            FACEBOOK_URL: 'https://facebook.com/',
+            TWITTER_URL: 'https://twitter.com/HotsourceAudio'
         };
 
     angular

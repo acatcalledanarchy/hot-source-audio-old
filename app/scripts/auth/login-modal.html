@@ -1,0 +1,33 @@
+<h2>Login</h2>
+<form novalidate>
+	<div class="row">
+		<!-- Email address -->
+		<div class="small-12 medium-6 large-4 columns">
+		    <label for="username" class="inline">
+		        <span class="show-for-small">Email address <span class="required">*</span></span>
+		        <span class="hide-for-small right">Email address <span class="required">*</span></span>
+		    </label>
+		</div>
+		<div class="small-12 medium-6 large-8 columns">
+            <input type="text" required="" id="emailAddress" name="emailAddress" placeholder="Enter email address">
+            <small class="error">Enter email address</small>
+        </div>
+        <!-- Password -->
+		<div class="row">
+			<div class="small-12 medium-6 large-4 columns">
+				<label for="password" class="inline">
+					<span class="show-for-small">Password <span class="required">*</span></span>
+					<span class="hide-for-small right">Password <span class="required">*</span></span>
+				</label>
+			</div>
+			<div class="small-12 medium-6 large-8 columns">
+				<input type="password" required="" id="password" name="password" placeholder="Enter password">
+				<small class="error">Enter password</small>
+			</div>
+		</div>
+     </div>
+     <div class="row">
+		<button class="button" ng-click="login()">Login</button> 
+     </div>
+</form>
+<a class="close-reveal-modal" ng-click="cancel()">&#215;</a>

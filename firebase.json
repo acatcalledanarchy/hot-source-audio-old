@@ -1,5 +1,5 @@
 {
-  "firebase": "oi-digital",
+  "firebase": "hotsourceaudio",
   "public": "dist",
   "ignore": [
     "firebase.json",

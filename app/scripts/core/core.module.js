@@ -14,7 +14,7 @@
         /*
          * 3rd Party modules
          */
-        'angular-loading-bar', 'firebase', 'ngMap', 'toastr', 'angulartics', 'angulartics.google.analytics', 'mm.foundation'
+        'angular-loading-bar', 'firebase', 'ngMap', 'toastr', 'angulartics', 'angulartics.google.analytics', 'mm.foundation', 'angular-carousel'
     ]);
 
 })();

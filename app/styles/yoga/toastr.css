@@ -1,9 +1,0 @@
-#toast-container {
-	margin-top: 55px;	
-}
-
-#toast-container > div {
-  -moz-box-shadow: 0 0 12px #FFF;
-  -webkit-box-shadow: 0 0 12px #FFF;
-  box-shadow: 0 0 12px #FFF;
-}

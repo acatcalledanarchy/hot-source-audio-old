@@ -15,6 +15,7 @@
 		var vm = this;
 		vm.pageContentClass	= 'page-content-home';
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.slides = ['banner-1', 'banner-2', 'banner-3', 'banner-4', 'banner-5'];
 	}
 
 })();

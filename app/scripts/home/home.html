@@ -5,38 +5,16 @@
 </div>
 <div class="row">
     <div class="medium-6 columns">
-         <ul data-orbit data-options="animation:'fade';animation_speed:1000;timer_speed:5000;pause_on_hover:false;timer:true;bullets:false;slide_number:false;navigation_arrows:false;">
-            <li>
-                <img src="images/banners/banner-1.jpg" alt="Hot Source" />
-                <div class="orbit-caption">
-                    <img src="images/home/hotsource-logo.png" alt="Hot Source" />
-                </div>
-            </li>
-            <li>
-                <img src="images/banners/banner-2.jpg" alt="Hot Source" />
-                <div class="orbit-caption">
-                    <img src="images/home/hotsource-logo.png" alt="Hot Source" />
-                </div>
-            </li>
-            <li>
-                <img src="images/banners/banner-3.jpg" alt="Hot Source" />
-                <div class="orbit-caption">
-                    <img src="images/home/hotsource-logo.png" alt="Hot Source" />
-                </div>
-            </li>
-            <li>
-                <img src="images/banners/banner-4.jpg" alt="Hot Source" />
-                <div class="orbit-caption">
-                    <img src="images/home/hotsource-logo.png" alt="Hot Source" />
-                </div>
-            </li>
-            <li>
-                <img src="images/banners/banner-5.jpg" alt="Hot Source" />
-                <div class="orbit-caption">
-                    <img src="images/home/hotsource-logo.png" alt="Hot Source" />
-                </div>
-            </li>
-         </ul>
+        <div class="slider-container">
+            <ul rn-carousel rn-carousel-autoslide rn-carousel-buffered class="slider">
+                <li ng-repeat="slide in vm.slides">
+                    <img src="images/banners/{{ slide }}.jpg" alt="Hot Source">
+                </li>
+             </ul>
+            <div class="logo-overlay">
+                <img src="images/home/hotsource-logo.png">
+            </div>
+        </div>
     </div>
     <div class="small-12 medium-6 columns">
         <div class="row">

@@ -95,7 +95,7 @@
 				}
 			},
 			data: {
-				pageTitle: 'About' + websiteTitle,
+				pageTitle: 'About us' + websiteTitle,
 				pageBodyClass: 'about'
 			}
 		})
@@ -203,7 +203,7 @@
 				}        
 			},
 			data: {
-				pageTitle: 'Contact' + websiteTitle,
+				pageTitle: 'Contact us' + websiteTitle,
 				pageBodyClass: 'contact'
 			}
 		})

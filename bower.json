@@ -23,7 +23,6 @@
     "lodash": "~2.4.1",
     "ngmap": "~1.2.0",
     "angular-toastr": "~0.5.2",
-    "angular-toggle-switch": "~1.0.0",
     "angularitics": "~0.17.1"
   },
   "devDependencies": {

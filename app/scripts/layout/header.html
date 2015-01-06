@@ -2,7 +2,11 @@
 <div class="contain-to-grid">
     <nav class="top-bar" data-topbar>
         <ul class="title-area">
-            <li class="name"><!-- Leave this empty --></li>
+            <li class="name">
+            	<h1>
+            		<a data-ui-sref="app.home">{{ vm.WEBSITE_SETTINGS.TITLE }}</a>
+            	</h1>
+            </li>
             <li class="toggle-topbar menu-icon">
                 <a href="#">
                     <span>Menu</span>
@@ -12,24 +16,24 @@
         <section class="top-bar-section">
             <ul class="right">
                 <li class="divider"></li>
-                <li>
-                    <a class="about-us" data-ui-sref="app.about-us" data-ui-sref-active="active">About us</a>
+                <li data-ui-sref-active="active">
+                    <a class="about-us" data-ui-sref="app.about-us">About us</a>
                 </li>
                 <li class="divider"></li>
-                <li>
-                    <a class="showreel" data-ui-sref="app.showreel" data-ui-sref-active="active">Showreel</a>
+                <li data-ui-sref-active="active">
+                    <a class="showreel" data-ui-sref="app.showreel">Showreel</a>
                 </li>
                 <li class="divider"></li>
-                <li>
-                     <a class="showreel" data-ui-sref="app.library-music" data-ui-sref-active="active">Library music</a>
+                <li data-ui-sref-active="active">
+                     <a class="showreel" data-ui-sref="app.library-music">Library music</a>
                 </li>
                 <li class="divider"></li>
-                <li>
-                    <a class="contact-us" data-ui-sref="app.contact-us" data-ui-sref-active="active">Contact us</a>
+                <li data-ui-sref-active="active">
+                    <a class="contact-us" data-ui-sref="app.contact-us">Contact us</a>
                 </li>
                 <li class="divider"></li>
-                <li data-ng-if="!vm.user">
-                   	<a class="register" data-ui-sref="app.register" data-ui-sref-active="active">Register</a>
+                <li data-ng-if="!vm.user" data-ui-sref-active="active">
+                   	<a class="register" data-ui-sref="app.register">Register</a>
                 </li>
                 <li class="divider"></li>
                 <li class="has-form" data-ng-if="!vm.user">

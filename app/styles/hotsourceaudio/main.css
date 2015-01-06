@@ -5,8 +5,22 @@
 */
 
 body {
-    font-family: 'Source Sans Pro', sans-serif !important;
-    background: url(../../images/backgrounds/background.jpg) !important;
+    background: url(../../images/backgrounds/background.jpg);
+}
+
+p,
+nav,
+h1,
+h2,
+h3,
+h4,
+h5,
+button,
+.button,
+.pricing-table .title,
+.pricing-table .bullet-item,
+.pricing-table .description {
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*section {
@@ -24,7 +38,6 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: 'Source Sans Pro', sans-serif;
     color: #F2267B;
 }
 
@@ -106,6 +119,15 @@ h2 {
     margin-bottom: 20px;
 }
 
+/*
+|---------
+| Showreel 
+|---------
+*/
+
+button.iconButton {
+    margin-bottom: 0;
+}
 /*
 |------
 | Forms
@@ -244,28 +266,10 @@ textarea:focus {
 }
 
 /*
-|-------
-| Button
-|-------
-*/
-
-button,
-.button {
-    font-family: 'Source Sans Pro', sans-serif !important;   
-}
-
-/*
 |--------------
 | Pricing Table
 |--------------
 */
-
-
-.pricing-table .title,
-.pricing-table .bullet-item,
-.pricing-table .description {
-    font-family: 'Source Sans Pro', sans-serif !important;
-}
 
 .pricing-table .genre {
     background: #FFF !important;

@@ -14,7 +14,9 @@
         /*
          * 3rd Party modules
          */
-        'angular-loading-bar', 'firebase', 'ngMap', 'toastr', 'angulartics', 'angulartics.google.analytics', 'mm.foundation', 'duScroll'
+        'angular-loading-bar', 'firebase', 'ngMap', 'toastr', 'angulartics', 'angulartics.google.analytics', 'mm.foundation', 'duScroll',
+
+        'com.2fdevs.videogular', 'com.2fdevs.videogular.plugins.controls', 'com.2fdevs.videogular.plugins.overlayplay', 'com.2fdevs.videogular.plugins.poster'
     ]);
 
 })();

@@ -16,112 +16,23 @@
 <div class="row">
 	<div class="small-12 columns">
 		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-		    <li>
-				<h3>Simon Prince</h3>
+		    <li ng-repeat="employee in vm.employees">
+				<h3>{{ employee.first_name }} {{ employee.surname }}</h3>
 				<div class="portrait">
-					<img src="images/about-us/simon.jpg" alt="Simon Prince" />
+					<img ng-src="images/about-us/{{ employee.image }}" alt="{{ employee.first_name }} {{ employee.surname }}" />
 				</div>
 				<ul class="no-bullet details-list">
 					<li>
 						<i class="icon-mail-3">
-						</i>&nbsp;&nbsp;<a href="mailto:simon@hotsourceaudio.com">simon@hotsourceaudio.com</a>
+						</i>&nbsp;&nbsp;<a href="mailto:{{ employee.email }}">{{ employee.email_address }}</a>
 					</li>
 					<li>
 						<i class="icon-phone">
-						</i>&nbsp;&nbsp<a href="tel:+44 (0) 1481 711111">+44 (0) 1481 711111</a>
+						</i>&nbsp;&nbsp<a href="tel:{{ employee.telephone }}">{{ employee.telephone_number }}</a>
 					</li>
 				</ul>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-		    <li>
-				<h3>Mark Adnitt</h3>
-				<div class="portrait">
-					<img src="images/about-us/mark.jpg" alt="Mark Adnitt" />
-				</div>
-				<ul class="no-bullet details-list">
-					<li>
-						<i class="icon-mail-3">
-						</i>&nbsp;&nbsp;<a href="mailto:mark@hotsourceaudio.com">mark@hotsourceaudio.com</a>
-					</li>
-					<li>
-						<i class="icon-phone">
-						</i>&nbsp;&nbsp<a href="tel:+44 (0) 1481 711112">+44 (0) 1481 711112</a>
-					</li>
-				</ul>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-		    <li>
-				<h3>Nick Windsor</h3>
-				<div class="portrait">
-					<img src="images/about-us/nick.jpg" alt="Nick Windsor" />
-				</div>
-				<ul class="no-bullet details-list">
-					<li>
-						<i class="icon-mail-3"></i>&nbsp;&nbsp;<a href="mailto:nick@hotsourceaudio.com">nick@hotsourceaudio.com</a>
-					</li>
-					<li>
-						<i class="icon-phone">
-						</i>&nbsp;&nbsp<a href="tel:+44 (0) 1481 711113">+44 (0) 1481 711113</a>
-					</li>
-				</ul>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>{{ employee.copy }}</p>
 			</li>
 		</ul>
 	</div>
 </div>
-
-<!--
-<div class="container">
-	<div class="row">
-		<div class="col-xs-12">
-		<h1 class="text-uppercase">About {{ vm.WEBSITE_SETTINGS.TITLE }}</h1>
-		<div class="well well-custom">
-			<div class="row">
-				<div class="col-xs-12 col-sm-4">
-					<div class="row">
-						<div class="col-xs-12">
-							<h2 class="text-uppercase">{{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
-							<p>
-								{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_1 }}
-								<br>
-								{{ vm.WEBSITE_SETTINGS.ADDRESS.LINE_2 }}
-								<br>
-								{{ vm.WEBSITE_SETTINGS.ADDRESS.PARISH }}
-								<br>
-								{{ vm.WEBSITE_SETTINGS.ADDRESS.ISLAND }}
-								<br>
-								{{ vm.WEBSITE_SETTINGS.ADDRESS.POSTCODE }}
-							</p>
-						</div>
-					</div>
-				</div>			
-				<div class="col-xs-12 col-sm-8">
-					<div class="google-map-container"
-						data-map
-						data-zoom="11" 
-						data-center="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]" 
-						data-disable-default-u-i="false"
-						data-disable-double-click-zoom="true"
-						data-draggable="false"
-						data-draggable-cursor="default"
-						data-dragging-cursor="move"
-						data-keyboard-shortcuts="false"
-						data-max-zoom="15"
-						data-min-zoom="10"
-						data-tilt="0"
-						data-height="100%"
-						data-map-type-id="ROADMAP">
-						<marker class="marker"
-							data-position="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]"
-							data-title="{{ vm.WEBSITE_SETTINGS.TITLE }}"
-							data-animation="Animation.DROP"
-							data-draggable="false"
-							data-visible="true"
-							data-icon="images/{{vm.WEBSITE_SETTINGS.GOOGLE.MAP.MARKER_ICON }}"></marker>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
--->

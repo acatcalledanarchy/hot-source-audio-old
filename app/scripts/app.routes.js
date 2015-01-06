@@ -61,6 +61,12 @@
 		})
 		.state('app.about-us', {
 			url: '/about-us', 	
+			resolve: {
+				Employee: 'Employee',
+				employees: function(Employee) {
+					return Employee.all;
+				}
+			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

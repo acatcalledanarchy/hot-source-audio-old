@@ -25,11 +25,11 @@
 			{ name: 'Virgin Atlantic', image: 'virgin-atlantic.png' }
 		];
 	
-		var service =  {
+		var factory =  {
 			all: clients
 		};
 
-		return service;
+		return factory;
 	}
 
 })();

@@ -14,7 +14,7 @@
         /*
          * 3rd Party modules
          */
-        'angular-loading-bar', 'firebase', 'ngCart', 'ngMap', 'toastr', 'mwl.calendar', 'ui.bootstrap', 'toggle-switch','angulartics', 'angulartics.google.analytics'
+        'angular-loading-bar', 'firebase', 'ngCart', 'ngMap', 'toastr', 'toggle-switch','angulartics', 'angulartics.google.analytics'
     ]);
 
 })();

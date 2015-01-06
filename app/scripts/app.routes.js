@@ -24,19 +24,15 @@
 					return Auth.resolveUser().then(function(user) {
 						return user;
 					});
+				},
+				Client: 'Client',
+				clients: function(Client) {
+					return Client.all;
 				}
 			}
 		})
 		.state('app.home', {
 			url: '/',
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -64,15 +60,7 @@
 			}
 		})
 		.state('app.about-us', {
-			url: '/about-us', 
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/about-us', 	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -100,15 +88,7 @@
 			}
 		})
 		.state('app.showreel', {
-			url: '/showreel', 
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/showreel', 	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -136,15 +116,7 @@
 			}
 		})
 		.state('app.library-music', {
-			url: '/library-music', 
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/library-music', 	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -172,15 +144,7 @@
 			}
 		})		
 		.state('app.contact-us', {
-			url: '/contact-us',
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/contact-us',	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -208,15 +172,7 @@
 			}
 		})
 		.state('app.privacy-policy', {
-			url: '/privacy-policy',
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/privacy-policy',	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -244,15 +200,7 @@
 			}
 		})
 		.state('app.404', {
-			url: '/404',
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				}
-			},		
+			url: '/404',	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

@@ -7,7 +7,7 @@
 
     var FIREBASE_ACCOUNT = 'http://oi-digital',
         WEBSITE_SETTINGS = {
-            TITLE: 'Lovely Yoga',
+            TITLE: 'Hot Source Audio Productions',
             LOGO: 'yoga-lessons-logo.png',
             BASE_URL: FIREBASE_ACCOUNT + '.firebaseapp.com/',
             HOMEPAGE_IMAGE: 'woman-meditating-ocean.jpg',

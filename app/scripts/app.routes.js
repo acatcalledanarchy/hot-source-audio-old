@@ -33,6 +33,12 @@
 		})
 		.state('app.home', {
 			url: '/',
+			resolve: {
+				Slide: 'Slide',
+				slides: function(Slide) {
+					return Slide.all;
+				}
+			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

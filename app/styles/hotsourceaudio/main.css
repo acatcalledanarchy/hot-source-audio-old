@@ -1,0 +1,391 @@
+/*
+|------------------------------
+| Overwrite Foundation Defaults
+|------------------------------
+*/
+
+body {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    background: url(../../images/backgrounds/background.jpg) !important;
+}
+
+/*section {
+    background: #000;
+}*/
+
+header,
+section/*,
+footer > .row*/ {
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #F2267B;
+}
+
+h1.subheading {
+    font-size: 24px;
+    color: #FFF;
+}
+
+h2 {
+    margin: 20px 0 30px 0;
+}
+
+/*
+|--------
+| Top Bar
+|--------
+*/
+
+.top-bar .name h1 a {
+    width: 100%;
+}
+
+.top-bar-section ul li > a {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*
+|------
+| Modal
+|------
+*/
+
+.reveal-modal {
+    color: #FFF;
+    background: #000;
+}
+
+/*
+|------------------
+| Home Page Banners
+|------------------
+*/
+
+.orbit-container {
+    margin-bottom: 40px;
+}
+
+.orbit-container .orbit-slides-container > * .orbit-caption {
+    top: 0;
+    width: 150px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+ol.orbit-bullets li {
+    background: #FFF !;
+}
+
+ol.orbit-bullets li.active {
+    background: #F2267B;
+}
+
+.orbit-timer {
+    display: none;
+}
+
+/*
+|---------
+| About us
+|---------
+*/
+
+.portrait {
+    position: relative;
+    margin: 20px 0 40px;
+}
+
+.details-list {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.icon-mail2 span,
+.icon-phone span {
+    display: none;
+}
+
+/*
+|------
+| Forms
+|------
+*/
+
+
+label {
+    font-size: 20px;
+    color: #FFF;
+}
+
+label .required {
+    color: #F2267B;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    box-shadow: 0 0 5px #F2267B;
+}
+
+/*
+|---------------
+| Twitter Widget
+|---------------
+*/
+
+.twitter-timeline {
+    margin-bottom: 20px;   
+}
+
+/*
+|-----------
+| GoogleMaps
+|-----------
+*/
+
+.map {
+    position: relative;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 450px;
+}
+
+.google-map {
+    width: 100%;
+    height: 450px;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE 6-9 */
+}
+
+.info_window_title,
+.info_window_copy {
+    color: #000;
+}
+
+.info_window_title{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.gm-style div div div div div div img {
+    display: none;
+}
+
+.gm-style-iw {
+    overflow: hidden;
+}
+
+/*
+|-----------
+| Preloading
+|-----------
+*/
+
+.portrait,
+.map {
+    background: #000;
+}
+
+.portrait .loading {
+    position: absolute;
+}
+
+.map .loading {
+    position: absolute;
+}
+
+.flex-video .loading {
+    position: relative;
+}
+
+.loading {
+	top: 0;
+	left: 0;
+	z-index: 2;
+	display: block;
+	background: #000 url(../img/global/loading.gif) no-repeat center center;
+}
+
+/*
+|----------
+| Accordion
+|----------
+*/
+
+.accordion dd > a {
+    color: #F2267B;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #000;
+    border-bottom: 1px solid #333;
+}
+
+.accordion dd > a:hover {
+    color: #FFF;
+    background: #000;
+}
+
+.accordion .content.active {
+    color: #000;
+}
+
+/*
+|---------
+| Magellan
+|---------
+*/
+
+[data-magellan-expedition] {
+    margin-bottom: 20px;
+    background: #000;
+}
+
+.sub-nav dt, .sub-nav dd, .sub-nav li {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.sub-nav dt a, .sub-nav dd a, .sub-nav li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/*
+|-------
+| Button
+|-------
+*/
+
+button,
+.button {
+    font-family: 'Source Sans Pro', sans-serif !important;   
+}
+
+/*
+|--------------
+| Pricing Table
+|--------------
+*/
+
+
+.pricing-table .title,
+.pricing-table .bullet-item,
+.pricing-table .description {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.pricing-table .genre {
+    background: #FFF !important;
+}
+
+.pricing-table .bullet-item,
+.pricing-table .description,
+.pricing-table .cta-button {
+    background: #FFF;
+    border-bottom: 1px solid #AAA;
+}
+
+/*
+|-------
+| Footer
+|-------
+*/
+
+footer {
+    /*padding-top: 5px;*/
+    background: #333;
+    border-top: 1px solid #222;
+}
+
+.client-logos {
+    color: #333;
+    background: url(../../images/backgrounds/background.jpg);
+}
+
+.client-logos ul {
+    margin: 60px 0 30px 0;
+}
+
+footer a i {
+    color: #FFF;
+    font-size: 30px;
+}
+
+footer a i span {
+    display: none;
+}
+
+footer a {
+    color: #FFF;
+}
+
+footer a:hover i {
+    color: #FFF;
+}
+
+footer .inline-list {
+    margin-top: 28px;
+}
+
+footer .inline-list.right {
+    margin-top: 20px;
+}
+
+/*
+|------
+| Small
+|------
+*/
+
+@media only screen and (max-width: 40em) {
+ 
+    /* Home */
+    .home h2 {
+        font-size: 22px;
+    }
+    
+    .orbit-container .orbit-slides-container li {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .orbit-container .orbit-slides-container li > img {
+        margin-top: -50%;
+    }
+    
+    /* About us */
+    .portrait {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .portrait img {
+        margin-top: -20px;
+    }
+}
+
+@media only screen and (max-width: 40em) and (orientation: portrait) {
+    
+    /* Any tricky Portrait stuff */
+}

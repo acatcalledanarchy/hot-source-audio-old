@@ -63,8 +63,8 @@
 				pageBodyClass: 'home'
 			}
 		})
-		.state('app.about', {
-			url: '/about', 
+		.state('app.about-us', {
+			url: '/about-us', 
 			resolve: {
 				Auth: 'Auth',
 				user: function(Auth) {
@@ -84,7 +84,7 @@
 					controllerAs: 'vm'
 				},		
 				'page-content@': {
-					templateUrl:  'scripts/about/about.html',
+					templateUrl:  'scripts/about-us/about-us.html',
 					controller:  'AboutCtrl',
 					controllerAs: 'vm'
 				},			
@@ -99,8 +99,80 @@
 				pageBodyClass: 'about'
 			}
 		})
-		.state('app.contact', {
-			url: '/contact',
+		.state('app.showreel', {
+			url: '/showreel', 
+			resolve: {
+				Auth: 'Auth',
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},		
+			views: {
+				'header@': {
+					templateUrl: 'scripts/layout/header.html',
+					controller: 'HeaderCtrl',
+					controllerAs: 'vm'
+				},		
+				'page-background@': {
+					controller: 'ShowreelBackgroundCtrl',
+					controllerAs: 'vm'
+				},		
+				'page-content@': {
+					templateUrl:  'scripts/showreel/showreel.html',
+					controller:  'ShowreelCtrl',
+					controllerAs: 'vm'
+				},			
+				'footer@': {
+					templateUrl: 'scripts/layout/footer.html',
+					controller: 'FooterCtrl',
+					controllerAs: 'vm'
+				}
+			},
+			data: {
+				pageTitle: 'Showreel' + websiteTitle,
+				pageBodyClass: 'showreel'
+			}
+		})
+		.state('app.library-music', {
+			url: '/library-music', 
+			resolve: {
+				Auth: 'Auth',
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},		
+			views: {
+				'header@': {
+					templateUrl: 'scripts/layout/header.html',
+					controller: 'HeaderCtrl',
+					controllerAs: 'vm'
+				},		
+				'page-background@': {
+					controller: 'LibraryMusicBackgroundCtrl',
+					controllerAs: 'vm'
+				},		
+				'page-content@': {
+					templateUrl:  'scripts/library-music/library-music.html',
+					controller:  'LibraryMusicCtrl',
+					controllerAs: 'vm'
+				},			
+				'footer@': {
+					templateUrl: 'scripts/layout/footer.html',
+					controller: 'FooterCtrl',
+					controllerAs: 'vm'
+				}
+			},
+			data: {
+				pageTitle: 'Showreel' + websiteTitle,
+				pageBodyClass: 'showreel'
+			}
+		})		
+		.state('app.contact-us', {
+			url: '/contact-us',
 			resolve: {
 				Auth: 'Auth',
 				user: function(Auth) {
@@ -120,7 +192,7 @@
 					controllerAs: 'vm'
 				},			
 				'page-content@': {
-					templateUrl: 'scripts/contact/contact.html',
+					templateUrl: 'scripts/contact-us/contact-us.html',
 					controller: 'ContactCtrl',
 					controllerAs: 'vm'
 				},			

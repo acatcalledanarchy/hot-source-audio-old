@@ -15,12 +15,12 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" href="styles/foundation.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/animations.css">
 	<link rel="stylesheet" type="text/css" href="styles/generic.css">
 	<link rel="stylesheet" type="text/css" href="styles/google.maps.css">
-	<link rel="stylesheet" type="text/css" href="styles/yoga.css">
+	<link rel="stylesheet" type="text/css" href="styles/hotsourceaudio.css">
 	<!-- endbuild -->
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Sintony:400,700">
 </head>
 <body ng-class="$state.current.data.pageBodyClass">
     <!--[if lt IE 7]>
@@ -28,7 +28,7 @@
     <![endif]-->
     <header ui-view="header"></header>
     <section class="page {{ vm.pageBackgroundClass }}" ui-view="page-background"></section>
-    <section class="page-content {{ vm.pageContentClass }}" ui-view="page-content"></section>
+    <section class="page-content content {{ vm.pageContentClass }}" ui-view="page-content"></section>
     <footer ui-view="footer"></footer>
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -65,7 +65,6 @@
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/toastr/toastr.js"></script>
     <script src="bower_components/moment/moment.js"></script>
-    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
     <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
     <script src="bower_components/jquery-waypoints/waypoints.js"></script>
@@ -87,6 +86,7 @@
     <script src="bower_components/angularitics/src/angulartics-woopra.js"></script>
     <script src="bower_components/angularitics/src/angulartics-marketo.js"></script>
     <script src="bower_components/angularitics/src/angulartics-intercom.js"></script>
+    <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -111,13 +111,22 @@
 	<!-- Core -->
 	<script src="scripts/core/core.module.js"></script>
 	<script src="scripts/core/constants.js"></script>
-	<!-- Layout -->
-	<script src="scripts/about/about.background.controller.js"></script>
-	<script src="scripts/about/about.controller.js"></script>
-	<script src="scripts/contact/contact.background.controller.js"></script>
-	<script src="scripts/contact/contact.controller.js"></script>
+	<!-- About us -->
+	<script src="scripts/about-us/about-us.background.controller.js"></script>
+	<script src="scripts/about-us/about-us.controller.js"></script>
+    <!-- Showreel -->
+    <script src="scripts/showreel/showreel.background.controller.js"></script>
+    <script src="scripts/showreel/showreel.controller.js"></script>
+    <!-- Library music -->
+    <script src="scripts/library-music/library-music.background.controller.js"></script>
+    <script src="scripts/library-music/library-music.controller.js"></script>
+	<!-- Contact us -->
+	<script src="scripts/contact-us/contact-us.background.controller.js"></script>
+	<script src="scripts/contact-us/contact-us.controller.js"></script>
+	<!-- Home -->
 	<script src="scripts/home/home.background.controller.js"></script>
 	<script src="scripts/home/home.controller.js"></script>
+	<!-- Layout -->
 	<script src="scripts/layout/footer.controller.js"></script>
 	<script src="scripts/layout/header.controller.js"></script>
     <!-- Errors -->

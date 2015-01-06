@@ -13,7 +13,7 @@
                 MAP: {
                     LATITUDE: 49.4604184,
                     LONGITUDE: -2.5458709,
-                    MARKER_ICON: 'yoga-lessons-marker.png'
+                    MARKER_ICON: 'hotsource-marker.png'
                 },
                 ANALYTICS: {
                     TRACKING_ID: 'UA-57546047-1'

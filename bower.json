@@ -25,7 +25,6 @@
     "angular-foundation": "~0.5.1",
     "icomoon": "~0.0.3",
     "foundation-icons": "*",
-    "angular-carousel": "~0.3.7",
     "angular-scroll": "~0.6.4"
   },
   "devDependencies": {

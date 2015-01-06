@@ -76,7 +76,7 @@ h2 {
 
 .slider-container .logo-overlay {
     position: relative;
-    top: -705px;
+    top: -690px;
     left: 20px;
     width: 150px;
 }
@@ -155,34 +155,14 @@ textarea:focus {
     margin: 0 0 20px 0;
     width: 100%;
     height: 450px;
-    width: 100%;
-    height: 450px;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-    filter: gray; /* IE 6-9 */
-}
-
-.gm-style-iw {
-    overflow: hidden;
 }
 
 .gmnoprint img {
     max-width: none;
 }
 
-.info_window_title,
-.info_window_copy {
-    color: #000;
-}
-
-.info_window_title{
-    display: block;
-    width: 100%;
-    text-align: center;
+.google-map-container [data-icon]:before {
+    content: '';
 }
 
 /*

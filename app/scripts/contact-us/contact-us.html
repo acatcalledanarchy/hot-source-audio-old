@@ -16,28 +16,28 @@
 <div class="row">
 	<div class="small-12 medium-6 columns">
 		<div class="google-map-container"
-			data-map
-			data-zoom="11" 
-			data-center="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]" 
-			data-disable-default-u-i="false"
-			data-disable-double-click-zoom="true"
-			data-draggable="false"
-			data-draggable-cursor="default"
-			data-dragging-cursor="move"
-			data-keyboard-shortcuts="false"
-			data-max-zoom="15"
-			data-min-zoom="15"
-			data-tilt="0"
-			data-height="100%"
-			data-map-type-id="ROADMAP">
-			<marker class="marker"
-				data-position="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]"
-				data-title="{{ vm.WEBSITE_SETTINGS.TITLE }}"
-				data-animation="Animation.DROP"
-				data-draggable="false"
-				data-visible="true"
-				></marker>
-		</div>
+						data-map
+						data-zoom="11" 
+						data-center="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]" 
+						data-disable-default-u-i="false"
+						data-disable-double-click-zoom="true"
+						data-draggable="false"
+						data-draggable-cursor="default"
+						data-dragging-cursor="move"
+						data-keyboard-shortcuts="false"
+						data-max-zoom="15"
+						data-min-zoom="15"
+						data-tilt="0"
+						data-height="100%"
+						data-map-type-id="ROADMAP">
+						<marker class="marker"
+							data-position="[ {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LATITUDE }}, {{ vm.WEBSITE_SETTINGS.GOOGLE.MAP.LONGITUDE }} ]"
+							data-title="{{ vm.WEBSITE_SETTINGS.TITLE }}"
+							data-animation="Animation.DROP"
+							data-draggable="false"
+							data-visible="true"
+							data-icon="images/contact-us/{{vm.WEBSITE_SETTINGS.GOOGLE.MAP.MARKER_ICON }}"></marker>
+					</div>
 	</div>
 	 <div class="small-12 medium-6 columns">
 		<ul class="no-bullet">

@@ -8,8 +8,7 @@
 			'app.auth',
 			'app.my-account',
 			'app.validate',
-			'app.filters',
-			'app.shop'
+			'app.filters'
 	  	]);
 
 })();

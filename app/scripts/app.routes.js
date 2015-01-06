@@ -207,7 +207,43 @@
 				pageBodyClass: 'contact'
 			}
 		})
-		.state('404', {
+		.state('app.privacy-policy', {
+			url: '/privacy-policy',
+			resolve: {
+				Auth: 'Auth',
+				user: function(Auth) {
+					return Auth.resolveUser().then(function(user) {
+						return user;
+					});
+				}
+			},		
+			views: {
+				'header@': {
+					templateUrl: 'scripts/layout/header.html',
+					controller: 'HeaderCtrl',
+					controllerAs: 'vm'
+				},			
+				'page-background@': {
+					controller: 'PrivacyPolicyBackgroundCtrl',
+					controllerAs: 'vm'
+				},	
+				'page-content@': {
+					templateUrl: 'scripts/privacy-policy/privacy-policy.html',
+					controller: 'PrivacyPolicyCtrl',
+					controllerAs: 'vm'
+				},		
+				'footer@': {
+					templateUrl: 'scripts/layout/footer.html',
+					controller: 'FooterCtrl',
+					controllerAs: 'vm'
+				}        
+			},
+			data: {
+				pageTitle: '404 Error' + websiteTitle,
+				pageBodyClass: 'error'
+			}
+		})
+		.state('app.404', {
 			url: '/404',
 			resolve: {
 				Auth: 'Auth',
@@ -218,21 +254,21 @@
 				}
 			},		
 			views: {
-				'header': {
+				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},			
-				'page-background': {
+				'page-background@': {
 					controller: 'ErrorBackgroundCtrl',
 					controllerAs: 'vm'
 				},	
-				'page-content': {
+				'page-content@': {
 					templateUrl: 'scripts/error/error.html',
 					controller: 'ErrorCtrl',
 					controllerAs: 'vm'
 				},		
-				'footer': {
+				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
 					controllerAs: 'vm'
@@ -244,7 +280,7 @@
 			}
 		});
 
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/404');
 	}
 
 	runBlock.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window', 'WEBSITE_SETTINGS'];

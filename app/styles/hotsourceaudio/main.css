@@ -280,7 +280,8 @@ button,
 */
 
 footer {
-    /*padding-top: 5px;*/
+    bottom: 0;
+    width: 100%;
     background: #333;
     border-top: 1px solid #222;
 }
@@ -338,15 +339,6 @@ footer .inline-list.right {
     /* Home */
     .home h2 {
         font-size: 22px;
-    }
-    
-    .orbit-container .orbit-slides-container li {
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .orbit-container .orbit-slides-container li > img {
-        margin-top: -50%;
     }
     
     /* About us */

@@ -228,7 +228,9 @@
 			}
 		});
 
-		$urlRouterProvider.otherwise('/404');
+		$urlRouterProvider
+			.when('', '/')
+			.otherwise('/404');
 	}
 
 	runBlock.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window', 'WEBSITE_SETTINGS'];

@@ -1,19 +1,19 @@
 <!-- Top Bar -->
 <div class="contain-to-grid">
-    <nav class="top-bar" data-topbar>
+    <top-bar>
         <ul class="title-area">
             <li class="name">
             	<h1>
             		<a data-ui-sref="app.home">{{ vm.WEBSITE_SETTINGS.TITLE }}</a>
             	</h1>
             </li>
-            <li class="toggle-topbar menu-icon">
+            <li toggle-top-bar class="menu-icon">
                 <a href="#">
                     <span>Menu</span>
                 </a>
             </li>
         </ul>
-        <section class="top-bar-section">
+        <top-bar-section class="top-bar-section">
             <ul class="right">
                 <li class="divider"></li>
                 <li data-ui-sref-active="active">
@@ -40,8 +40,8 @@
                     <a href="inc/login.php" class="button" data-reveal-id="modal" data-reveal-ajax="true">Login</a>
                 </li>
             </ul>
-        </section>
-    </nav>
+        </top-bar-section>
+    </top-bar>
 </div>
 
 <!--

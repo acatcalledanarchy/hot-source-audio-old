@@ -130,13 +130,20 @@ button.iconButton {
 }
 
 .showreel-video-container {
-    height: 0;
+    height: 100%;
     padding-bottom: 56.25%;
     position: relative;
 }
 
 .showreel-video {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.showreel-video-buffering {
     top: 0;
     left: 0;
     right: 0;

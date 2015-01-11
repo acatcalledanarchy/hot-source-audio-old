@@ -10,10 +10,8 @@
 	<!-- bower:css -->
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
 	<link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
-	<link rel="stylesheet" href="bower_components/toastr/toastr.css" />
-	<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
 	<link rel="stylesheet" href="bower_components/icomoon/dist/css/style.css" />
-	<link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
+	<link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
@@ -55,6 +53,7 @@
     <![endif]-->
     <!-- endbuild -->
     <script src="//maps.google.com/maps/api/js"></script>
+    <!--
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -62,29 +61,21 @@
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
         ga('create', 'UA-57546047-1', 'auto');
-    </script>    
+    </script>
+    -->    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/firebase-simple-login/firebase-simple-login.js"></script>
-    <script src="bower_components/mockfirebase/dist/mockfirebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
     <script src="bower_components/ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/toastr/toastr.js"></script>
-    <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
-    <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
     <script src="bower_components/jquery-waypoints/waypoints.js"></script>
     <script src="bower_components/SHA-1/sha1.js"></script>
     <script src="bower_components/angularitics/src/angulartics.js"></script>
@@ -105,35 +96,13 @@
     <script src="bower_components/angularitics/src/angulartics-marketo.js"></script>
     <script src="bower_components/angularitics/src/angulartics-intercom.js"></script>
     <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
-    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
-    <script src="bower_components/videogular/videogular.js"></script>
-    <script src="bower_components/videogular-poster/poster.js"></script>
-    <script src="bower_components/videogular-buffering/buffering.js"></script>
-    <script src="bower_components/videogular-controls/controls.js"></script>
-    <script src="bower_components/videogular-overlay-play/overlay-play.js"></script>
-    <script src="bower_components/videogular-youtube/youtube.js"></script>
+    <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
+    <script src="bower_components/ngScrollTo/ng-scrollto.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.module.js"></script>
-	<script src="scripts/app.routes.js"></script>
-	<!-- Auth -->
-	<script src="scripts/auth/auth.module.js"></script>
-	<script src="scripts/auth/auth.routes.js"></script>
-	<script src="scripts/auth/auth.factory.js"></script>
-	<script src="scripts/auth/auth.background.controller.js"></script>
-	<script src="scripts/auth/auth.controller.js"></script>
-	<script src="scripts/auth/login-form.controller.js"></script>
-    <script src="scripts/auth/login-modal.controller.js"></script>
-	<script src="scripts/auth/register-form.controller.js"></script>
-	<!-- My account -->
-	<script src="scripts/my-account/my-account.module.js"></script>
-	<script src="scripts/my-account/my-account.routes.js"></script>
-	<script src="scripts/my-account/my-account.controller.js"></script>
-	<script src="scripts/my-account/change-password-form.directive.js"></script>
-	<script src="scripts/my-account/profile.factory.js"></script>
-	<script src="scripts/my-account/profile.controller.js"></script>
-	<script src="scripts/my-account/users-table.controller.js"></script>        
+	<script src="scripts/app.routes.js"></script>       
 	<!-- Core -->
 	<script src="scripts/core/core.module.js"></script>
 	<script src="scripts/core/constants.js"></script>
@@ -143,41 +112,21 @@
     <!-- Showreel -->
     <script src="scripts/showreel/showreel.background.controller.js"></script>
     <script src="scripts/showreel/showreel.controller.js"></script>
-    <!-- Library music -->
-    <script src="scripts/library-music/library-music.background.controller.js"></script>
-    <script src="scripts/library-music/library-music.controller.js"></script>
 	<!-- Contact us -->
 	<script src="scripts/contact-us/contact-us.background.controller.js"></script>
 	<script src="scripts/contact-us/contact-us.controller.js"></script>
 	<!-- Home -->
 	<script src="scripts/home/home.background.controller.js"></script>
 	<script src="scripts/home/home.controller.js"></script>
-    <!-- Slides -->
-    <script src="scripts/slides/slide.factory.js"></script>
 	<!-- Layout -->
 	<script src="scripts/layout/footer.controller.js"></script>
 	<script src="scripts/layout/header.controller.js"></script>
-    <!-- Clients -->
-    <script src="scripts/clients/client.factory.js"></script>
-    <!-- Employees -->
-    <script src="scripts/employees/employee.factory.js"></script>
     <!-- Errors -->
     <script src="scripts/error/error.background.controller.js"></script>
     <script src="scripts/error/error.controller.js"></script>
     <!-- Privacy Policy -->
     <script src="scripts/privacy-policy/privacy-policy.background.controller.js"></script>
     <script src="scripts/privacy-policy/privacy-policy.controller.js"></script>
-	<!-- Validate Module -->
-	<script src="scripts/validate/validate.module.js"></script>
-	<script src="scripts/validate/constants.js"></script>
-	<script src="scripts/validate/config.js"></script>
-	<script src="scripts/validate/validate.password.characters.directive.js"></script>
-	<script src="scripts/validate/validate.match.directive.js"></script>
-    <script src="scripts/validate/validate.dont.match.directive.js"></script>
-	<script src="scripts/validate/validate.record.availability.directive.js"></script>  
-	<!-- Filter Module -->
-	<script src="scripts/filters/filters.module.js"></script>
-	<script src="scripts/filters/capitalize.filter.js"></script>
 	<!-- endbuild -->
 </body>
 </html>

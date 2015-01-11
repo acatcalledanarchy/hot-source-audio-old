@@ -8,13 +8,10 @@
 		.module('app')
 		.controller('ErrorCtrl', ErrorCtrl);
 
-	ErrorCtrl.$inject = ['user'];
-
-	function ErrorCtrl(user) {
+	function ErrorCtrl() {
 
 		var vm = this;
 		vm.pageContentClass	= 'page-content-error';
-		vm.user = user;
 	}
 
 })();

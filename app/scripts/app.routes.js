@@ -17,28 +17,10 @@
 
 		$stateProvider
 		.state('app', {
-			abstract: true,
-			resolve: {
-				Auth: 'Auth',
-				user: function(Auth) {
-					return Auth.resolveUser().then(function(user) {
-						return user;
-					});
-				},
-				Client: 'Client',
-				clients: function(Client) {
-					return Client.all;
-				}
-			}
+			abstract: true
 		})
 		.state('app.home', {
 			url: '/',
-			resolve: {
-				Slide: 'Slide',
-				slides: function(Slide) {
-					return Slide.all;
-				}
-			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -67,12 +49,6 @@
 		})
 		.state('app.about-us', {
 			url: '/about-us', 	
-			resolve: {
-				Employee: 'Employee',
-				employees: function(Employee) {
-					return Employee.all;
-				}
-			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
@@ -245,13 +221,12 @@
 			.otherwise('/404');
 	}
 
-	runBlock.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window', 'WEBSITE_SETTINGS'];
+	runBlock.$inject = ['$rootScope', '$state', '$stateParams', '$location', '$window'];
 
-	function runBlock($rootScope, $state, $stateParams, $location, $window, WEBSITE_SETTINGS) {
+	function runBlock($rootScope, $state, $stateParams, $location, $window) {
 		$rootScope.$on('$stateChangeSuccess', function() {
 			$rootScope.$state = $state;
 			$rootScope.$stateParams = $stateParams;
-			$rootScope.$stateParams.googleAnalyticsTrackingId = WEBSITE_SETTINGS.GOOGLE.ANALYTICS.TRACKING_ID; //!XXX This maybe a terrible hack?
 			if ($window.ga) {
 		        $window.ga('send', 'pageview', {
 		        	page: $location.path()

@@ -8,26 +8,12 @@
 		.module('app')
 		.controller('HeaderCtrl', HeaderCtrl);
 
-	HeaderCtrl.$inject = ['$scope', 'user', 'Auth', '$modal', 'WEBSITE_SETTINGS'];
+	HeaderCtrl.$inject = ['WEBSITE_SETTINGS'];
 
-	function HeaderCtrl($scope, user, Auth, $modal, WEBSITE_SETTINGS) {
+	function HeaderCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.logout = Auth.logout;
-		vm.user = user;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
-
-		$scope.openModal = openModal;
-		
-		///////////////////////////////////////
-
-		function openModal() {
-
-			$modal.open({
-				templateUrl: 'scripts/auth/login-modal.html',
-				controller: 'LoginModalCtrl',
-			});
-		}
 	}
 
 })();

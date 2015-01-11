@@ -6,9 +6,11 @@
 <div class="row">
     <div class="medium-6 columns">
         <div class="slider-container">
-            <div class="slider">
-                <img src="images/banners/banner-1.jpg">
-            </div>
+            <ul class="slider" rn-carousel rn-carousel-auto-slide="10">
+                <li ng-repeat="slide in vm.WEBSITE_SETTINGS.SLIDES">
+                    <img ng-src="images/banners/{{ slide }}">
+                </li>
+            </ul>
             <div class="logo-overlay">
                 <img src="images/home/hotsource-logo.png" alt="Hot Source">
             </div>
@@ -16,7 +18,7 @@
     </div>
     <div class="small-12 medium-6 columns">
         <div class="row">
-            <div class="small-12 columns" ng-bind-html="vm.pageCopy"></div>
+            <div class="small-12 columns" ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.PAGE_COPY"></div>
         </div>
     </div>
 </div>

@@ -1,0 +1,71 @@
+/*
+|-------
+| Layout
+|-------
+*/
+
+/* Header */
+header,
+section {
+    background-color: rgba(0, 0, 0, 0.7) !important; 
+}
+
+/* Top bar */
+.top-bar .name h1 a {
+    width: 100%;
+}
+
+.top-bar-section ul li > a {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.top-bar-section ul li.active > a:hover {
+    background: #F2267B;
+    cursor: default;
+}
+
+/* Footer */
+footer {
+    bottom: 0;
+    width: 100%;
+    background: #333;
+    border-top: 1px solid #222;
+}
+
+.client-logos {
+    color: #333;
+    background: url(../../images/backgrounds/background.jpg);
+}
+
+.client-logos ul {
+    margin: 60px 0 30px 0;
+}
+
+footer .inline-list {
+    margin-top: 28px;
+}
+
+footer .inline-list.right {
+    margin-top: 20px;
+}
+
+footer small {
+    font-size: 14px;
+}
+
+footer a {
+    color: #FFF;
+}
+
+footer a i {
+    color: #FFF;
+    font-size: 30px;
+}
+
+footer a:hover i {
+    color: #F2267B;
+}
+
+footer a i span {
+    display: none;
+}

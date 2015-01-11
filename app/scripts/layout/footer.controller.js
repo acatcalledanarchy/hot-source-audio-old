@@ -8,12 +8,11 @@
 		.module('app')
 		.controller('FooterCtrl', FooterCtrl);
 
-	FooterCtrl.$inject = ['clients', 'WEBSITE_SETTINGS'];
+	FooterCtrl.$inject = ['WEBSITE_SETTINGS'];
 
-	function FooterCtrl(clients, WEBSITE_SETTINGS) {
+	function FooterCtrl(WEBSITE_SETTINGS) {
 	
 		var vm = this;
-		vm.clients = clients;
 		vm.copyrightYear = getCopyrightYear();
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 

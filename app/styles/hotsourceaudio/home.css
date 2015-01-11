@@ -1,0 +1,28 @@
+/*
+|-----
+| Home
+|-----
+*/
+
+.slider-container {
+	position: relative;
+	height: 0;
+	padding-bottom: 155%;
+	margin-bottom: 20px;
+}
+
+.slider-container .logo-overlay {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 150px;
+}
+
+.slider {
+    margin-left: 0;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

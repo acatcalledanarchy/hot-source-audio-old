@@ -4,29 +4,27 @@
     </div>
 </div>
 <div class="row">
-	<div class="small-12 medium-6 large-8 end columns">
-		<p>{{ vm.introCopy }}</p>
-	</div>
+	<div class="small-12 medium-6 large-8 end columns" ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.ABOUT_US.INTRO_COPY"></div>
 </div>
 <div class="row">
 	<div class="small-12 columns">
 		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-		    <li ng-repeat="employee in vm.employees">
-				<h3>{{ employee.first_name }} {{ employee.surname }}</h3>
+		    <li ng-repeat="employee in vm.WEBSITE_SETTINGS.EMPLOYEES">
+				<h3>{{ employee.FIRST_NAME }} {{ employee.SURNAME }}</h3>
 				<div class="portrait">
-					<img ng-src="images/about-us/{{ employee.image }}" alt="{{ employee.first_name }} {{ employee.surname }}" />
+					<img ng-src="images/about-us/{{ employee.IMAGE }}" alt="{{ employee.FIRST_NAME }} {{ employee.SURNAME }}" />
 				</div>
 				<ul class="no-bullet details-list">
 					<li>
 						<i class="icon-mail-3">
-						</i>&nbsp;&nbsp;<a href="mailto:{{ employee.email_address }}">{{ employee.email_address }}</a>
+						</i>&nbsp;&nbsp;<a href="mailto:{{ employee.EMAIL_ADDRESS }}">{{ employee.EMAIL_ADDRESS }}</a>
 					</li>
 					<li>
 						<i class="icon-phone">
-						</i>&nbsp;&nbsp<a href="tel:{{ employee.telephone }}">{{ employee.telephone_number }}</a>
+						</i>&nbsp;&nbsp;<a href="tel:{{ employee.TELEPHONE_NUMBER }}">{{ employee.TELEPHONE_NUMBER }}</a>
 					</li>
 				</ul>
-				<p>{{ employee.copy }}</p>
+				<p>{{ employee.COPY }}</p>
 			</li>
 		</ul>
 	</div>

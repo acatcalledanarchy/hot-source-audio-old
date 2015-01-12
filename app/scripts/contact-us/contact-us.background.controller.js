@@ -11,7 +11,7 @@
 	function ContactBackgroundCtrl() {
 
 		var vm = this;
-		vm.pageBackgroundClass = 'page-background-contact';
+		vm.pageBackgroundClass = 'page-background-contact-us';
 	}
 
 })();

@@ -13,7 +13,7 @@
 	function ContactCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageContentClass	= 'page-content-contact';
+		vm.pageContentClass	= 'page-content-contact-us';
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 })();

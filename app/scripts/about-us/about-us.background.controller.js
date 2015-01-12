@@ -11,7 +11,7 @@
 	function AboutBackgroundCtrl() {
 
 		var vm = this;
-		vm.pageBackgroundClass = 'page-background-about';
+		vm.pageBackgroundClass = 'page-background-about-us';
 	}
 
 })();

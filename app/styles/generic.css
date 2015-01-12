@@ -8,7 +8,6 @@ body {
 	height: 100%;
 }
 
-/*
 .page {
 	display: block;
 	position: absolute;
@@ -29,21 +28,15 @@ body {
 .page.ng-enter 		{ z-index: -2; }
 .page.ng-leave 		{ z-index: -1; }
 
-.page-content { z-index: 1003; }
-.page-content.ng-enter { z-index: 1004; }
+.page-content { z-index: 0; }
+.page-content.ng-enter { z-index: 1; }
 .page-content.ng-leave {
 	position: absolute;
-	top: 0;
+	top: 45px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	z-index: 1005;
-}
-*/
-
-/* Remove annoying Bootstrap focus */
-* {
-    outline: 0 !important;
 }
 
 /* Animations */

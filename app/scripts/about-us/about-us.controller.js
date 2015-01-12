@@ -15,7 +15,7 @@
 
   		var vm = this;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
-		vm.pageContentClass	= 'page-content-about';
+		vm.pageContentClass	= 'page-content-about-us';
 	}
 
 })();

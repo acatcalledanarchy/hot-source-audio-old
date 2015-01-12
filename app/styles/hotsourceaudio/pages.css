@@ -1,0 +1,31 @@
+/* Page backgrounds */
+.page-background-home,
+.page-background-about-us,
+.page-background-showreel,
+.page-background-contact-us,
+.page-background-error {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+.page-background-home {
+	background-color: #000;
+}
+
+.page-background-about-us {
+	background-color: #000;
+}
+
+.page-background-showreel {
+	background-color: #000;
+}
+
+.page-background-contact-us {
+	background-color: #000;
+}
+
+.page-background-error {
+	background-color: #000;
+}

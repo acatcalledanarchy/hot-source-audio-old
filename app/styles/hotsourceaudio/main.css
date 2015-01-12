@@ -5,7 +5,8 @@
 */
 
 body {
-    background: url(../../images/backgrounds/background.jpg);
+    /*background: url(../../images/backgrounds/background.jpg);*/
+    background-color: #000;
 }
 
 p,

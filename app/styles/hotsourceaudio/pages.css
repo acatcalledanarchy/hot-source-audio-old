@@ -6,16 +6,15 @@
 	right: 0;
 	bottom: 0;
 	z-index: -1;
+	overflow: hidden;
 }
 
 .page-overlay .overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: #000;
-	opacity: 0.7;
+	display: block;
+	margin-left: 15px;
+	margin-right: 15px;
+	height: 5000px;
+	background: #454545;
 }
 
 /* Page content */
@@ -45,7 +44,6 @@
 	z-index: 3;
     position: absolute;
     top: 45px;
-    bottom: 0;
     left: 0;
     right: 0;
     overflow: hidden;

@@ -5,7 +5,12 @@
 */
 
 body {
-	background: url(../../images/backgrounds/background.jpg);
+	/*background-color: #575757;*/
+	background-image: url(../../images/backgrounds/soundproofing.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 p,
@@ -29,26 +34,21 @@ h3,
 h4,
 h5,
 a {
-    color: #ED8232;
+    color: #E95130;
 }
 
-h1.subheading {
-    font-size: 24px;
-    color: #FFF;
+p a:hover {
+	text-decoration: underline;
 }
 
 h2 {
 	margin: 0;
 }
 
-.panel {
-	border: none;
-	background: #000 !important;
-	opacity: 0.5;
-	color: #FFF !important;
+h1.subheading {
+	font-size: 1.5rem;
 }
 
-.panel-content {
-	position: relative;
-	opacity: 1;
+.th {
+	border-width: 2px;
 }

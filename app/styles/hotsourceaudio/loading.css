@@ -1,12 +1,12 @@
 #loading-bar .bar {
-	background: #F2267B;
+	background: #E95130;
 }
 
 #loading-bar .peg {
-	-moz-box-shadow: #F2267B 1px 0 6px 1px;
-	-ms-box-shadow: #F2267B 1px 0 6px 1px;
-	-webkit-box-shadow: #F2267B 1px 0 6px 1px;
-	box-shadow: #F2267B 1px 0 6px 1px;
+	-moz-box-shadow: #E95130 1px 0 6px 1px;
+	-ms-box-shadow: #E95130 1px 0 6px 1px;
+	-webkit-box-shadow: #E95130 1px 0 6px 1px;
+	box-shadow: #E95130 1px 0 6px 1px;
 }
 
 #loading-bar-spinner {
@@ -14,8 +14,8 @@
 }
 
 #loading-bar-spinner .spinner-icon {
-	border-top-color:  #F2267B;
-	border-left-color: #F2267B;
+	border-top-color:  #E95130;
+	border-left-color: #E95130;
 	width: 22px;
 	height: 22px;
 }

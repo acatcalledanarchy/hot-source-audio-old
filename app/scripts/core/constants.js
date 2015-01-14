@@ -31,10 +31,10 @@
                         KEYWORDS: 'audio, production, radio, tv, film, voiceover, podcasts, restoration, commercial, music, online, digital, conversion, dat, minidisc, reel, cassette'
                     },  
                     INTRO_COPY: '<p>Hot Source is an independent audio production company based in Guernsey in the Channel Islands. We are passionate about defining your brand with creative audio that connects and engages emotionally with your customers producing successful results.</p>',
-                    HOW_WE_WORK_COPY: '<p>We like to meet with you, get an overview of where you are with your current marketing and identify objectives.</p>' +
+                    HOW_WE_WORK_COPY: '<p>We like to chat with you, get an overview of where you are with your current marketing and identify objectives.</p>' +
                         '<p>We like to agree the creative brief then go to work.</p>' +
-                        '<p>We work to brief and price accordingly. Where possible we will supply audio examples and cost guides, making sure you understand what is achievable for the final budget. We will also present demos where appropriate.</p>' +
-                        '<p>If you already have an creative agency on board we can work develop ideas with them or purely as a production house.</p>',
+                        '<p>We work to your brief and price accordingly. Where possible we will supply audio examples and cost guides, making sure you understand what is achievable for the final budget. We will also present demos where appropriate.</p>' +
+                        '<p>If you already have an creative agency on board we can work to develop ideas with them or purely as a production house.</p>',
                     SERVICES: [
                         {
                             TITLE: 'Radio commercial production',

@@ -25,32 +25,32 @@
     <link rel="stylesheet" type="text/css" href="styles/hotsourceaudio.css">
 	<!-- endbuild -->
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon-180x180.png">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-160x160.png" sizes="160x160">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon-180x180.png">
+<link rel="shortcut icon" href="/images/favicon/favicon.ico">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-160x160.png" sizes="160x160">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png">
+<meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
 </head>
 <body ng-class="$state.current.data.page.bodyClass">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <header ui-view="header"></header>
-    <section class="page-overlay"><div class="row overlay"></div></section>
-    <section class="page-content {{ vm.pageContentClass }}" ui-view="page-content"></section>
+    <section class="page-overlay" ui-view="page-overlay"></section>
+    <section class="page-content" ui-view="page-content"></section>
     <section class="banner-overlay" ui-view="page-banner"></section>
     <section class="logo-overlay" ui-view="logo-overlay"></section>
     <footer ui-view="footer"></footer>

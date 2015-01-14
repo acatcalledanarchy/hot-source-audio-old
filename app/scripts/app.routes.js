@@ -87,6 +87,9 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},
 				'page-content@': {
 					templateUrl:  'scripts/home/home.html',
 					controller:  'HomeCtrl',
@@ -124,6 +127,9 @@
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
+				},
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
 				},
 				'page-content@': {
 					templateUrl:  'scripts/studio/studio.html',
@@ -163,6 +169,9 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},		
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},
 				'page-content@': {
 					templateUrl:  'scripts/about-us/about-us.html',
 					controller:  'AboutUsCtrl',
@@ -200,7 +209,10 @@
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
-				},		
+				},	
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},	
 				'page-content@': {
 					templateUrl:  'scripts/our-work/our-work.html',
 					controller:  'OurWorkCtrl',
@@ -239,6 +251,9 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},	
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},
 				'page-content@': {
 					templateUrl: 'scripts/contact-us/contact-us.html',
 					controller: 'ContactUsCtrl',
@@ -276,7 +291,10 @@
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
-				},			
+				},	
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},		
 				'page-content@': {
 					templateUrl: 'scripts/error/error.html',
 					controller: 'ErrorCtrl',

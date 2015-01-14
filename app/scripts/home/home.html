@@ -1,24 +1,33 @@
 <div class="row">
     <div class="small-12 columns">
-        <h2>Welcome to <br class="show-for-small">Hot Source Audio Productions</h2>
+        <div class="banner-container"></div>
     </div>
 </div>
 <div class="row">
-    <div class="medium-6 columns">
-        <div class="slider-container">
-            <ul class="slider" rn-carousel rn-carousel-auto-slide="10">
-                <li ng-repeat="slide in vm.WEBSITE_SETTINGS.SLIDES">
-                    <img ng-src="images/banners/{{ slide }}">
-                </li>
-            </ul>
-            <div class="logo-overlay">
-                <img src="images/home/hotsource-logo.png" alt="Hot Source">
+    <div class="small-12 medium-8 medium-push-3 columns end">
+        <h2>Welcome to {{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
+        <div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.INTRO_COPY"></div>
+        <h4>How we work</h4>
+        <div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.HOW_WE_WORK_COPY"></div>
+        <p>&nbsp;</p>
+        <div class="row" ng-repeat="service in vm.WEBSITE_SETTINGS.PAGES.HOME.SERVICES">
+            <div class="service">
+                <div class="small-12 medium-4 columns">
+                    <div class="th">
+                        <img ng-src="images/services/{{ service.IMAGE }}" alt="{{ service.TITLE }}">
+                    </div>
+                </div>
+                <div class="small-12 medium-8 columns">
+                    <h4>{{ service.TITLE }}</h4>
+                    <div ng-bind-html="service.COPY"></div>
+                    <ul class="no-bullet" ng-if="service.LINK">
+                    <li>
+                        <i class="fi-volume">
+                        </i>&nbsp;&nbsp;<a data-ui-sref="app.our-work">{{ service.LINK.TEXT }}</a>
+                    </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="small-12 medium-6 columns">
-        <div class="row">
-            <div class="small-12 columns" ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.PAGE_COPY"></div>
-        </div>
+        </div>    
     </div>
 </div>

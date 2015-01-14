@@ -9,11 +9,71 @@
 		.config(config)
 		.run(runBlock);
 
-	config.$inject = ['$stateProvider', '$urlRouterProvider', 'WEBSITE_SETTINGS'];
+	config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', 'WEBSITE_SETTINGS'];
 
-	function config($stateProvider, $urlRouterProvider, WEBSITE_SETTINGS) {
+	function config($stateProvider, $urlRouterProvider, $locationProvider, WEBSITE_SETTINGS) {
 
-		var websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
+		var addressLine,
+			client,
+			contactUsKeywords = [],
+			contactUsDescription = [],
+			description,
+			i,
+			j,
+			keywords,
+			showreelKeywords = ['clients', 'showreel', 'audio', 'video'],
+			showreelDescription = [],
+			websiteTitle = ' | ' + WEBSITE_SETTINGS.TITLE;
+
+		//////////////////////////////////////////////////////////////////////////////////
+
+		for(i in WEBSITE_SETTINGS.CLIENTS) {
+			client = WEBSITE_SETTINGS.CLIENTS[i].NAME;
+			showreelKeywords.push(client);
+		}
+
+		for(i in WEBSITE_SETTINGS.SHOWREEL.VIDEOS) {
+			description = WEBSITE_SETTINGS.SHOWREEL.VIDEOS[i].COPY;
+			keywords = WEBSITE_SETTINGS.SHOWREEL.VIDEOS[i].TITLE.toLowerCase().split(' ');
+			for(j in keywords) {
+				if(showreelKeywords.indexOf(keywords[j]) < 0) {
+					showreelKeywords.push(keywords[j]);		
+				}
+			}
+			showreelDescription.push(description);
+		}
+
+		for(i in WEBSITE_SETTINGS.SHOWREEL.MP3S) {
+			description = WEBSITE_SETTINGS.SHOWREEL.MP3S[i].COPY;
+			keywords = WEBSITE_SETTINGS.SHOWREEL.MP3S[i].TITLE.toLowerCase().split(' ');
+			for(j in keywords) {
+				if(showreelKeywords.indexOf(keywords[j]) < 0) {
+					showreelKeywords.push(keywords[j]);	
+				}
+			}
+			showreelDescription.push(description);
+		}
+
+		showreelDescription = showreelDescription.join(' ');
+		showreelKeywords = showreelKeywords.join(', ');
+
+		////////////////////////////////////////////////////////////////////////////////////
+
+		for(i in WEBSITE_SETTINGS.ADDRESS) {
+			addressLine = WEBSITE_SETTINGS.ADDRESS[i];
+			contactUsDescription.push(addressLine);
+			addressLine = addressLine.split(' ');
+			for(j in addressLine) {
+				if(contactUsKeywords.indexOf(addressLine[j]) < 0) {
+					contactUsKeywords.push(addressLine[j]);
+				}
+			}
+		}
+
+		contactUsDescription = contactUsDescription.join(', ');
+		contactUsKeywords = contactUsKeywords.join(', ');
+
+		////////////////////////////////////////////////////////////
 
 		$stateProvider
 		.state('app', {
@@ -27,14 +87,18 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},
-				'page-background@': {
-					controller: 'HomeBackgroundCtrl',
-					controllerAs: 'vm'
-				},
 				'page-content@': {
 					templateUrl:  'scripts/home/home.html',
 					controller:  'HomeCtrl',
 					controllerAs: 'vm'
+				},
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'HomeBannerCtrl',
+					controllerAs: 'vm'
+				},
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
 				},
 				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
@@ -43,8 +107,52 @@
 				}
 			},
 			data: {
-				pageTitle: 'Home' + websiteTitle,
-				pageBodyClass: 'home'
+				page: {
+					title: 'Home' + websiteTitle,
+					bodyClass: 'home'
+				},
+				meta: {
+					description: WEBSITE_SETTINGS.PAGES.HOME.META.DESCRIPTION,
+					keywords: WEBSITE_SETTINGS.PAGES.HOME.META.KEYWORDS
+				}
+			}
+		})
+		.state('app.studio', {
+			url: '/studio',
+			views: {
+				'header@': {
+					templateUrl: 'scripts/layout/header.html',
+					controller: 'HeaderCtrl',
+					controllerAs: 'vm'
+				},
+				'page-content@': {
+					templateUrl:  'scripts/studio/studio.html',
+					controller:  'StudioCtrl',
+					controllerAs: 'vm'
+				},
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'StudioBannerCtrl',
+					controllerAs: 'vm'
+				},
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},
+				'footer@': {
+					templateUrl: 'scripts/layout/footer.html',
+					controller: 'FooterCtrl',
+					controllerAs: 'vm'
+				}
+			},
+			data: {
+				page: {
+					title: 'Studio' + websiteTitle,
+					bodyClass: 'studio'
+				},
+				meta: {
+					description: WEBSITE_SETTINGS.PAGES.STUDIO.META.DESCRIPTION,
+					keywords: WEBSITE_SETTINGS.PAGES.STUDIO.META.KEYWORDS
+				}
 			}
 		})
 		.state('app.about-us', {
@@ -55,15 +163,19 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},		
-				'page-background@': {
-					controller: 'AboutBackgroundCtrl',
-					controllerAs: 'vm'
-				},		
 				'page-content@': {
 					templateUrl:  'scripts/about-us/about-us.html',
-					controller:  'AboutCtrl',
+					controller:  'AboutUsCtrl',
 					controllerAs: 'vm'
-				},			
+				},	
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'AboutUsBannerCtrl',
+					controllerAs: 'vm'
+				},	
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},		
 				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -71,27 +183,37 @@
 				}
 			},
 			data: {
-				pageTitle: 'About us' + websiteTitle,
-				pageBodyClass: 'about'
+				page: {
+					title: 'About us' + websiteTitle,
+					bodyClass: 'about-us'
+				},
+				meta: {
+					description: WEBSITE_SETTINGS.PAGES.ABOUT_US.META.DESCRIPTION,
+					keywords: WEBSITE_SETTINGS.PAGES.ABOUT_US.META.KEYWORDS
+				}
 			}
 		})
-		.state('app.showreel', {
-			url: '/showreel', 	
+		.state('app.our-work', {
+			url: '/our-work', 	
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},		
-				'page-background@': {
-					controller: 'ShowreelBackgroundCtrl',
-					controllerAs: 'vm'
-				},		
 				'page-content@': {
-					templateUrl:  'scripts/showreel/showreel.html',
-					controller:  'ShowreelCtrl',
+					templateUrl:  'scripts/our-work/our-work.html',
+					controller:  'OurWorkCtrl',
 					controllerAs: 'vm'
-				},			
+				},	
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'OurWorkBannerCtrl',
+					controllerAs: 'vm'
+				},	
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},		
 				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -99,38 +221,16 @@
 				}
 			},
 			data: {
-				pageTitle: 'Showreel' + websiteTitle,
-				pageBodyClass: 'showreel'
-			}
-		})
-		.state('app.library-music', {
-			url: '/library-music', 	
-			views: {
-				'header@': {
-					templateUrl: 'scripts/layout/header.html',
-					controller: 'HeaderCtrl',
-					controllerAs: 'vm'
-				},		
-				'page-background@': {
-					controller: 'LibraryMusicBackgroundCtrl',
-					controllerAs: 'vm'
-				},		
-				'page-content@': {
-					templateUrl:  'scripts/library-music/library-music.html',
-					controller:  'LibraryMusicCtrl',
-					controllerAs: 'vm'
-				},			
-				'footer@': {
-					templateUrl: 'scripts/layout/footer.html',
-					controller: 'FooterCtrl',
-					controllerAs: 'vm'
+				page: {
+					title: 'Our work' + websiteTitle,
+					bodyClass: 'our-work',
+				},
+				meta: {
+					description: showreelDescription,
+					keywords: showreelKeywords
 				}
-			},
-			data: {
-				pageTitle: 'Showreel' + websiteTitle,
-				pageBodyClass: 'showreel'
 			}
-		})		
+		})	
 		.state('app.contact-us', {
 			url: '/contact-us',	
 			views: {
@@ -139,43 +239,19 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},	
-				'page-background@': {
-					controller: 'ContactBackgroundCtrl',
-					controllerAs: 'vm'
-				},			
 				'page-content@': {
 					templateUrl: 'scripts/contact-us/contact-us.html',
-					controller: 'ContactCtrl',
+					controller: 'ContactUsCtrl',
 					controllerAs: 'vm'
-				},			
-				'footer@': {
-					templateUrl: 'scripts/layout/footer.html',
-					controller: 'FooterCtrl',
-					controllerAs: 'vm'
-				}        
-			},
-			data: {
-				pageTitle: 'Contact us' + websiteTitle,
-				pageBodyClass: 'contact'
-			}
-		})
-		.state('app.privacy-policy', {
-			url: '/privacy-policy',	
-			views: {
-				'header@': {
-					templateUrl: 'scripts/layout/header.html',
-					controller: 'HeaderCtrl',
-					controllerAs: 'vm'
-				},			
-				'page-background@': {
-					controller: 'PrivacyPolicyBackgroundCtrl',
+				},
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'ContactUsBannerCtrl',
 					controllerAs: 'vm'
 				},	
-				'page-content@': {
-					templateUrl: 'scripts/privacy-policy/privacy-policy.html',
-					controller: 'PrivacyPolicyCtrl',
-					controllerAs: 'vm'
-				},		
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},			
 				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -183,8 +259,14 @@
 				}        
 			},
 			data: {
-				pageTitle: '404 Error' + websiteTitle,
-				pageBodyClass: 'error'
+				page: {
+					title: 'Contact us' + websiteTitle,
+					bodyClass: 'contact-us'
+				},
+				meta: {
+					description: contactUsDescription,
+					keywords: contactUsKeywords
+				}
 			}
 		})
 		.state('app.404', {
@@ -195,15 +277,19 @@
 					controller: 'HeaderCtrl',
 					controllerAs: 'vm'
 				},			
-				'page-background@': {
-					controller: 'ErrorBackgroundCtrl',
-					controllerAs: 'vm'
-				},	
 				'page-content@': {
 					templateUrl: 'scripts/error/error.html',
 					controller: 'ErrorCtrl',
 					controllerAs: 'vm'
-				},		
+				},	
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'ErrorBannerCtrl',
+					controllerAs: 'vm'
+				},
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},	
 				'footer@': {
 					templateUrl: 'scripts/layout/footer.html',
 					controller: 'FooterCtrl',
@@ -211,11 +297,18 @@
 				}        
 			},
 			data: {
-				pageTitle: '404 Error' + websiteTitle,
-				pageBodyClass: 'error'
+				page: {
+					title: '404 error' + websiteTitle,
+					bodyClass: 'error'
+				},
+				meta: {
+					description: '',
+					keywords: ''
+				}
 			}
 		});
 
+		$locationProvider.hashPrefix('!');
 		$urlRouterProvider
 			.when('', '/')
 			.otherwise('/404');

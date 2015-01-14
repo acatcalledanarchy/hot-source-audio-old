@@ -7,3 +7,48 @@
 button.iconButton {
     margin-bottom: 0;
 }
+
+.videogular-container videogular vg-timedisplay {
+    font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.videogular-container {
+	margin-bottom: 60px;
+}
+
+.videogular-container.video {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%;
+}
+
+.videogular-container.video .videogular,
+.videogular-poster,
+.videogular-buffering {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.videogular-buffering .bufferingContainer {
+	top: 40%;
+	margin-top: 0;
+}
+
+.videogular-poster {
+	background: #000;
+}
+
+.videogular-container.audio {
+	height: 50px;
+}
+
+.videogular .loadingSpinner {
+	box-shadow: none;
+	border-top-color:  #F2267B;
+	border-left-color: #F2267B;
+	border-right-color: #000;
+	border-bottom-color: #000;
+}

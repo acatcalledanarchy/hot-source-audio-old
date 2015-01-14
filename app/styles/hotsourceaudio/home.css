@@ -1,13 +1,8 @@
-/*
-|-----
-| Home
-|-----
-*/
-
+/* Home */
 .slider-container {
 	position: relative;
 	height: 0;
-	padding-bottom: 155%;
+	padding-bottom: 25%;
 	margin-bottom: 20px;
 }
 
@@ -25,4 +20,13 @@
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.service {
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+.service h4 {
+    margin-top: -5px;
 }

@@ -2,8 +2,10 @@
 <html class="no-js" ng-app="app">
 <head>
 	<meta charset="utf-8">
-	<title ng-bind="$state.current.data.pageTitle"></title>
-	<meta name="description" content="">
+	<title ng-bind="$state.current.data.page.title"></title>
+	<meta name="description" content="{{ $state.current.data.meta.description }}">
+    <meta name="keywords" content="{{ $state.current.data.meta.keywords }}">
+    <meta name="fragment" content="!">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
@@ -15,13 +17,13 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" href="styles/videogular.css">
     <link rel="stylesheet" type="text/css" href="styles/foundation.min.css">
     <link rel="stylesheet" type="text/css" href="styles/foundation-icons.css">
 	<link rel="stylesheet" type="text/css" href="styles/animations.css">
 	<link rel="stylesheet" type="text/css" href="styles/generic.css">
-	<link rel="stylesheet" type="text/css" href="styles/hotsourceaudio.css">
+    <link rel="stylesheet" type="text/css" href="styles/hotsourceaudio.css">
 	<!-- endbuild -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
@@ -30,21 +32,27 @@
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon-180x180.png">
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-160x160.png" sizes="160x160">
     <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
-    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileColor" content="#b91d47">
     <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
     <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
 </head>
-<body ng-class="$state.current.data.pageBodyClass">
+<body ng-class="$state.current.data.page.bodyClass">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <header ui-view="header"></header>
-    <section class="page {{ vm.pageBackgroundClass }}" ui-view="page-background"></section>
-    <section class="page-content content {{ vm.pageContentClass }}" ui-view="page-content"></section>
+    <section class="page-overlay"><div class="row overlay"></div></section>
+    <section class="page-content {{ vm.pageContentClass }}" ui-view="page-content"></section>
+    <section class="banner-overlay" ui-view="page-banner"></section>
+    <section class="logo-overlay" ui-view="logo-overlay"></section>
     <footer ui-view="footer"></footer>
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -53,16 +61,14 @@
     <![endif]-->
     <!-- endbuild -->
     <script src="//maps.google.com/maps/api/js"></script>
-    <!--
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-57546047-1', 'auto');
-    </script>
-    -->    
+        ga('create', 'UA-37550524-1', 'auto');
+    </script>   
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -98,35 +104,41 @@
     <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
     <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
     <script src="bower_components/ngScrollTo/ng-scrollto.js"></script>
+    <script src="bower_components/videogular/videogular.js"></script>
+    <script src="bower_components/videogular-controls/controls.js"></script>
+    <script src="bower_components/videogular-buffering/buffering.js"></script>
+    <script src="bower_components/videogular-overlay-play/overlay-play.js"></script>
+    <script src="bower_components/videogular-poster/poster.js"></script>
+    <script src="bower_components/shifty/dist/shifty.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
-	<script src="scripts/app.module.js"></script>
-	<script src="scripts/app.routes.js"></script>       
+    <script src="scripts/app.module.js"></script>
+    <script src="scripts/app.routes.js"></script>       
 	<!-- Core -->
 	<script src="scripts/core/core.module.js"></script>
 	<script src="scripts/core/constants.js"></script>
-	<!-- About us -->
-	<script src="scripts/about-us/about-us.background.controller.js"></script>
-	<script src="scripts/about-us/about-us.controller.js"></script>
-    <!-- Showreel -->
-    <script src="scripts/showreel/showreel.background.controller.js"></script>
-    <script src="scripts/showreel/showreel.controller.js"></script>
-	<!-- Contact us -->
-	<script src="scripts/contact-us/contact-us.background.controller.js"></script>
-	<script src="scripts/contact-us/contact-us.controller.js"></script>
 	<!-- Home -->
-	<script src="scripts/home/home.background.controller.js"></script>
-	<script src="scripts/home/home.controller.js"></script>
+    <script src="scripts/home/home.banner.controller.js"></script>
+    <script src="scripts/home/home.controller.js"></script>
+    <!-- Studio -->
+    <script src="scripts/studio/studio.banner.controller.js"></script>
+    <script src="scripts/studio/studio.controller.js"></script>
+    <!-- About us -->
+	<script src="scripts/about-us/about-us.banner.controller.js"></script>
+	<script src="scripts/about-us/about-us.controller.js"></script>
+    <!-- Our work -->
+    <script src="scripts/our-work/our-work.banner.controller.js"></script>
+    <script src="scripts/our-work/our-work.controller.js"></script>
+	<!-- Contact us -->
+	<script src="scripts/contact-us/contact-us.banner.controller.js"></script>
+	<script src="scripts/contact-us/contact-us.controller.js"></script>
 	<!-- Layout -->
 	<script src="scripts/layout/footer.controller.js"></script>
 	<script src="scripts/layout/header.controller.js"></script>
     <!-- Errors -->
-    <script src="scripts/error/error.background.controller.js"></script>
+    <script src="scripts/error/error.banner.controller.js"></script>
     <script src="scripts/error/error.controller.js"></script>
-    <!-- Privacy Policy -->
-    <script src="scripts/privacy-policy/privacy-policy.background.controller.js"></script>
-    <script src="scripts/privacy-policy/privacy-policy.controller.js"></script>
 	<!-- endbuild -->
 </body>
 </html>

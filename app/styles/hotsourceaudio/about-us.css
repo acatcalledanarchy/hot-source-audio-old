@@ -1,26 +1,9 @@
-/*
-|---------
-| About us
-|---------
-*/
-
-.portrait {
-    position: relative;
-    margin: 20px 0 40px;
+/* About us */
+.employee {
+	display: inline-block;
+    margin-bottom: 40px;
 }
 
-.details-list {
-    margin-bottom: 20px;
-}
-
-@media only screen and (max-width: 40em) {
- 
-    .portrait {
-        height: 200px;
-        overflow: hidden;
-    }
-    
-    .portrait img {
-        margin-top: -20px;
-    }
+.employee h4 {
+    margin-top: -5px;
 }

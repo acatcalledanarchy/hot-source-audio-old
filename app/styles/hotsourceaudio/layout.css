@@ -15,13 +15,25 @@ section {
     width: 100%;
 }
 
+.top-bar-section ul li.active>a {
+    background: #ED8232;
+}
+
 .top-bar-section ul li > a {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'TeXGyreAdventorRegular', sans-serif;
 }
 
 .top-bar-section ul li.active > a:hover {
-    background: #F2267B;
+    background: #ED8232;
     cursor: default;
+}
+
+/* Banner */
+.banner-container {
+    margin-bottom: 40px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
 }
 
 /* Footer */

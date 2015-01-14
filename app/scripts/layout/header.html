@@ -2,11 +2,6 @@
 <div class="contain-to-grid">
     <top-bar>
         <ul class="title-area">
-            <li class="name">
-            	<h1>
-            		<a data-ui-sref="app.home" ng-show="$state.current.url != '/'">{{ vm.WEBSITE_SETTINGS.TITLE }}</a>
-            	</h1>
-            </li>
             <li toggle-top-bar class="menu-icon">
                 <a href="#">
                     <span>Menu</span>
@@ -16,11 +11,15 @@
         <top-bar-section class="top-bar-section">
             <ul class="right">
                 <li data-ui-sref-active="active">
+                    <a class="studio" data-ui-sref="app.studio">Studio</a>
+                </li>
+                <li class="divider"></li>
+                <li data-ui-sref-active="active">
                     <a class="about-us" data-ui-sref="app.about-us">About us</a>
                 </li>
                 <li class="divider"></li>
                 <li data-ui-sref-active="active">
-                    <a class="showreel" data-ui-sref="app.showreel">Showreel</a>
+                    <a class="showreel" data-ui-sref="app.our-work">Our work</a>
                 </li>
                 <li class="divider"></li>
                 <li data-ui-sref-active="active">

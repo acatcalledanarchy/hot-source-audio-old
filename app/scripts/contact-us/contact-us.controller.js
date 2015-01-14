@@ -6,11 +6,11 @@
 
 	angular
 		.module('app')
-		.controller('ContactCtrl', ContactCtrl);
+		.controller('ContactUsCtrl', ContactUsCtrl);
 
-	ContactCtrl.$inject = ['WEBSITE_SETTINGS'];
+	ContactUsCtrl.$inject = ['WEBSITE_SETTINGS'];
 
-	function ContactCtrl(WEBSITE_SETTINGS) {
+	function ContactUsCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
 		vm.pageContentClass	= 'page-content-contact-us';

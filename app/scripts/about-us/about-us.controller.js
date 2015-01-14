@@ -7,11 +7,11 @@
 
 	angular
 		.module('app')
-		.controller('AboutCtrl', AboutCtrl);
+		.controller('AboutUsCtrl', AboutUsCtrl);
 
-	AboutCtrl.$inject = ['WEBSITE_SETTINGS'];
+	AboutUsCtrl.$inject = ['WEBSITE_SETTINGS'];
 
-	function AboutCtrl(WEBSITE_SETTINGS) {
+	function AboutUsCtrl(WEBSITE_SETTINGS) {
 
   		var vm = this;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;

@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="small-12 columns">
+        <div class="banner-container"></div>
+    </div>
+</div>
+<div class="row">
+	<div class="small-12 medium-8 medium-push-3 columns end">
+		<h2>Our work</h2>
+    	<div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.OUR_WORK.INTRO_COPY"></div>
+    	<p>&nbsp;</p>
+    	<div class="row">
+    		<!-- Videos -->
+			<div class="small-12 columns" ng-repeat="video in vm.WEBSITE_SETTINGS.SHOWREEL.VIDEOS">
+		    	<a id="#{{ video.PAGE_ANCHOR }}"></a>
+				<h3>{{ video.TITLE }}</h3>
+		    	<p>{{ video.COPY }}</p>
+		    	<div class="videogular-container video">
+			    	<videogular class="videogular">
+						<vg-video vg-src="video.FILES">
+						</vg-video>
+						<vg-controls>
+							<vg-play-pause-button></vg-play-pause-button>
+							<vg-timedisplay>{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
+							<vg-scrubBar>
+								<vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
+							</vg-scrubBar>
+							<vg-timedisplay>{{ timeLeft | date:'mm:ss' }}</vg-timedisplay>
+							<vg-volume>
+								<vg-mutebutton></vg-mutebutton>
+								<vg-volumebar></vg-volumebar>
+							</vg-volume>
+							<vg-fullscreenButton></vg-fullscreenButton>
+						</vg-controls>
+						<vg-overlay-play></vg-overlay-play>
+						<vg-buffering class="videogular-buffering"></vg-buffering>
+						<vg-poster-image class="videogular-poster"></vg-poster-image>
+					</videogular>
+				</div>
+		    </div>
+		    <!-- MP3's -->
+			<div ng-class="{'end':$last}" class="small-12 columns" ng-repeat="mp3 in vm.WEBSITE_SETTINGS.SHOWREEL.MP3S">
+				<a id="#{{ mp3.PAGE_ANCHOR }}"></a>
+				<h3>{{ mp3.TITLE }}</h3>
+				<p>{{ mp3.COPY }}</p>
+				<div class="videogular-container audio">
+					<videogular>
+						<vg-audio vg-src="mp3.FILES"></vg-audio>
+						<vg-controls>
+							<vg-play-pause-button></vg-play-pause-button>
+							<vg-timedisplay>{{ currentTime | date:'mm:ss' }}</vg-timedisplay>
+							<vg-scrubBar>
+								<vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
+							</vg-scrubBar>
+							<vg-timedisplay>{{ timeLeft | date:'mm:ss' }}</vg-timedisplay>
+							<vg-volume>
+								<vg-mutebutton></vg-mutebutton>
+							</vg-volume>
+						</vg-controls>
+					</videogular>
+				</div>
+			</div>
+    	</div>
+	</div>
+</div>

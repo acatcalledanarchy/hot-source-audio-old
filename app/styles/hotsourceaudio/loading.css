@@ -9,7 +9,13 @@
 	box-shadow: #F2267B 1px 0 6px 1px;
 }
 
+#loading-bar-spinner {
+	top: 12px;
+}
+
 #loading-bar-spinner .spinner-icon {
 	border-top-color:  #F2267B;
 	border-left-color: #F2267B;
+	width: 22px;
+	height: 22px;
 }

@@ -1,12 +1,13 @@
-/* Animations */
-.page.ng-enter {
+/* Banner overlay animation */
+.banner-overlay.ng-enter {
 	animation: fadeIn 0.25s both ease-in;
 }
 
-.page.ng-leave {
+.banner-overlay.ng-leave {
 	animation: fadeOut 0.25s both ease-in;
 }
 
+/* Page content animation */
 .page-content.ng-enter {
 	-webkit-animation-name: fadeIn;
     -moz-animation-name: fadeIn;

@@ -1,31 +1,36 @@
 <div class="row">
     <div class="small-12 columns">
-        <h2>About us</h2>     
+        <div class="banner-container"></div>
     </div>
 </div>
 <div class="row">
-	<div class="small-12 medium-6 large-8 end columns" ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.ABOUT_US.INTRO_COPY"></div>
-</div>
-<div class="row">
-	<div class="small-12 columns">
-		<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-		    <li ng-repeat="employee in vm.WEBSITE_SETTINGS.EMPLOYEES">
-				<h3>{{ employee.FIRST_NAME }} {{ employee.SURNAME }}</h3>
-				<div class="portrait">
-					<img ng-src="images/about-us/{{ employee.IMAGE }}" alt="{{ employee.FIRST_NAME }} {{ employee.SURNAME }}" />
-				</div>
-				<ul class="no-bullet details-list">
-					<li>
-						<i class="icon-mail-3">
-						</i>&nbsp;&nbsp;<a href="mailto:{{ employee.EMAIL_ADDRESS }}">{{ employee.EMAIL_ADDRESS }}</a>
-					</li>
-					<li>
-						<i class="icon-phone">
-						</i>&nbsp;&nbsp;<a href="tel:{{ employee.TELEPHONE_NUMBER }}">{{ employee.TELEPHONE_NUMBER }}</a>
-					</li>
-				</ul>
-				<p>{{ employee.COPY }}</p>
-			</li>
-		</ul>
-	</div>
+    <div class="small-12 medium-8 medium-push-3 columns end">
+    	<h2>About us</h2> 
+    	<div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.ABOUT_US.INTRO_COPY"></div>    
+    	<p>&nbsp;</p>
+    	<div class="row" ng-repeat="employee in vm.WEBSITE_SETTINGS.EMPLOYEES">
+            <div class="employee">
+    	    	<div class="small-12 medium-4 columns">
+                    <div class="th">
+            			<img ng-src="images/about-us/{{ employee.IMAGE }}" alt="{{ employee.FIRST_NAME }} {{ employee.SURNAME }}">
+                    </div>
+    	    	</div>
+    	    	<div class="small-12 medium-8 columns">
+    	    		<h4>{{ employee.FIRST_NAME }} {{ employee.SURNAME }}</h4>
+    				<p>{{ employee.JOB_TITLE }}</p>
+    				<ul class="no-bullet">
+    					<li>
+    						<i class="icon-mail-3">
+    						</i>&nbsp;&nbsp;<a href="mailto:{{ employee.EMAIL_ADDRESS }}">{{ employee.EMAIL_ADDRESS }}</a>
+    					</li>
+    					<li>
+    						<i class="icon-phone">
+    						</i>&nbsp;&nbsp;<a href="tel:{{ employee.TELEPHONE_NUMBER }}">{{ employee.TELEPHONE_NUMBER }}</a>
+    					</li>
+    				</ul>
+    				<div ng-bind-html="employee.COPY"></div>
+    	    	</div>
+            </div>
+    	</div>
+    </div>
 </div>

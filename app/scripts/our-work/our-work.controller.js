@@ -8,15 +8,14 @@
 		.module('app')
 		.controller('OurWorkCtrl', OurWorkCtrl);
 
-	OurWorkCtrl.$inject = ['$sce', '$stateParams', '$document', 'WEBSITE_SETTINGS'];
+	OurWorkCtrl.$inject = ['$sce', '$stateParams', '$location', 'WEBSITE_SETTINGS'];
 
-	function OurWorkCtrl($sce, $stateParams, $document, WEBSITE_SETTINGS) {
+	function OurWorkCtrl($sce, $stateParams, $location, WEBSITE_SETTINGS) {
 
-		/*if($stateParams.pageAnchor) {
-			var pageAnchor = $('#' + $stateParams.pageAnchor);
-			console.log('Page anchor', pageAnchor);
-			$document.duScrollToElement(pageAnchor, 0, 500);
-		}*/
+		if($stateParams.pageAnchor) {
+			var pageAnchor = $stateParams.pageAnchor;
+			$location.hash(pageAnchor);
+		}
 
 		var i,
 			j,

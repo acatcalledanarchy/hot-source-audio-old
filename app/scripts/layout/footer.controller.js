@@ -8,13 +8,12 @@
 		.module('app')
 		.controller('FooterCtrl', FooterCtrl);
 
-	FooterCtrl.$inject = ['WEBSITE_SETTINGS'];
+	FooterCtrl.$inject = ['$location', 'WEBSITE_SETTINGS'];
 
-	function FooterCtrl(WEBSITE_SETTINGS) {
+	function FooterCtrl($location, WEBSITE_SETTINGS) {
 	
 		var vm = this;
 		vm.copyrightYear = getCopyrightYear();
-		vm.scrollToTop = scrollToTop();
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 
 		//////////////////////////////
@@ -24,10 +23,6 @@
 				year = d.getFullYear();
 
 			return year;
-		}
-
-		function scrollToTop() {
-			//$document.scrollTopAnimated(500, 5000);
 		}
 	}
 

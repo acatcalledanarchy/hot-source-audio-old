@@ -1,12 +1,11 @@
 <!-- Top Bar -->
 <div class="contain-to-grid">
+    <a id="top"></a>
     <top-bar>
         <ul class="title-area">
             <li class="name">
                 <h1>
-                    {{ $state.current.data.bodyClass }}
-                    <a data-ui-sref="app.home" ng-show="$state.current.data.bodyClass != 'home'">{{ vm.WEBSITE_SETTINGS.TITLE }}</a>
-                    }
+                    <a data-ui-sref="app.home" ng-show="$state.current.data.page.bodyClass != 'home'">{{ vm.WEBSITE_SETTINGS.TITLE }}</a>
                 </h1>
              </li>
             <li toggle-top-bar class="menu-icon">

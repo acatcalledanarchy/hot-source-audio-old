@@ -8,9 +8,9 @@
 		.module('app')
 		.controller('FooterCtrl', FooterCtrl);
 
-	FooterCtrl.$inject = ['$location', 'WEBSITE_SETTINGS'];
+	FooterCtrl.$inject = ['$scope', '$location', 'WEBSITE_SETTINGS'];
 
-	function FooterCtrl($location, WEBSITE_SETTINGS) {
+	function FooterCtrl($scope, $location, WEBSITE_SETTINGS) {
 	
 		var vm = this;
 		vm.copyrightYear = getCopyrightYear();
@@ -24,6 +24,10 @@
 
 			return year;
 		}
+
+		$scope.scrollToTop = function() {
+			$location.hash('top');
+		};
 	}
 
 })();

@@ -13,8 +13,8 @@
 	function ErrorCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
+		vm.autoScroll = true;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
-		vm.pageContentClass	= 'page-content-error';
 	}
 
 })();

@@ -13,6 +13,7 @@
 	function StudioCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
+		vm.autoScroll = false;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 	}
 

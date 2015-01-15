@@ -22,10 +22,10 @@
                     <h4 class="hide-for-small">{{ service.TITLE }}</h4>
                     <div ng-bind-html="service.COPY"></div>
                     <ul class="no-bullet" ng-if="service.LINK">
-                    <li>
-                        <i class="fi-volume">
-                        </i>&nbsp;&nbsp;<a data-ui-sref="app.our-work.page-anchor({ pageAnchor: service.LINK.PAGE_ANCHOR })">{{ service.LINK.TEXT }}</a>
-                    </li>
+                        <li>
+                            <i class="fi-volume">
+                            </i>&nbsp;&nbsp;<a data-ui-sref="app.our-work.page-anchor({ pageAnchor: service.LINK.PAGE_ANCHOR })">{{ service.LINK.TEXT }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>

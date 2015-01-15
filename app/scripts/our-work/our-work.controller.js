@@ -12,17 +12,22 @@
 
 	function OurWorkCtrl($sce, $stateParams, $location, WEBSITE_SETTINGS) {
 
-		if($stateParams.pageAnchor) {
-			var pageAnchor = $stateParams.pageAnchor;
-			$location.hash(pageAnchor);
-		}
-
 		var i,
 			j,
 			vm = this;
 		vm.trustAsResourceUrl = trustAsResourceUrl;
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+
+		///////////////////////////////////////////
 		
+		if($stateParams.pageAnchor) {
+			vm.autoScroll = false;
+			var pageAnchor = $stateParams.pageAnchor;
+			$location.hash(pageAnchor);
+		} else {
+			vm.autoScroll = true;
+		}
+
 		activate();
 
 		///////////////////////////////////////////

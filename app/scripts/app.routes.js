@@ -244,7 +244,10 @@
 			}
 		})	
 		.state('app.our-work.page-anchor', {
-			url: '/:pageAnchor', 	
+			url: '/', 
+			params: {
+				pageAnchor: {}
+			},
 			views: {
 				'header@': {
 					templateUrl: 'scripts/layout/header.html',

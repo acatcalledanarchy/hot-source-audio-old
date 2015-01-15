@@ -1,0 +1,26 @@
+html {
+	height: 100%;
+}
+
+table {
+	width:100%;
+	height:100%;
+	background:#E95130;
+	z-index:9999;
+	position:absolute;
+	border:none;
+}
+
+table p img {
+	float: left;
+}
+
+table p a {
+	clear: left;
+	color: #FFF;
+}
+
+table p a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}

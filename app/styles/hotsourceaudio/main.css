@@ -1,11 +1,5 @@
-/*
-|-----
-| Main
-|-----
-*/
-
+/* Main */
 body {
-	/*background-color: #575757;*/
 	background-image: url(../../images/backgrounds/soundproofing.jpg);
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -37,7 +31,7 @@ a {
     color: #E95130;
 }
 
-p a:hover {
+.page-content a:hover {
 	text-decoration: underline;
 }
 
@@ -51,4 +45,9 @@ h1.subheading {
 
 .th {
 	border-width: 2px;
+}
+
+.th:hover,
+.th:focus {
+	box-shadow: none;
 }

@@ -1,62 +1,56 @@
-<div class="row">
+<div class="row clients-row">
     <div class="small-12 columns">
-         <div class="clients-row">
-            <h1 class="subheading">Clients</h1>
-        </div>
+        <h1 class="subheading">Clients</h1>
     </div>
 </div>
 <!-- Client logos -->
-<div class="row">
+<div class="row client-logos-row">
     <div class="small-12 columns text-center">
-        <div class="client-logos-row">
-            <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
-                <li ng-repeat="client in vm.WEBSITE_SETTINGS.CLIENTS">
-                    <img ng-src="images/client-logos/{{ client.IMAGE }}" alt="{{ client.NAME }}">
-                </li>
-             </ul>
-         </div>
+        <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            <li ng-repeat="client in vm.WEBSITE_SETTINGS.CLIENTS">
+                <img ng-src="images/client-logos/{{ client.IMAGE }}" alt="{{ client.NAME }}">
+            </li>
+         </ul>
     </div>
 </div>
-<div class="row">
+<div class="row footer-row">
     <div class="small-12 columns">
-        <div class="footer-row">
-            <div class="row">
-                <div class="small-8 columns show-for-small">
-                    <ul class="inline-list">
-                        <li>
-                            <a data-scroll-to="" class="go-to-top">
-                                <i class="icon-arrow-up"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="medium-8 columns hide-for-small">
-                    <ul class="inline-list">
-                        <li>
-                            <small>&copy; {{ vm.WEBSITE_SETTINGS.TITLE }} {{ vm.copyrightYear }}</small>
-                        </li>
-                    </ul>
-                </div>
-                <div class="small-4 columns">
-                    <!--
-                    <ul class="inline-list right">
-                        <li>
-                            <a ng-href="{{ vm.WEBSITE_SETTINGS.FACEBOOK_URL }}" target="_blank">
-                                <i class="fi-social-facebook">
-                                    <span>Hot Source Audio Facebook</span>
-                                </i>
-                            </a>
-                        </li>
-                        <li>
-                            <a ng-href="{{ vm.WEBSITE_SETTINGS.TWITTER_URL }}" target="_blank">
-                                <i class="fi-social-twitter">
-                                    <span>Hot Source Audio Twitter</span>
-                                </i>
-                            </a>
-                        </li>
-                    </ul>
-                    -->
-                </div>
+        <div class="row">
+            <div class="small-8 columns show-for-small">
+                <ul class="inline-list">
+                    <li>
+                        <a class="go-to-top" ng-click="scrollToTop()">
+                            <i class="icon-arrow-up"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="medium-8 columns hide-for-small">
+                <ul class="inline-list">
+                    <li>
+                        <small>&copy; {{ vm.WEBSITE_SETTINGS.TITLE }} {{ vm.copyrightYear }}</small>
+                    </li>
+                </ul>
+            </div>
+            <div class="small-4 columns">
+                <!--
+                <ul class="inline-list right">
+                    <li>
+                        <a ng-href="{{ vm.WEBSITE_SETTINGS.FACEBOOK_URL }}" target="_blank">
+                            <i class="fi-social-facebook">
+                                <span>Hot Source Audio Facebook</span>
+                            </i>
+                        </a>
+                    </li>
+                    <li>
+                        <a ng-href="{{ vm.WEBSITE_SETTINGS.TWITTER_URL }}" target="_blank">
+                            <i class="fi-social-twitter">
+                                <span>Hot Source Audio Twitter</span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+                -->
             </div>
         </div>
     </div>

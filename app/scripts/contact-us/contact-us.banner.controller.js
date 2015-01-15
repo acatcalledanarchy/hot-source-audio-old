@@ -13,8 +13,7 @@
 	function ContactUsBannerCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageBanner = 'contact-us.jpg';
-		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.pageBanner = WEBSITE_SETTINGS.PAGES.CONTACT_US.BANNER;
 	}
 
 })();

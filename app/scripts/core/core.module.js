@@ -10,7 +10,7 @@
         /*
          * 3rd Party modules
          */
-        'angular-loading-bar', 'ngMap', 'angulartics', 'angulartics.google.analytics', 'mm.foundation', 'angular-carousel', 'ngScrollTo',
+        'angular-loading-bar', 'ngMap', 'angulartics', 'angulartics.google.analytics', 'mm.foundation', 'angular-carousel', 'duScroll',
         /*
          * Videogular
          */

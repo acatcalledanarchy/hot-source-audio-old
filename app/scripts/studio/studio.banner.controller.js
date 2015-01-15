@@ -13,8 +13,7 @@
 	function StudioBannerCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageBanner = 'studio.jpg';
-		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.pageBanner = WEBSITE_SETTINGS.PAGES.STUDIO.BANNER;
 	}
 
 })();

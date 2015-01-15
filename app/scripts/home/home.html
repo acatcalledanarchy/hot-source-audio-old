@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="small-12 medium-8 medium-push-3 columns end">
-        <h2>Welcome to {{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
+        <h2>Welcome to <br class="show-for-small">{{ vm.WEBSITE_SETTINGS.TITLE }}</h2>
         <div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.INTRO_COPY"></div>
         <h4>How we work</h4>
         <div ng-bind-html="vm.WEBSITE_SETTINGS.PAGES.HOME.HOW_WE_WORK_COPY"></div>
@@ -13,17 +13,18 @@
         <div class="row" ng-repeat="service in vm.WEBSITE_SETTINGS.PAGES.HOME.SERVICES">
             <div class="service">
                 <div class="small-12 medium-4 columns">
+                    <h4 class="show-for-small">{{ service.TITLE }}</h4>
                     <div class="th">
                         <img ng-src="images/services/{{ service.IMAGE }}" alt="{{ service.TITLE }}">
                     </div>
                 </div>
                 <div class="small-12 medium-8 columns">
-                    <h4>{{ service.TITLE }}</h4>
+                    <h4 class="hide-for-small">{{ service.TITLE }}</h4>
                     <div ng-bind-html="service.COPY"></div>
                     <ul class="no-bullet" ng-if="service.LINK">
                     <li>
                         <i class="fi-volume">
-                        </i>&nbsp;&nbsp;<a data-ui-sref="app.our-work">{{ service.LINK.TEXT }}</a>
+                        </i>&nbsp;&nbsp;<a data-ui-sref="app.our-work.page-anchor({ pageAnchor: service.LINK.PAGE_ANCHOR })">{{ service.LINK.TEXT }}</a>
                     </li>
                     </ul>
                 </div>

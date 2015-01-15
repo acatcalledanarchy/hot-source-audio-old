@@ -11,7 +11,7 @@
     	<div class="row">
     		<!-- Videos -->
 			<div class="small-12 columns" ng-repeat="video in vm.WEBSITE_SETTINGS.SHOWREEL.VIDEOS">
-		    	<a id="#{{ video.PAGE_ANCHOR }}"></a>
+		    	<a id="{{ video.PAGE_ANCHOR }}"></a>
 				<h3>{{ video.TITLE }}</h3>
 		    	<p>{{ video.COPY }}</p>
 		    	<div class="videogular-container video">
@@ -39,7 +39,7 @@
 		    </div>
 		    <!-- MP3's -->
 			<div ng-class="{'end':$last}" class="small-12 columns" ng-repeat="mp3 in vm.WEBSITE_SETTINGS.SHOWREEL.MP3S">
-				<a id="#{{ mp3.PAGE_ANCHOR }}"></a>
+				<a id="{{ mp3.PAGE_ANCHOR }}"></a>
 				<h3>{{ mp3.TITLE }}</h3>
 				<p>{{ mp3.COPY }}</p>
 				<div class="videogular-container audio">

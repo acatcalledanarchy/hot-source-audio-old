@@ -14,6 +14,7 @@
 	
 		var vm = this;
 		vm.copyrightYear = getCopyrightYear();
+		vm.scrollToTop = scrollToTop();
 		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
 
 		//////////////////////////////
@@ -23,6 +24,10 @@
 				year = d.getFullYear();
 
 			return year;
+		}
+
+		function scrollToTop() {
+			//$document.scrollTopAnimated(500, 5000);
 		}
 	}
 

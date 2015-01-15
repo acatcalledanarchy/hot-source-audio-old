@@ -13,8 +13,7 @@
 	function ErrorBannerCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageBanner = 'error.jpg';
-		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.pageBanner = WEBSITE_SETTINGS.PAGES.ERROR.BANNER;
 	}
 
 })();

@@ -29,7 +29,8 @@
                     META: {
                         DESCRIPTION: 'Hot Source is an independent audio production company based in Guernsey in the Channel Islands.',
                         KEYWORDS: 'audio, production, radio, tv, film, voiceover, podcasts, restoration, commercial, music, online, digital, conversion, dat, minidisc, reel, cassette'
-                    },  
+                    }, 
+                    BANNER: 'home.jpg', 
                     INTRO_COPY: '<p>Hot Source is an independent audio production company based in Guernsey in the Channel Islands. We are passionate about defining your brand with creative audio that connects and engages emotionally with your customers producing successful results.</p>',
                     HOW_WE_WORK_COPY: '<p>We like to chat with you, get an overview of where you are with your current marketing and identify objectives.</p>' +
                         '<p>We like to agree the creative brief then go to work.</p>' +
@@ -41,7 +42,7 @@
                             IMAGE: 'studio.jpg',
                             COPY: '<p>We write and produce radio commercials including scriptwriting, voice-over casting & recording, bespoke music branding.</p>',
                             LINK: {
-                                URL: 'radio',
+                                PAGE_ANCHOR: 'radio-commericals-showreel',
                                 TEXT: 'Listen to showreel'
                             }
                         },
@@ -55,7 +56,7 @@
                             IMAGE: 'amp.jpg',
                             COPY: '<p>Copywriting, voice casting and recording, music and sound design for online video, podcasts and audio books.</p>',
                             LINK: {
-                                URL: '#',
+                                PAGE_ANCHOR: 'music-showreel',
                                 TEXT: 'Listen to showreel'
                             }
                         },
@@ -71,6 +72,7 @@
                         DESCRIPTION: 'Our studios are situated in the former WW2 German Naval Command Communications Bunker built during the 1940/45 occupation. Code named Seeko-Ki it housed one of the legendary enigma coding machines.',
                         KEYWORDS: 'studio, ww2, german, naval, command, seeko-ki, isdn, real-time, audio, drum, vocal, booth, live, guitar, room, enigma, coding, machine'
                     },
+                    BANNER: 'studio.jpg',
                     INTRO_COPY: '<p>Our studios are situated in the former WW2 German Naval Command Communications Bunker built during the 1940/45 occupation. Code named Seeko-Ki it housed one of the legendary enigma coding machines.</p>' +
                         '<p>Other than the two most essential pieces of kit (our ears and imagination) we have all the industry leading hardware and software at hand to create music and sound design bringing your productions to life.</p>' +
                         '<p>Via ISDN we can link with studios for real-time audio connections across the globe making voice talent available to any producers working at our facilities.</p>' +
@@ -81,6 +83,7 @@
                         DESCRIPTION: '',
                         KEYWORDS: ''
                     },
+                    BANNER: 'about-us.jpg',
                     INTRO_COPY: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' + 
                     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ' +
                     'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
@@ -90,6 +93,7 @@
                         DESCRIPTION: '',
                         KEYWORDS: ''
                     },
+                    BANNER: 'our-work.jpg',
                     INTRO_COPY: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' + 
                     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ' +
                     'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
@@ -99,24 +103,12 @@
                         DESCRIPTION: '',
                         KEYWORDS: ''
                     },
+                    BANNER: 'contact-us.jpg',
                     INTRO_COPY: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' + 
-                    'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ' +
-                    'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
-                },
-                PRIVACY_POLICY: {
-                    META: {
-                        DESCRIPTION: '',
-                        KEYWORDS: ''
-                    },
-                    PAGE_COPY: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ' + 
                     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ' +
                     'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'
                 }
             },
-            SLIDES: [
-                'gear.jpg'/*,
-                'banner-4.jpg'*/
-            ],
             EMPLOYEES: [
                 {
                     FIRST_NAME: 'Simon',
@@ -153,7 +145,10 @@
                         PAGE_ANCHOR: 'radio-commericals-showreel',
                         COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
                         FILES: [
-                            { SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/audio/ad-showreel-2013.mp3', TYPE: 'audio/mpeg' }
+                            {
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/audio/ad-showreel-2013.mp3',
+                                TYPE: 'audio/mpeg'
+                            }
                         ]
                     },
                     {
@@ -161,17 +156,22 @@
                         PAGE_ANCHOR: 'music-showreel',
                         COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
                         FILES: [
-                            { SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/audio/music-showreel-2013.mp3', TYPE: 'audio/mpeg' }
+                            {
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/audio/music-showreel-2013.mp3',
+                                TYPE: 'audio/mpeg'
+                            }
                         ]
                     }
                 ],
                 VIDEOS: [
 					{
 						TITLE: 'Blue Islands TV advert',
-                        PAGE_ANCHOR: '',
                         COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
 						FILES: [
-							{ SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/blue-islands.mp4', TYPE: 'video/mp4' }
+							{
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/blue-islands.mp4',
+                                TYPE: 'video/mp4'
+                            }
 						]
 					},
 					{
@@ -179,24 +179,63 @@
                         PAGE_ANCHOR: '',
 						COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
                         FILES: [
-							{ SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/emirates.mp4', TYPE: 'video/mp4' }
+							{
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/emirates.mp4',
+                                TYPE: 'video/mp4'
+                            }
 						]
 					}
 				]
             },
             CLIENTS: [
-                { NAME: '7up', IMAGE: '7up.png' },
-                { NAME: 'B&amp;Q', IMAGE: 'b-and-q.png' },
-                { NAME: 'British Airways', IMAGE: 'british-airways.png' },
-                { NAME: 'Castrol', IMAGE: 'castrol.png' },
-                { NAME: 'Emirates', IMAGE: 'emirates.png' },
-                { NAME: 'Lexus', IMAGE: 'lexus.png' },
-                { NAME: 'Lloyds TSB', IMAGE: 'lloyds-tsb.png' },
-                { NAME: 'Northern Trust', IMAGE: 'northern-trust.png' },
-                { NAME: 'SpecSavers', IMAGE: 'specsavers.png' },
-                { NAME: 'Time Out Dubai', IMAGE: 'time-out-dubai.png' },
-                { NAME: 'Transport for London', IMAGE: 'transport-for-london.png' },
-                { NAME: 'Virgin Atlantic', IMAGE: 'virgin-atlantic.png' }
+                {
+                    NAME: '7up',
+                    IMAGE: '7up.png'
+                },
+                {
+                    NAME: 'B&amp;Q',
+                    IMAGE: 'b-and-q.png'
+                },
+                {
+                    NAME: 'British Airways',
+                    IMAGE: 'british-airways.png'
+                },
+                {
+                    NAME: 'Castrol', 
+                    IMAGE: 'castrol.png' 
+                },
+                {
+                    NAME: 'Emirates',
+                    IMAGE: 'emirates.png'
+                },
+                {
+                    NAME: 'Lexus',
+                    IMAGE: 'lexus.png'
+                },
+                {
+                    NAME: 'Lloyds TSB',
+                    IMAGE: 'lloyds-tsb.png'
+                },
+                {
+                    NAME: 'Northern Trust',
+                    IMAGE: 'northern-trust.png'
+                },
+                {
+                    NAME: 'SpecSavers',
+                    IMAGE: 'specsavers.png'
+                },
+                {
+                    NAME: 'Time Out Dubai',
+                    IMAGE: 'time-out-dubai.png'
+                },
+                {
+                    NAME: 'Transport for London',
+                    IMAGE: 'transport-for-london.png'
+                },
+                {
+                    NAME: 'Virgin Atlantic',
+                    IMAGE: 'virgin-atlantic.png'
+                }
             ]
         };
 

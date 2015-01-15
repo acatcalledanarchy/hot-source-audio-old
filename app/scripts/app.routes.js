@@ -243,6 +243,47 @@
 				}
 			}
 		})	
+		.state('app.our-work.page-anchor', {
+			url: '/:pageAnchor', 	
+			views: {
+				'header@': {
+					templateUrl: 'scripts/layout/header.html',
+					controller: 'HeaderCtrl',
+					controllerAs: 'vm'
+				},	
+				'page-overlay@': {
+					templateUrl: 'scripts/layout/page-overlay.html'
+				},	
+				'page-content@': {
+					templateUrl:  'scripts/our-work/our-work.html',
+					controller:  'OurWorkCtrl',
+					controllerAs: 'vm'
+				},	
+				'page-banner@': {
+					templateUrl: 'scripts/layout/banner.html',
+					controller: 'OurWorkBannerCtrl',
+					controllerAs: 'vm'
+				},	
+				'logo-overlay@': {
+					templateUrl: 'scripts/layout/logo-overlay.html'
+				},		
+				'footer@': {
+					templateUrl: 'scripts/layout/footer.html',
+					controller: 'FooterCtrl',
+					controllerAs: 'vm'
+				}
+			},
+			data: {
+				page: {
+					title: 'Our work' + websiteTitle,
+					bodyClass: 'our-work',
+				},
+				meta: {
+					description: showreelDescription,
+					keywords: showreelKeywords
+				}
+			}
+		})	
 		.state('app.contact-us', {
 			url: '/contact-us',	
 			views: {

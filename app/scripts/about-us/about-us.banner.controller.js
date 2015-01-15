@@ -13,8 +13,7 @@
 	function AboutUsBannerCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageBanner = 'about-us.jpg';
-		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.pageBanner = WEBSITE_SETTINGS.PAGES.ABOUT_US.BANNER;
 	}
 
 })();

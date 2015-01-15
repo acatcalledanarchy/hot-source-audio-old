@@ -7,3 +7,14 @@
 .service h4 {
     margin-top: -5px;
 }
+
+.service .th {
+	margin-bottom: 20px;
+}
+
+@media (min-width: 769px) {
+
+	.service .th {
+		margin-bottom: 0;
+	}
+}

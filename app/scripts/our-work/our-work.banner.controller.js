@@ -13,8 +13,7 @@
 	function OurWorkBannerCtrl(WEBSITE_SETTINGS) {
 
 		var vm = this;
-		vm.pageBanner = 'our-work.jpg';
-		vm.WEBSITE_SETTINGS = WEBSITE_SETTINGS;
+		vm.pageBanner = WEBSITE_SETTINGS.PAGES.OUR_WORK.BANNER;
 	}
 
 })();

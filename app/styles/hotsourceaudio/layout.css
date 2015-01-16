@@ -23,6 +23,16 @@ header {
 }
 
 /* Page overlay */
+.page-overlay {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
 .page-overlay .overlay {
     display: block;
     margin-bottom: -9999px;
@@ -30,7 +40,24 @@ header {
     background: #454545;
 }
 
-/* Banner */
+/* Banner overlay */
+.banner-overlay {
+    z-index: 3;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.banner-overlay.ng-enter {
+    z-index: 4;
+}
+
+.banner-overlay.ng-leave {
+    z-index: 5;
+}
+
 .banner-container {
     margin-top: 45px;
     margin-bottom: 40px;
@@ -43,9 +70,40 @@ header {
 .banner-container img {
     position: absolute;
     top: 0;
+    width: 100%;
+}
+
+/* Logo overlay */
+.logo-overlay {
+    z-index: 6;
+    position: absolute;
+    top: 55px;
     left: 0;
     right: 0;
+}
+
+.logo-overlay img {
+    width: 80px;
+    height: auto;
+}
+
+/* Page content */
+.page-content {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page-content.ng-enter {
+    z-index: 1;
+}
+
+.page-content.ng-leave {
+    position: absolute;
+    top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /* Footer */
@@ -98,4 +156,37 @@ footer a:hover i {
 
 footer a i span {
     display: none;
+}
+
+/* Medium */
+@media (min-width: 769px) {
+
+    /* Logo overlay */
+    .logo-overlay img {
+        width: 118px;
+    }
+
+    /* Page content */
+    .contain-to-grid .top-bar,
+    .page-overlay .row,
+    .page-content .row,
+    .banner-overlay .row,
+    .logo-overlay .row,
+    footer .row {
+        max-width: 100%;
+    }    
+}
+
+/* Large */
+@media(min-width: 1280px) {
+
+    /* Page content */
+    .contain-to-grid .top-bar,
+    .page-overlay .row,
+    .page-content .row,
+    .banner-overlay .row,
+    .logo-overlay .row,
+    footer .row {
+        max-width: 62.5em;
+    }
 }

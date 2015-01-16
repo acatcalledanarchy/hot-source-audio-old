@@ -112,7 +112,8 @@
 			data: {
 				page: {
 					title: 'Home' + websiteTitle,
-					bodyClass: 'home'
+					bodyClass: 'home',
+					autoScroll: true
 				},
 				meta: {
 					description: WEBSITE_SETTINGS.PAGES.HOME.META.DESCRIPTION,
@@ -153,7 +154,8 @@
 			data: {
 				page: {
 					title: 'Studio' + websiteTitle,
-					bodyClass: 'studio'
+					bodyClass: 'studio',
+					autoScroll: true
 				},
 				meta: {
 					description: WEBSITE_SETTINGS.PAGES.STUDIO.META.DESCRIPTION,
@@ -194,7 +196,8 @@
 			data: {
 				page: {
 					title: 'About us' + websiteTitle,
-					bodyClass: 'about-us'
+					bodyClass: 'about-us',
+					autoScroll: true
 				},
 				meta: {
 					description: WEBSITE_SETTINGS.PAGES.ABOUT_US.META.DESCRIPTION,
@@ -236,6 +239,7 @@
 				page: {
 					title: 'Our work' + websiteTitle,
 					bodyClass: 'our-work',
+					autoScroll: true
 				},
 				meta: {
 					description: showreelDescription,
@@ -280,6 +284,7 @@
 				page: {
 					title: 'Our work' + websiteTitle,
 					bodyClass: 'our-work',
+					autoScroll: false
 				},
 				meta: {
 					description: showreelDescription,
@@ -320,7 +325,8 @@
 			data: {
 				page: {
 					title: 'Contact us' + websiteTitle,
-					bodyClass: 'contact-us'
+					bodyClass: 'contact-us',
+					autoScroll: true
 				},
 				meta: {
 					description: contactUsDescription,
@@ -361,7 +367,8 @@
 			data: {
 				page: {
 					title: '404 error' + websiteTitle,
-					bodyClass: 'error'
+					bodyClass: 'error',
+					autoScroll: true
 				},
 				meta: {
 					description: '',

@@ -10,7 +10,7 @@
         /*
          * 3rd Party modules
          */
-        'angular-loading-bar', 'ngMap', /*'angulartics', 'angulartics.google.analytics',*/ 'mm.foundation',
+        'angular-loading-bar', 'ngMap', 'angulartics', 'angulartics.google.analytics', 'mm.foundation',
         /*
          * Videogular
          */

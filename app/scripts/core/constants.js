@@ -191,26 +191,43 @@
                 ],
                 VIDEOS: [
 					{
-						TITLE: 'Blue Islands TV advert',
+						TITLE: 'Blue Islands Airline',
                         COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
 						FILES: [
 							{
-                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/blue-islands.mp4',
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/69287439.mp4',
                                 TYPE: 'video/mp4'
                             }
 						]
 					},
 					{
-						TITLE: 'Emirates TV advert',
-                        PAGE_ANCHOR: '',
-						COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+						TITLE: 'Emirates Airline',
+                        COPY: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
                         FILES: [
 							{
                                 SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/emirates.mp4',
                                 TYPE: 'video/mp4'
                             }
 						]
-					}
+					},
+                    {
+                        TITLE: 'Conquer the Castle',
+                        FILES: [
+                            {
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/Manon_Carpenter_CTC.mp4',
+                                TYPE: 'video/mp4'
+                            }
+                        ]
+                    },
+                    {
+                        TITLE: 'States of Guernsey',
+                        FILES: [
+                            {
+                                SRC: 'https://dl.dropboxusercontent.com/u/4809757/website-showreel/video/Drivers_of_change_Public-1.mp4',
+                                TYPE: 'video/mp4'
+                            }
+                        ]
+                    }
 				]
             },
             CLIENTS: [
